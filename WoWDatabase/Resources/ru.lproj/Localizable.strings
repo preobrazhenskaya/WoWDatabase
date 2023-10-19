@@ -23,3 +23,5 @@
 "achievements.detail.nextAchievement" = "Следующее достижение";
 "achievements.detail.faction" = "Фракция";
 "achievements.detail.factionBoth" = "Любая";
+
+"profile.updateToken" = "Обновить токен доступа";

@@ -40,7 +40,7 @@ enum TabEnum: Int, Identifiable, CaseIterable {
 		case .achievements:
 			AchievementsListView(viewModel: .init())
 		case .profile:
-			Spacer()
+			ProfileView(viewModel: .init())
 		}
 	}
 }

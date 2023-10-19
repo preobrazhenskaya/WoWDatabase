@@ -13,6 +13,7 @@ struct TabsView: View {
 			ForEach(TabEnum.allCases) { tab in
 				tab.contentView
 					.tabItem { Label(tab.title, systemSymbol: tab.icon) }
+					.tag(tab)
 			}
 			.setTabBarTheme()
 		}

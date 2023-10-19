@@ -8,7 +8,7 @@
 import Combine
 
 class BaseViewModel: ObservableObject {
-	@Published var isLoading = true
+	@Published var isLoading = false
 	@Published var showError = false
 	
 	var cancellableSet: Set<AnyCancellable> = []
