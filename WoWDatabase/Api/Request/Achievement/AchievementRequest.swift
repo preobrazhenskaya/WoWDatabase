@@ -7,16 +7,14 @@
 
 import Alamofire
 
-struct AchievementRequest: RequestProtocol {
-	var endpoint: String {
-		"\(Constants.API.URL.achievement)/\(id)"
-	}
-	
-	let method = HTTPMethod.get
-	let parameters = defaultParameters
-	let headers = defaultHeaders
-	
+struct AchievementRequest {
+	let id: Int
+}
+
+extension AchievementRequest: RequestProtocol {
 	typealias Response = AchievementModel
 	
-	let id: Int
+	var url: String {
+		"\(Constants.API.URL.main)\(Constants.API.URL.achievement)/\(id)"
+	}
 }

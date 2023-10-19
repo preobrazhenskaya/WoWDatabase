@@ -207,9 +207,9 @@
 		87963F882AC75E010001BDB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				87E520542ACC5FA900856334 /* MediaModel.swift */,
-				87963F8D2AC75E0E0001BDB1 /* TokenModel.swift */,
 				87E5205E2ACC7D2C00856334 /* Achievement */,
+				87A365DB2AE14CE50041B017 /* Auth */,
+				87A365DC2AE14CEB0041B017 /* Media */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -228,6 +228,22 @@
 				87A365C42AE0061D0041B017 /* AchievementApi.swift */,
 			);
 			path = Api;
+			sourceTree = "<group>";
+		};
+		87A365DB2AE14CE50041B017 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				87963F8D2AC75E0E0001BDB1 /* TokenModel.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		87A365DC2AE14CEB0041B017 /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				87E520542ACC5FA900856334 /* MediaModel.swift */,
+			);
+			path = Media;
 			sourceTree = "<group>";
 		};
 		87D4CC322AD8210F0079657E /* Generated */ = {

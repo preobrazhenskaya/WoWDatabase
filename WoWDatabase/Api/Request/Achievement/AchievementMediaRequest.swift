@@ -7,16 +7,14 @@
 
 import Alamofire
 
-struct AchievementMediaRequest: RequestProtocol {
-	var endpoint: String {
-		"\(Constants.API.URL.media)\(Constants.API.URL.achievement)/\(id)"
-	}
-	
-	let method = HTTPMethod.get
-	let parameters = defaultParameters
-	let headers = defaultHeaders
-	
+struct AchievementMediaRequest {
+	let id: Int
+}
+
+extension AchievementMediaRequest: RequestProtocol {
 	typealias Response = MediaModel
 	
-	let id: Int
+	var url: String {
+		"\(Constants.API.URL.main)\(Constants.API.URL.media)\(Constants.API.URL.achievement)/\(id)"
+	}
 }

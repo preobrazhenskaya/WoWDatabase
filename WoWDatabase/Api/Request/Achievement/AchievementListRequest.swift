@@ -8,10 +8,6 @@
 import Alamofire
 
 struct AchievementListRequest: RequestProtocol {
-	let endpoint = "\(Constants.API.URL.achievement)\(Constants.API.URL.list)"
-	let method = HTTPMethod.get
-	let parameters = defaultParameters
-	let headers = defaultHeaders
-	
 	typealias Response = AchievementsListModel
+	let url = "\(Constants.API.URL.main)\(Constants.API.URL.achievement)\(Constants.API.URL.list)"
 }

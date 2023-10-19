@@ -8,16 +8,20 @@
 import Alamofire
 
 protocol RequestProtocol {
-	var endpoint: String { get }
+	associatedtype Response: Decodable
+	
+	var url: String { get }
 	var method: HTTPMethod { get }
 	var parameters: [String: String] { get }
 	var headers: HTTPHeaders? { get }
-	
-	associatedtype Response: Decodable
 }
 
 extension RequestProtocol {
-	static var defaultParameters: [String: String] {
+	var method: HTTPMethod {
+		.get
+	}
+	
+	var parameters: [String: String] {
 		[
 			Constants.API.Parameters.Keys.region: Constants.API.Parameters.Value.regionEU,
 			Constants.API.Parameters.Keys.namespace: Constants.API.Parameters.Value.namespaceEU,
@@ -25,9 +29,9 @@ extension RequestProtocol {
 		]
 	}
 	
-	static var defaultHeaders: HTTPHeaders? {
+	var headers: HTTPHeaders? {
 		[
-			Constants.API.Headers.Keys.authorization: "\(Constants.API.Headers.Value.bearer) "
+			Constants.API.Headers.Keys.authorization: "\(Constants.API.Headers.Value.bearer) \(AuthService.getToken() ?? "")"
 		]
 	}
 }

@@ -10,7 +10,10 @@ import Combine
 
 struct Api {
 	static func send<T: RequestProtocol>(request: T) -> AnyPublisher<T.Response, AFError> {
-		let url = URL(string: "\(Constants.API.URL.main)\(request.endpoint)")!
+		guard let url = URL(string: request.url) else {
+			return Fail(error: AFError.invalidURL(url: request.url))
+				.eraseToAnyPublisher()
+		}
 		let request = AF.request(url,
 								 method: request.method,
 								 parameters: request.parameters,
