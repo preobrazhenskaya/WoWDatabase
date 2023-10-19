@@ -1,0 +1,20 @@
+input_dir: WoWDatabase/
+output_dir: WoWDatabase/Resources/Generated/
+
+xcassets:
+  inputs:
+    - Resources/Assets.xcassets
+  outputs:
+    templateName: swift5
+    params:
+       forceProvidesNamespaces: true
+    output: XCAssets+Generated.swift
+    
+strings:
+  inputs:
+    - Resources/ru.lproj
+  outputs:
+    - templateName: structured-swift5
+      params:
+        publicAccess: true
+      output: Strings+Generated.swift

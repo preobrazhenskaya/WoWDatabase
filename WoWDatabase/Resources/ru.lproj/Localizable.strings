@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  WoWDatabase
+
+  Created by Яна Преображенская on 12.10.2023.
+  
+*/
+
+"general.yes" = "Да";
+"general.no" = "Нет";
+"general.error" = "Ошибка";
+"general.ok" = "Ок";
+
+"tab.achievements" = "Достижения";
+"tab.profile" = "Профиль";
+
+"achievements.detail.category" = "Категория";
+"achievements.detail.points" = "Очки";
+"achievements.detail.isAccountWide" = "Распространяется на весь аккаунт";
+"achievements.detail.reward" = "Награда";
+"achievements.detail.criteria" = "Критерии";
+"achievements.detail.prevAchievement" = "Предыдущее достижение";
+"achievements.detail.nextAchievement" = "Следующее достижение";
+"achievements.detail.faction" = "Фракция";
+"achievements.detail.factionBoth" = "Любая";

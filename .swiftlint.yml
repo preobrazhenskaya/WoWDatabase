@@ -1,0 +1,8 @@
+excluded:
+  - Pods
+  - WoWDatabase/Resources/Generated
+
+disabled_rules:
+  - trailing_whitespace
+  - line_length
+  - nesting
