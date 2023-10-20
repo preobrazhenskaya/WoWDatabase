@@ -44,6 +44,6 @@ struct AchievementRow: View {
 
 struct AchievementRow_Previews: PreviewProvider {
     static var previews: some View {
-		AchievementRow(achievement: .init(id: 1, name: "Name"), backgroundColor: .backgroundAccent)
+		AchievementRow(achievement: .init(id: 1, name: "Name"), backgroundColor: .background)
     }
 }

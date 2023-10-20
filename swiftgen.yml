@@ -18,3 +18,10 @@ strings:
       params:
         publicAccess: true
       output: Strings+Generated.swift
+
+fonts:
+  inputs:
+    - Resources/Font
+  outputs:
+    templateName: swift5
+    output: Fonts+Generated.swift

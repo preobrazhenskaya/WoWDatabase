@@ -15,13 +15,13 @@ struct AchievementsListView: View {
 			ScrollView {
 				LazyVStack {
 					ForEach(viewModel.achievements) { achievement in
-						AchievementRowBuilder(achievement: achievement, backgroundColor: .backgroundAccent)
+						AchievementRowBuilder(achievement: achievement, backgroundColor: .background)
 					}
 				}
 				.padding(.all)
 			}
 			.setNavigationBar(title: L10n.Tab.achievements, dismiss: nil, showBack: false)
-			.setBackgroundTheme()
+			.setViewBaseTheme()
 			.withLoader(isLoading: viewModel.isLoading)
 			.withErrorAlert(isPresented: $viewModel.showError, errorText: viewModel.errorText.value)
 			.onFirstAppear { viewModel.loadData() }

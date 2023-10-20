@@ -17,7 +17,7 @@ struct ProfileView: View {
 					viewModel.updateToken()
 				}, label: {
 					ZStack {
-						Color.accent
+						Color.backgroundDark
 						Text(L10n.Profile.updateToken)
 							.foregroundColor(.white)
 					}
@@ -28,7 +28,7 @@ struct ProfileView: View {
 			}
 			.padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
 			.setNavigationBar(title: L10n.Tab.profile, dismiss: nil, showBack: false)
-			.setBackgroundTheme()
+			.setViewBaseTheme()
 			.withLoader(isLoading: viewModel.isLoading)
 			.withErrorAlert(isPresented: $viewModel.showError, errorText: viewModel.errorText.value)
 		}

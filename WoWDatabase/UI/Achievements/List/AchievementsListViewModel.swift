@@ -29,7 +29,6 @@ final class AchievementsListViewModel: BaseViewModel {
 //			.init(id: 6, name: "10-й уровень"),
 //			.init(id: 7, name: "20-й уровень")
 //		]
-//		listLoading.send(false)
 		AchievementApi.getAchievementsList()
 			.trackLoading(listLoading)
 			.getError(errorText)

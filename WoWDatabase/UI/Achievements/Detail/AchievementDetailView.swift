@@ -13,15 +13,14 @@ struct AchievementDetailView: View {
 	@ObservedObject var viewModel: AchievementDetailViewModel
 	
 	var background: some View {
-		Color.backgroundAccent
+		Color.background
 			.cornerRadius(6)
 			.padding(.init(top: 150, leading: 0, bottom: 0, trailing: 0))
 	}
 	
 	var titleText: some View {
 		Text(viewModel.achievement?.name ?? "")
-			.bold()
-			.font(.largeTitle)
+			.font(.customBoldLargeTitle)
 			.fixedSize(horizontal: false, vertical: true)
 			.multilineTextAlignment(.center)
 	}
@@ -32,21 +31,30 @@ struct AchievementDetailView: View {
 			case .empty:
 				CustomProgressView(isLoading: true)
 			case let .success(image):
-				image
-					.resizable()
-					.scaledToFill()
-					.cornerRadius(10)
-					.overlay(
-						RoundedRectangle(cornerRadius: 10)
-								.stroke(Color.textMain, lineWidth: 2)
-					)
+				ZStack {
+					image
+						.resizable()
+						.scaledToFill()
+						.cornerRadius(10)
+						.frame(width: 200, height: 200)
+					RoundedRectangle(cornerRadius: 10)
+						.stroke(
+							LinearGradient(
+								colors: [Color.borderStart,
+										 Color.borderEnd],
+								startPoint: .topLeading,
+								endPoint: .bottomTrailing
+							),
+							lineWidth: 5
+						)
+				}
 			default:
 				Image(systemSymbol: .photo)
 					.resizable()
 					.scaledToFit()
 			}
 		}
-		.frame(width: 200, height: 200)
+		.frame(width: 205, height: 205)
 	}
 	
 	var descriptionText: some View {
@@ -117,7 +125,7 @@ struct AchievementDetailView: View {
 			Text("\(L10n.Achievements.Detail.prevAchievement):")
 				.bold()
 				.padding(.top, 4)
-			AchievementRowBuilder(achievement: achievement, backgroundColor: .backgroundAccentLight)
+			AchievementRowBuilder(achievement: achievement, backgroundColor: .backgroundLight)
 		}
 	}
 	
@@ -126,7 +134,7 @@ struct AchievementDetailView: View {
 			Text("\(L10n.Achievements.Detail.nextAchievement):")
 				.bold()
 				.padding(.top, 4)
-			AchievementRowBuilder(achievement: achievement, backgroundColor: .backgroundAccentLight)
+			AchievementRowBuilder(achievement: achievement, backgroundColor: .backgroundLight)
 		}
 	}
 	
@@ -166,8 +174,9 @@ struct AchievementDetailView: View {
 			.padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
 		}
 		.setNavigationBar(title: "", dismiss: dismiss, showBack: true)
+		.toolbarBackground(.hidden, for: .navigationBar)
 		.toolbar(.hidden, for: .tabBar)
-		.setBackgroundTheme()
+		.setViewBaseTheme()
 		.withLoader(isLoading: viewModel.isLoading)
 		.withErrorAlert(isPresented: $viewModel.showError, errorText: viewModel.errorText.value)
 		.onFirstAppear { viewModel.loadData() }

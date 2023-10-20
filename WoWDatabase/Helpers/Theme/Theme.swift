@@ -20,8 +20,8 @@ public extension View {
 		modifier(NavigationBarTheme(title: title, dismiss: dismiss, showBack: showBack))
 	}
 	
-	func setBackgroundTheme() -> some View {
-		modifier(ViewBackgroundTheme())
+	func setViewBaseTheme() -> some View {
+		modifier(ViewBaseTheme())
 	}
 	
 	func withLoader(isLoading: Bool) -> some View {
@@ -80,25 +80,17 @@ struct NavigationBarTheme: ViewModifier {
 }
 
 // MARK: - View
-struct ViewBackgroundTheme: ViewModifier {
+struct ViewBaseTheme: ViewModifier {
 	func body(content: Content) -> some View {
 		content
+			.font(.customBody)
 			.scrollContentBackground(.hidden)
 			.background(
-				ZStack {
-					RadialGradient(
-						colors: [Color.backgroundGradientAccent,
-								 Color.background],
-						center: .topTrailing,
-						startRadius: 0,
-						endRadius: 350)
-					RadialGradient(
-						colors: [Color.backgroundGradientAccent,
-								 Color.clear],
-						center: .bottomLeading,
-						startRadius: 0,
-						endRadius: 350)
-				}.ignoresSafeArea()
+				Image(asset: Asset.background)
+					.resizable()
+					.scaledToFill()
+					.ignoresSafeArea()
+					.blur(radius: 2)
 			)
 	}
 }
