@@ -18,7 +18,7 @@ struct SkillDetailView: View {
 	
 	var minLevelText: some View {
 		HStack {
-			Text("\(L10n.Professions.Skill.Detail.minLevel):")
+			Text("\(L10n.Skill.Detail.minLevel):")
 				.bold()
 			Text(viewModel.skill?.minimumSkillLevelString ?? "")
 		}
@@ -26,9 +26,26 @@ struct SkillDetailView: View {
 	
 	var maxLevelText: some View {
 		HStack {
-			Text("\(L10n.Professions.Skill.Detail.maxLevel):")
+			Text("\(L10n.Skill.Detail.maxLevel):")
 				.bold()
 			Text(viewModel.skill?.maximumSkillLevelString ?? "")
+		}
+	}
+	
+	var recipesList: some View {
+		VStack(alignment: .leading) {
+			Text("\(L10n.Skill.Detail.recipes):")
+				.bold()
+				.padding(.top, 4)
+			LazyVStack(alignment: .leading) {
+				ForEach(viewModel.skill?.categories ?? []) { category in
+					NavigationLink(destination: {
+						Router.navigate(to: .recipesList(category: category))
+					}, label: {
+						NameIdRow(model: .init(id: 1, name: category.name), backgroundColor: .backgroundLight)
+					})
+				}
+			}
 		}
 	}
 	
@@ -39,6 +56,9 @@ struct SkillDetailView: View {
 				VStack(alignment: .leading) {
 					minLevelText
 					maxLevelText
+					if !(viewModel.skill?.categories?.isEmpty ?? true) {
+						recipesList
+					}
 				}
 				.frame(minWidth: 0,
 					   maxWidth: .infinity,

@@ -23,6 +23,9 @@
 		871A55BA2AE6B6F50030ADBC /* SkillDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55B92AE6B6F50030ADBC /* SkillDetailVM.swift */; };
 		871A55BC2AE6B80D0030ADBC /* SkillDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55BB2AE6B80D0030ADBC /* SkillDetailView.swift */; };
 		871A55BE2AE6BB480030ADBC /* SkillRowBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55BD2AE6BB480030ADBC /* SkillRowBuilder.swift */; };
+		871A55C22AE6BDC90030ADBC /* RecipesListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55C12AE6BDC90030ADBC /* RecipesListVM.swift */; };
+		871A55C52AE6BE4D0030ADBC /* RecipesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55C42AE6BE4D0030ADBC /* RecipesListView.swift */; };
+		871A55C82AE6BFA00030ADBC /* RecipeRowBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55C72AE6BFA00030ADBC /* RecipeRowBuilder.swift */; };
 		87963EE02AC749760001BDB1 /* WoWDatabaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87963EDF2AC749760001BDB1 /* WoWDatabaseApp.swift */; };
 		87963EE42AC749790001BDB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87963EE32AC749790001BDB1 /* Assets.xcassets */; };
 		87963EE72AC749790001BDB1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87963EE62AC749790001BDB1 /* Preview Assets.xcassets */; };
@@ -111,6 +114,9 @@
 		871A55B92AE6B6F50030ADBC /* SkillDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDetailVM.swift; sourceTree = "<group>"; };
 		871A55BB2AE6B80D0030ADBC /* SkillDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDetailView.swift; sourceTree = "<group>"; };
 		871A55BD2AE6BB480030ADBC /* SkillRowBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillRowBuilder.swift; sourceTree = "<group>"; };
+		871A55C12AE6BDC90030ADBC /* RecipesListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListVM.swift; sourceTree = "<group>"; };
+		871A55C42AE6BE4D0030ADBC /* RecipesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListView.swift; sourceTree = "<group>"; };
+		871A55C72AE6BFA00030ADBC /* RecipeRowBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRowBuilder.swift; sourceTree = "<group>"; };
 		87963EDF2AC749760001BDB1 /* WoWDatabaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWDatabaseApp.swift; sourceTree = "<group>"; };
 		87963EE32AC749790001BDB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87963EE62AC749790001BDB1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -184,8 +190,9 @@
 		871A55922AE660DA0030ADBC /* Professions */ = {
 			isa = PBXGroup;
 			children = (
-				871A55AE2AE6A4310030ADBC /* Detail */,
-				871A55972AE68D0B0030ADBC /* List */,
+				871A55BF2AE6BD910030ADBC /* Professions */,
+				871A55C02AE6BDA40030ADBC /* Recipes */,
+				871A55C62AE6BF270030ADBC /* Skills */,
 			);
 			path = Professions;
 			sourceTree = "<group>";
@@ -232,29 +239,39 @@
 		871A55AE2AE6A4310030ADBC /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				871A55B32AE6B42B0030ADBC /* Profession */,
-				871A55B42AE6B4380030ADBC /* Skill */,
-			);
-			path = Detail;
-			sourceTree = "<group>";
-		};
-		871A55B32AE6B42B0030ADBC /* Profession */ = {
-			isa = PBXGroup;
-			children = (
 				871A55B12AE6A5F10030ADBC /* ProfessionDetailView.swift */,
 				871A55AF2AE6A4500030ADBC /* ProfessionDetailVM.swift */,
 				871A55BD2AE6BB480030ADBC /* SkillRowBuilder.swift */,
 			);
-			path = Profession;
+			path = Detail;
 			sourceTree = "<group>";
 		};
-		871A55B42AE6B4380030ADBC /* Skill */ = {
+		871A55BF2AE6BD910030ADBC /* Professions */ = {
+			isa = PBXGroup;
+			children = (
+				871A55AE2AE6A4310030ADBC /* Detail */,
+				871A55972AE68D0B0030ADBC /* List */,
+			);
+			path = Professions;
+			sourceTree = "<group>";
+		};
+		871A55C02AE6BDA40030ADBC /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				871A55C72AE6BFA00030ADBC /* RecipeRowBuilder.swift */,
+				871A55C42AE6BE4D0030ADBC /* RecipesListView.swift */,
+				871A55C12AE6BDC90030ADBC /* RecipesListVM.swift */,
+			);
+			path = Recipes;
+			sourceTree = "<group>";
+		};
+		871A55C62AE6BF270030ADBC /* Skills */ = {
 			isa = PBXGroup;
 			children = (
 				871A55BB2AE6B80D0030ADBC /* SkillDetailView.swift */,
 				871A55B92AE6B6F50030ADBC /* SkillDetailVM.swift */,
 			);
-			path = Skill;
+			path = Skills;
 			sourceTree = "<group>";
 		};
 		87963ED32AC749760001BDB1 = {
@@ -735,6 +752,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				871A55C82AE6BFA00030ADBC /* RecipeRowBuilder.swift in Sources */,
 				871A55992AE68D270030ADBC /* ProfessionsListVM.swift in Sources */,
 				871A55BC2AE6B80D0030ADBC /* SkillDetailView.swift in Sources */,
 				879F3AE62AE2824E006E1C6A /* Fonts+Generated.swift in Sources */,
@@ -755,6 +773,7 @@
 				87D4CC402AD934430079657E /* FirstAppear.swift in Sources */,
 				871A55A32AE69B4E0030ADBC /* ProfessionApi.swift in Sources */,
 				87A365A72ADD4D110041B017 /* NavigationLazyView.swift in Sources */,
+				871A55C22AE6BDC90030ADBC /* RecipesListVM.swift in Sources */,
 				87D4CC3B2AD843AD0079657E /* AchievementRowBuilder.swift in Sources */,
 				87A365D72AE143370041B017 /* ProfileViewModel.swift in Sources */,
 				87963F8E2AC75E0E0001BDB1 /* TokenModel.swift in Sources */,
@@ -771,6 +790,7 @@
 				87963EF02AC74BA90001BDB1 /* AchievementsListView.swift in Sources */,
 				871A55B62AE6B4800030ADBC /* SkillTierModel.swift in Sources */,
 				87E520342ACBF1A000856334 /* AchievementsListVM.swift in Sources */,
+				871A55C52AE6BE4D0030ADBC /* RecipesListView.swift in Sources */,
 				879F3AD52AE1562D006E1C6A /* AuthService.swift in Sources */,
 				871A55A92AE6A1CA0030ADBC /* ProfessionModel.swift in Sources */,
 				87A365C02ADEB6140041B017 /* BaseViewModel.swift in Sources */,

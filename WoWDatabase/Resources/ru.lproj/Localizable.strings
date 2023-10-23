@@ -17,8 +17,9 @@
 
 "professions.detail.type" = "Тип";
 "professions.detail.skills" = "Навыки";
-"professions.skill.detail.minLevel" = "Минимальный уровень";
-"professions.skill.detail.maxLevel" = "Максимальный уровень";
+"Skill.detail.minLevel" = "Минимальный уровень";
+"Skill.detail.maxLevel" = "Максимальный уровень";
+"Skill.detail.recipes" = "Рецепты";
 
 "achievements.detail.category" = "Категория";
 "achievements.detail.points" = "Очки";

@@ -72,6 +72,8 @@ struct NavigationBarTheme: ViewModifier {
 					Text(title)
 						.foregroundColor(.textMain)
 						.bold()
+						.fixedSize(horizontal: false, vertical: true)
+						.multilineTextAlignment(.center)
 				}
 			}
 			.navigationBarTitleDisplayMode(.inline)

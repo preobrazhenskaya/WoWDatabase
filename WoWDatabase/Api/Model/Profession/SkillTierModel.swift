@@ -37,7 +37,11 @@ struct SkillTierModel: Codable {
 	}
 }
 
-struct SkillTierCategoriesModel: Codable {
+struct SkillTierCategoriesModel: Codable, Identifiable {
+	var id: String {
+		name ?? ""
+	}
+	
 	let name: String?
 	let recipes: [NameIdModel]?
 }

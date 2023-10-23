@@ -100,7 +100,9 @@ struct ProfessionDetailView: View {
 					descriptionText
 					VStack(alignment: .leading) {
 						typeText
-						skillList
+						if !(viewModel.profession?.skillTiers?.isEmpty ?? true) {
+							skillList
+						}
 					}
 					.frame(minWidth: 0,
 						   maxWidth: .infinity,
