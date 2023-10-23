@@ -9,6 +9,7 @@ import SwiftUI
 import SFSafeSymbols
 
 enum TabEnum: Int, Identifiable, CaseIterable {
+	case professions
 	case achievements
 	case profile
 	
@@ -18,6 +19,8 @@ enum TabEnum: Int, Identifiable, CaseIterable {
 	
 	var title: String {
 		switch self {
+		case .professions:
+			return L10n.Tab.professions
 		case .achievements:
 			return L10n.Tab.achievements
 		case .profile:
@@ -27,6 +30,8 @@ enum TabEnum: Int, Identifiable, CaseIterable {
 	
 	var icon: SFSymbol {
 		switch self {
+		case .professions:
+			return SFSymbol.hammerFill
 		case .achievements:
 			return SFSymbol.starFill
 		case .profile:
@@ -37,6 +42,8 @@ enum TabEnum: Int, Identifiable, CaseIterable {
 	@ViewBuilder
 	var contentView: some View {
 		switch self {
+		case .professions:
+			ProfessionsListView(viewModel: .init())
 		case .achievements:
 			AchievementsListView(viewModel: .init())
 		case .profile:

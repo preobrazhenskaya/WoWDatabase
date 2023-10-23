@@ -15,6 +15,7 @@ enum Constants {
 			static let list = "/index"
 			
 			static let achievement = "/achievement"
+			static let profession = "/profession"
 		}
 		
 		enum Parameters {
