@@ -12,7 +12,7 @@ final class ProfessionDetailVM: BaseViewModel {
 	@Published var profession: ProfessionModel?
 	@Published var professionIcon: URL?
 	
-	private let professionId: Int
+	let professionId: Int
 	private var professionLoading = CurrentValueSubject<Bool, Never>(false)
 	var mediaLoading = CurrentValueSubject<Bool, Never>(false)
 	

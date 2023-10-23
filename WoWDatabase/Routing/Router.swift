@@ -11,6 +11,7 @@ struct Router {
 	enum Destination {
 		case achievementDetail(id: Int)
 		case professionDetail(id: Int)
+		case skillDetail(skillId: Int, professionId: Int)
 	}
 	
 	@ViewBuilder
@@ -20,6 +21,8 @@ struct Router {
 			NavigationLazyView(AchievementDetailView(viewModel: .init(achievementId: id)))
 		case let .professionDetail(id):
 			NavigationLazyView(ProfessionDetailView(viewModel: .init(professionId: id)))
+		case let .skillDetail(skillId, professionId):
+			NavigationLazyView(SkillDetailView(viewModel: .init(skillId: skillId, professionId: professionId)))
 		}
 	}
 }

@@ -77,6 +77,19 @@ struct ProfessionDetailView: View {
 		.padding(.top, 4)
 	}
 	
+	var skillList: some View {
+		VStack(alignment: .leading) {
+			Text("\(L10n.Professions.Detail.skills):")
+				.bold()
+				.padding(.top, 4)
+			LazyVStack(alignment: .leading) {
+				ForEach(viewModel.profession?.skillTiers ?? []) { skill in
+					SkillRowBuilder(skill: skill, professionId: viewModel.professionId)
+				}
+			}
+		}
+	}
+	
 	var body: some View {
 		ScrollView {
 			ZStack {
@@ -87,6 +100,7 @@ struct ProfessionDetailView: View {
 					descriptionText
 					VStack(alignment: .leading) {
 						typeText
+						skillList
 					}
 					.frame(minWidth: 0,
 						   maxWidth: .infinity,

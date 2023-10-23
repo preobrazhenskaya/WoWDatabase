@@ -18,6 +18,11 @@
 		871A55AD2AE6A3360030ADBC /* ProfessionMediaRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55AC2AE6A3360030ADBC /* ProfessionMediaRequest.swift */; };
 		871A55B02AE6A4500030ADBC /* ProfessionDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55AF2AE6A4500030ADBC /* ProfessionDetailVM.swift */; };
 		871A55B22AE6A5F10030ADBC /* ProfessionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55B12AE6A5F10030ADBC /* ProfessionDetailView.swift */; };
+		871A55B62AE6B4800030ADBC /* SkillTierModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55B52AE6B4800030ADBC /* SkillTierModel.swift */; };
+		871A55B82AE6B5FF0030ADBC /* SkillTierRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55B72AE6B5FF0030ADBC /* SkillTierRequest.swift */; };
+		871A55BA2AE6B6F50030ADBC /* SkillDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55B92AE6B6F50030ADBC /* SkillDetailVM.swift */; };
+		871A55BC2AE6B80D0030ADBC /* SkillDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55BB2AE6B80D0030ADBC /* SkillDetailView.swift */; };
+		871A55BE2AE6BB480030ADBC /* SkillRowBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55BD2AE6BB480030ADBC /* SkillRowBuilder.swift */; };
 		87963EE02AC749760001BDB1 /* WoWDatabaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87963EDF2AC749760001BDB1 /* WoWDatabaseApp.swift */; };
 		87963EE42AC749790001BDB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87963EE32AC749790001BDB1 /* Assets.xcassets */; };
 		87963EE72AC749790001BDB1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87963EE62AC749790001BDB1 /* Preview Assets.xcassets */; };
@@ -101,6 +106,11 @@
 		871A55AC2AE6A3360030ADBC /* ProfessionMediaRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionMediaRequest.swift; sourceTree = "<group>"; };
 		871A55AF2AE6A4500030ADBC /* ProfessionDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionDetailVM.swift; sourceTree = "<group>"; };
 		871A55B12AE6A5F10030ADBC /* ProfessionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionDetailView.swift; sourceTree = "<group>"; };
+		871A55B52AE6B4800030ADBC /* SkillTierModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillTierModel.swift; sourceTree = "<group>"; };
+		871A55B72AE6B5FF0030ADBC /* SkillTierRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillTierRequest.swift; sourceTree = "<group>"; };
+		871A55B92AE6B6F50030ADBC /* SkillDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDetailVM.swift; sourceTree = "<group>"; };
+		871A55BB2AE6B80D0030ADBC /* SkillDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillDetailView.swift; sourceTree = "<group>"; };
+		871A55BD2AE6BB480030ADBC /* SkillRowBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillRowBuilder.swift; sourceTree = "<group>"; };
 		87963EDF2AC749760001BDB1 /* WoWDatabaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWDatabaseApp.swift; sourceTree = "<group>"; };
 		87963EE32AC749790001BDB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87963EE62AC749790001BDB1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -176,7 +186,6 @@
 			children = (
 				871A55AE2AE6A4310030ADBC /* Detail */,
 				871A55972AE68D0B0030ADBC /* List */,
-				871A55A52AE69E340030ADBC /* Row */,
 			);
 			path = Professions;
 			sourceTree = "<group>";
@@ -184,6 +193,7 @@
 		871A55972AE68D0B0030ADBC /* List */ = {
 			isa = PBXGroup;
 			children = (
+				871A55A62AE69E4A0030ADBC /* ProfessionRowBuilder.swift */,
 				871A559A2AE68D400030ADBC /* ProfessionsListView.swift */,
 				871A55982AE68D270030ADBC /* ProfessionsListVM.swift */,
 			);
@@ -195,6 +205,7 @@
 			children = (
 				871A55A82AE6A1CA0030ADBC /* ProfessionModel.swift */,
 				871A559D2AE69A260030ADBC /* ProfessionsListModel.swift */,
+				871A55B52AE6B4800030ADBC /* SkillTierModel.swift */,
 			);
 			path = Profession;
 			sourceTree = "<group>";
@@ -205,6 +216,7 @@
 				871A55AC2AE6A3360030ADBC /* ProfessionMediaRequest.swift */,
 				871A55AA2AE6A2BA0030ADBC /* ProfessionRequest.swift */,
 				871A55A02AE69AD40030ADBC /* ProfessionsListRequest.swift */,
+				871A55B72AE6B5FF0030ADBC /* SkillTierRequest.swift */,
 			);
 			path = Profession;
 			sourceTree = "<group>";
@@ -217,21 +229,32 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		871A55A52AE69E340030ADBC /* Row */ = {
+		871A55AE2AE6A4310030ADBC /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				871A55A62AE69E4A0030ADBC /* ProfessionRowBuilder.swift */,
+				871A55B32AE6B42B0030ADBC /* Profession */,
+				871A55B42AE6B4380030ADBC /* Skill */,
 			);
-			path = Row;
+			path = Detail;
 			sourceTree = "<group>";
 		};
-		871A55AE2AE6A4310030ADBC /* Detail */ = {
+		871A55B32AE6B42B0030ADBC /* Profession */ = {
 			isa = PBXGroup;
 			children = (
 				871A55B12AE6A5F10030ADBC /* ProfessionDetailView.swift */,
 				871A55AF2AE6A4500030ADBC /* ProfessionDetailVM.swift */,
+				871A55BD2AE6BB480030ADBC /* SkillRowBuilder.swift */,
 			);
-			path = Detail;
+			path = Profession;
+			sourceTree = "<group>";
+		};
+		871A55B42AE6B4380030ADBC /* Skill */ = {
+			isa = PBXGroup;
+			children = (
+				871A55BB2AE6B80D0030ADBC /* SkillDetailView.swift */,
+				871A55B92AE6B6F50030ADBC /* SkillDetailVM.swift */,
+			);
+			path = Skill;
 			sourceTree = "<group>";
 		};
 		87963ED32AC749760001BDB1 = {
@@ -713,15 +736,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				871A55992AE68D270030ADBC /* ProfessionsListVM.swift in Sources */,
+				871A55BC2AE6B80D0030ADBC /* SkillDetailView.swift in Sources */,
 				879F3AE62AE2824E006E1C6A /* Fonts+Generated.swift in Sources */,
 				87FCCA332AD52DD400CB27C4 /* TabEnum.swift in Sources */,
 				871A55A72AE69E4A0030ADBC /* ProfessionRowBuilder.swift in Sources */,
 				87E5204C2ACC497600856334 /* Router.swift in Sources */,
 				87A365C52AE0061D0041B017 /* AchievementApi.swift in Sources */,
+				871A55BA2AE6B6F50030ADBC /* SkillDetailVM.swift in Sources */,
 				87A365BD2ADE97E10041B017 /* Publisher+Extension.swift in Sources */,
 				87E520502ACC575100856334 /* TabsView.swift in Sources */,
 				87963EFA2AC755B80001BDB1 /* Api.swift in Sources */,
 				87D4CC3D2AD848CA0079657E /* NameIdModel.swift in Sources */,
+				871A55BE2AE6BB480030ADBC /* SkillRowBuilder.swift in Sources */,
 				87FCCA362AD5317B00CB27C4 /* Theme.swift in Sources */,
 				87963EF22AC74C0F0001BDB1 /* NameIdRow.swift in Sources */,
 				87D4CC232AD814920079657E /* Constants.swift in Sources */,
@@ -743,11 +769,13 @@
 				87FCCA3A2AD53AA000CB27C4 /* Color.swift in Sources */,
 				87A365DE2AE14D050041B017 /* AuthApi.swift in Sources */,
 				87963EF02AC74BA90001BDB1 /* AchievementsListView.swift in Sources */,
+				871A55B62AE6B4800030ADBC /* SkillTierModel.swift in Sources */,
 				87E520342ACBF1A000856334 /* AchievementsListVM.swift in Sources */,
 				879F3AD52AE1562D006E1C6A /* AuthService.swift in Sources */,
 				871A55A92AE6A1CA0030ADBC /* ProfessionModel.swift in Sources */,
 				87A365C02ADEB6140041B017 /* BaseViewModel.swift in Sources */,
 				871A55A12AE69AD40030ADBC /* ProfessionsListRequest.swift in Sources */,
+				871A55B82AE6B5FF0030ADBC /* SkillTierRequest.swift in Sources */,
 				87A365DA2AE149080041B017 /* TokenRequest.swift in Sources */,
 				87E5204A2ACC145A00856334 /* AchievementDetailVM.swift in Sources */,
 				871A55AD2AE6A3360030ADBC /* ProfessionMediaRequest.swift in Sources */,

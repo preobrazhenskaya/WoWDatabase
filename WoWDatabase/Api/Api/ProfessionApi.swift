@@ -20,4 +20,8 @@ struct ProfessionApi {
 	static func getProfessionMedia(id: Int) -> AnyPublisher<MediaModel, AFError> {
 		Api.send(request: ProfessionMediaRequest(id: id))
 	}
+	
+	static func getSkillTier(professionId: Int, skillTierId: Int) -> AnyPublisher<SkillTierModel, AFError> {
+		Api.send(request: SkillTierRequest(professionId: professionId, skillTierId: skillTierId))
+	}
 }

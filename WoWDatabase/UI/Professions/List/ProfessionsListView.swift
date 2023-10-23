@@ -15,7 +15,7 @@ struct ProfessionsListView: View {
 			ScrollView {
 				LazyVStack {
 					ForEach(viewModel.professions) { profession in
-						ProfessionRowBuilder(profession: profession, backgroundColor: .background)
+						ProfessionRowBuilder(profession: profession)
 					}
 				}
 				.padding(.all)

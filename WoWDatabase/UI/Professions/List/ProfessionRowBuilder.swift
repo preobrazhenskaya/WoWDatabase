@@ -9,10 +9,9 @@ import SwiftUI
 
 struct ProfessionRowBuilder: View {
 	var profession: NameIdModel
-	var backgroundColor: Color
 	
 	var body: some View {
-		let row = NameIdRow(model: profession, backgroundColor: backgroundColor)
+		let row = NameIdRow(model: profession, backgroundColor: .background)
 		if let id = profession.id {
 			NavigationLink(destination: {
 				Router.navigate(to: .professionDetail(id: id))
@@ -27,6 +26,6 @@ struct ProfessionRowBuilder: View {
 
 struct ProfessionRowBuilder_Previews: PreviewProvider {
     static var previews: some View {
-		ProfessionRowBuilder(profession: .init(id: 1, name: "Name"), backgroundColor: .background)
+		ProfessionRowBuilder(profession: .init(id: 1, name: "Name"))
     }
 }

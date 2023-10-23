@@ -16,6 +16,9 @@
 "tab.profile" = "Профиль";
 
 "professions.detail.type" = "Тип";
+"professions.detail.skills" = "Навыки";
+"professions.skill.detail.minLevel" = "Минимальный уровень";
+"professions.skill.detail.maxLevel" = "Максимальный уровень";
 
 "achievements.detail.category" = "Категория";
 "achievements.detail.points" = "Очки";
