@@ -27,9 +27,16 @@ struct AchievementDetailView: View {
 	
 	var mainImage: some View {
 		AsyncImage(url: viewModel.achievementIcon) { phase in
+			let defaultImage = Image(systemSymbol: .photo)
+				.resizable()
+				.scaledToFit()
 			switch phase {
 			case .empty:
-				CustomProgressView(isLoading: true)
+				if !viewModel.iconLoading.value && viewModel.achievementIcon == nil {
+					defaultImage
+				} else {
+					CustomProgressView(isLoading: true)
+				}
 			case let .success(image):
 				ZStack {
 					image
@@ -49,9 +56,7 @@ struct AchievementDetailView: View {
 						)
 				}
 			default:
-				Image(systemSymbol: .photo)
-					.resizable()
-					.scaledToFit()
+				defaultImage
 			}
 		}
 		.frame(width: 205, height: 205)

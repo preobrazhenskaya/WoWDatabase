@@ -13,8 +13,8 @@ final class AchievementDetailVM: BaseViewModel {
 	@Published var achievementIcon: URL?
 	
 	private let achievementId: Int
-	private var achievementLoading = PassthroughSubject<Bool, Never>()
-	private var iconLoading = PassthroughSubject<Bool, Never>()
+	private var achievementLoading = CurrentValueSubject<Bool, Never>(false)
+	var iconLoading = CurrentValueSubject<Bool, Never>(false)
 	
 	init(achievementId: Int) {
 		self.achievementId = achievementId

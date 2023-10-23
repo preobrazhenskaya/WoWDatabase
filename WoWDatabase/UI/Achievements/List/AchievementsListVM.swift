@@ -10,7 +10,7 @@ import Combine
 final class AchievementsListVM: BaseViewModel {
 	@Published var achievements = [NameIdModel]()
 	
-	private var listLoading = PassthroughSubject<Bool, Never>()
+	private var listLoading = CurrentValueSubject<Bool, Never>(false)
 	
 	override func bind() {
 		super.bind()

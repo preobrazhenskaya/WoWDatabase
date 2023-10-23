@@ -16,7 +16,7 @@ extension Publisher {
 			.eraseToAnyPublisher()
 	}
 	
-	func trackLoading(_ isLoading: PassthroughSubject<Bool, Never>) -> AnyPublisher<Output, Failure> {
+	func trackLoading(_ isLoading: CurrentValueSubject<Bool, Never>) -> AnyPublisher<Output, Failure> {
 		handleEvents(receiveSubscription: { _ in
 			isLoading.send(true)
 		}, receiveOutput: { _ in

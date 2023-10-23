@@ -8,7 +8,7 @@
 import Combine
 
 final class ProfileViewModel: BaseViewModel {
-	private var tokenLoading = PassthroughSubject<Bool, Never>()
+	private var tokenLoading = CurrentValueSubject<Bool, Never>(false)
 	
 	override func bind() {
 		super.bind()

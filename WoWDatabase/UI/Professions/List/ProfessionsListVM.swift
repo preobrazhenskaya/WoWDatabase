@@ -10,7 +10,7 @@ import Combine
 final class ProfessionsListVM: BaseViewModel {
 	@Published var professions = [NameIdModel]()
 	
-	private var professionsLoading = PassthroughSubject<Bool, Never>()
+	private var professionsLoading = CurrentValueSubject<Bool, Never>(false)
 	
 	override func bind() {
 		super.bind()
