@@ -12,4 +12,12 @@ struct ProfessionApi {
 	static func getProfessionsList() -> AnyPublisher<ProfessionsListModel, AFError> {
 		Api.send(request: ProfessionsListRequest())
 	}
+	
+	static func getProfession(id: Int) -> AnyPublisher<ProfessionModel, AFError> {
+		Api.send(request: ProfessionRequest(id: id))
+	}
+	
+	static func getProfessionMedia(id: Int) -> AnyPublisher<MediaModel, AFError> {
+		Api.send(request: ProfessionMediaRequest(id: id))
+	}
 }

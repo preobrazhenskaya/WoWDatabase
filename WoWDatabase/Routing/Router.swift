@@ -10,12 +10,16 @@ import SwiftUI
 struct Router {
 	enum Destination {
 		case achievementDetail(id: Int)
+		case professionDetail(id: Int)
 	}
 	
+	@ViewBuilder
 	static func navigate(to destination: Destination) -> some View {
 		switch destination {
 		case let .achievementDetail(id):
-			return NavigationLazyView(AchievementDetailView(viewModel: .init(achievementId: id)))
+			NavigationLazyView(AchievementDetailView(viewModel: .init(achievementId: id)))
+		case let .professionDetail(id):
+			NavigationLazyView(ProfessionDetailView(viewModel: .init(professionId: id)))
 		}
 	}
 }

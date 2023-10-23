@@ -13,6 +13,11 @@
 		871A55A12AE69AD40030ADBC /* ProfessionsListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55A02AE69AD40030ADBC /* ProfessionsListRequest.swift */; };
 		871A55A32AE69B4E0030ADBC /* ProfessionApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55A22AE69B4E0030ADBC /* ProfessionApi.swift */; };
 		871A55A72AE69E4A0030ADBC /* ProfessionRowBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55A62AE69E4A0030ADBC /* ProfessionRowBuilder.swift */; };
+		871A55A92AE6A1CA0030ADBC /* ProfessionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55A82AE6A1CA0030ADBC /* ProfessionModel.swift */; };
+		871A55AB2AE6A2BA0030ADBC /* ProfessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55AA2AE6A2BA0030ADBC /* ProfessionRequest.swift */; };
+		871A55AD2AE6A3360030ADBC /* ProfessionMediaRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55AC2AE6A3360030ADBC /* ProfessionMediaRequest.swift */; };
+		871A55B02AE6A4500030ADBC /* ProfessionDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55AF2AE6A4500030ADBC /* ProfessionDetailVM.swift */; };
+		871A55B22AE6A5F10030ADBC /* ProfessionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55B12AE6A5F10030ADBC /* ProfessionDetailView.swift */; };
 		87963EE02AC749760001BDB1 /* WoWDatabaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87963EDF2AC749760001BDB1 /* WoWDatabaseApp.swift */; };
 		87963EE42AC749790001BDB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87963EE32AC749790001BDB1 /* Assets.xcassets */; };
 		87963EE72AC749790001BDB1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87963EE62AC749790001BDB1 /* Preview Assets.xcassets */; };
@@ -91,6 +96,11 @@
 		871A55A02AE69AD40030ADBC /* ProfessionsListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionsListRequest.swift; sourceTree = "<group>"; };
 		871A55A22AE69B4E0030ADBC /* ProfessionApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionApi.swift; sourceTree = "<group>"; };
 		871A55A62AE69E4A0030ADBC /* ProfessionRowBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionRowBuilder.swift; sourceTree = "<group>"; };
+		871A55A82AE6A1CA0030ADBC /* ProfessionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionModel.swift; sourceTree = "<group>"; };
+		871A55AA2AE6A2BA0030ADBC /* ProfessionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionRequest.swift; sourceTree = "<group>"; };
+		871A55AC2AE6A3360030ADBC /* ProfessionMediaRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionMediaRequest.swift; sourceTree = "<group>"; };
+		871A55AF2AE6A4500030ADBC /* ProfessionDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionDetailVM.swift; sourceTree = "<group>"; };
+		871A55B12AE6A5F10030ADBC /* ProfessionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionDetailView.swift; sourceTree = "<group>"; };
 		87963EDF2AC749760001BDB1 /* WoWDatabaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWDatabaseApp.swift; sourceTree = "<group>"; };
 		87963EE32AC749790001BDB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87963EE62AC749790001BDB1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -164,6 +174,7 @@
 		871A55922AE660DA0030ADBC /* Professions */ = {
 			isa = PBXGroup;
 			children = (
+				871A55AE2AE6A4310030ADBC /* Detail */,
 				871A55972AE68D0B0030ADBC /* List */,
 				871A55A52AE69E340030ADBC /* Row */,
 			);
@@ -182,6 +193,7 @@
 		871A559C2AE69A0C0030ADBC /* Profession */ = {
 			isa = PBXGroup;
 			children = (
+				871A55A82AE6A1CA0030ADBC /* ProfessionModel.swift */,
 				871A559D2AE69A260030ADBC /* ProfessionsListModel.swift */,
 			);
 			path = Profession;
@@ -190,6 +202,8 @@
 		871A559F2AE69ABD0030ADBC /* Profession */ = {
 			isa = PBXGroup;
 			children = (
+				871A55AC2AE6A3360030ADBC /* ProfessionMediaRequest.swift */,
+				871A55AA2AE6A2BA0030ADBC /* ProfessionRequest.swift */,
 				871A55A02AE69AD40030ADBC /* ProfessionsListRequest.swift */,
 			);
 			path = Profession;
@@ -209,6 +223,15 @@
 				871A55A62AE69E4A0030ADBC /* ProfessionRowBuilder.swift */,
 			);
 			path = Row;
+			sourceTree = "<group>";
+		};
+		871A55AE2AE6A4310030ADBC /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				871A55B12AE6A5F10030ADBC /* ProfessionDetailView.swift */,
+				871A55AF2AE6A4500030ADBC /* ProfessionDetailVM.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		87963ED32AC749760001BDB1 = {
@@ -722,12 +745,17 @@
 				87963EF02AC74BA90001BDB1 /* AchievementsListView.swift in Sources */,
 				87E520342ACBF1A000856334 /* AchievementsListVM.swift in Sources */,
 				879F3AD52AE1562D006E1C6A /* AuthService.swift in Sources */,
+				871A55A92AE6A1CA0030ADBC /* ProfessionModel.swift in Sources */,
 				87A365C02ADEB6140041B017 /* BaseViewModel.swift in Sources */,
 				871A55A12AE69AD40030ADBC /* ProfessionsListRequest.swift in Sources */,
 				87A365DA2AE149080041B017 /* TokenRequest.swift in Sources */,
 				87E5204A2ACC145A00856334 /* AchievementDetailVM.swift in Sources */,
+				871A55AD2AE6A3360030ADBC /* ProfessionMediaRequest.swift in Sources */,
+				871A55AB2AE6A2BA0030ADBC /* ProfessionRequest.swift in Sources */,
 				87E5203B2ACC033C00856334 /* AchievementsListModel.swift in Sources */,
 				87E520552ACC5FA900856334 /* MediaModel.swift in Sources */,
+				871A55B02AE6A4500030ADBC /* ProfessionDetailVM.swift in Sources */,
+				871A55B22AE6A5F10030ADBC /* ProfessionDetailView.swift in Sources */,
 				879F3AF22AE2901F006E1C6A /* Font.swift in Sources */,
 				87E520462ACC13D900856334 /* AchievementDetailView.swift in Sources */,
 				87963EE02AC749760001BDB1 /* WoWDatabaseApp.swift in Sources */,
