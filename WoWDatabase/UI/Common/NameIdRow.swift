@@ -1,5 +1,5 @@
 //
-//  AchievementRow.swift
+//  NameIdRow.swift
 //  WoWDatabase
 //
 //  Created by Яна Преображенская on 29.09.2023.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct AchievementRow: View {
-	var achievement: AchievementShortModel
+struct NameIdRow: View {
+	var model: NameIdModel
 	var backgroundColor: Color
 	
 	var background: some View {
@@ -17,7 +17,7 @@ struct AchievementRow: View {
 	}
 	
 	var titleText: some View {
-		Text(achievement.name ?? "")
+		Text(model.name ?? "")
 			.fixedSize(horizontal: false, vertical: true)
 			.multilineTextAlignment(.leading)
 	}
@@ -32,7 +32,7 @@ struct AchievementRow: View {
 			HStack {
 				titleText
 				Spacer()
-				if achievement.id != nil {
+				if model.id != nil {
 					navigationImage
 				}
 			}
@@ -44,6 +44,6 @@ struct AchievementRow: View {
 
 struct AchievementRow_Previews: PreviewProvider {
     static var previews: some View {
-		AchievementRow(achievement: .init(id: 1, name: "Name"), backgroundColor: .background)
+		NameIdRow(model: .init(id: 1, name: "Name"), backgroundColor: .background)
     }
 }

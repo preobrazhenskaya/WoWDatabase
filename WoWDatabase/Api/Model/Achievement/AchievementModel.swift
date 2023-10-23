@@ -13,8 +13,8 @@ struct AchievementModel: Codable {
 	let points: Int?
 	let isAccountWide: Bool?
 	let criteria: AchievementCriteriaModel?
-	let prerequisiteAchievement: AchievementShortModel?
-	let nextAchievement: AchievementShortModel?
+	let prerequisiteAchievement: NameIdModel?
+	let nextAchievement: NameIdModel?
 	let rewardDescription: String?
 	let requirements: AchievementRequirementsModel?
 	

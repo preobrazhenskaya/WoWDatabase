@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct AchievementRowBuilder: View {
-	var achievement: AchievementShortModel
+	var achievement: NameIdModel
 	var backgroundColor: Color
 	
 	var body: some View {
-		let row = AchievementRow(achievement: achievement, backgroundColor: backgroundColor)
+		let row = NameIdRow(model: achievement, backgroundColor: backgroundColor)
 		if let id = achievement.id {
 			NavigationLink(destination: {
 				Router.navigate(to: .achievementDetail(id: id))

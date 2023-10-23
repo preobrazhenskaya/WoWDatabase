@@ -1,5 +1,5 @@
 //
-//  AchievementsListViewModel.swift
+//  AchievementsListVM.swift
 //  WoWDatabase
 //
 //  Created by Яна Преображенская on 03.10.2023.
@@ -7,8 +7,8 @@
 
 import Combine
 
-final class AchievementsListViewModel: BaseViewModel {
-	@Published var achievements = [AchievementShortModel]()
+final class AchievementsListVM: BaseViewModel {
+	@Published var achievements = [NameIdModel]()
 	
 	private var listLoading = PassthroughSubject<Bool, Never>()
 	

@@ -10,9 +10,11 @@ enum Constants {
 		enum URL {
 			static let main = "https://eu.api.blizzard.com/data/wow"
 			static let auth = "https://oauth.battle.net/token"
+			
 			static let media = "/media"
-			static let achievement = "/achievement"
 			static let list = "/index"
+			
+			static let achievement = "/achievement"
 		}
 		
 		enum Parameters {

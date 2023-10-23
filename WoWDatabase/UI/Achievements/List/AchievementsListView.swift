@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AchievementsListView: View {
-	@ObservedObject var viewModel: AchievementsListViewModel
+	@ObservedObject var viewModel: AchievementsListVM
 	
 	var body: some View {
 		NavigationStack {
@@ -32,6 +32,6 @@ struct AchievementsListView: View {
 
 struct AchievementsListView_Previews: PreviewProvider {
 	static var previews: some View {
-		AchievementsListView(viewModel: AchievementsListViewModel())
+		AchievementsListView(viewModel: AchievementsListVM())
 	}
 }

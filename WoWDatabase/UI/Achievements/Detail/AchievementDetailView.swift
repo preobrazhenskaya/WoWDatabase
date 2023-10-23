@@ -10,7 +10,7 @@ import Combine
 
 struct AchievementDetailView: View {
 	@Environment(\.dismiss) private var dismiss
-	@ObservedObject var viewModel: AchievementDetailViewModel
+	@ObservedObject var viewModel: AchievementDetailVM
 	
 	var background: some View {
 		Color.background
@@ -120,7 +120,7 @@ struct AchievementDetailView: View {
 		}
 	}
 	
-	func prevAchievementView(achievement: AchievementShortModel) -> some View {
+	func prevAchievementView(achievement: NameIdModel) -> some View {
 		VStack(alignment: .leading) {
 			Text("\(L10n.Achievements.Detail.prevAchievement):")
 				.bold()
@@ -129,7 +129,7 @@ struct AchievementDetailView: View {
 		}
 	}
 	
-	func nextAchievementView(achievement: AchievementShortModel) -> some View {
+	func nextAchievementView(achievement: NameIdModel) -> some View {
 		VStack(alignment: .leading) {
 			Text("\(L10n.Achievements.Detail.nextAchievement):")
 				.bold()

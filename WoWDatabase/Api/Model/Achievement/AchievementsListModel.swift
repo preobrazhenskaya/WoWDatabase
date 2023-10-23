@@ -6,5 +6,5 @@
 //
 
 struct AchievementsListModel: Codable {
-	let achievements: [AchievementShortModel]?
+	let achievements: [NameIdModel]?
 }

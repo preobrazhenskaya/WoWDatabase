@@ -1,5 +1,5 @@
 //
-//  AchievementDetailViewModel.swift
+//  AchievementDetailVM.swift
 //  WoWDatabase
 //
 //  Created by Яна Преображенская on 03.10.2023.
@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-final class AchievementDetailViewModel: BaseViewModel {
+final class AchievementDetailVM: BaseViewModel {
 	@Published var achievement: AchievementModel?
 	@Published var achievementIcon: URL?
 	
