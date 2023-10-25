@@ -26,6 +26,11 @@
 		871A55C22AE6BDC90030ADBC /* RecipesListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55C12AE6BDC90030ADBC /* RecipesListVM.swift */; };
 		871A55C52AE6BE4D0030ADBC /* RecipesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55C42AE6BE4D0030ADBC /* RecipesListView.swift */; };
 		871A55C82AE6BFA00030ADBC /* RecipeRowBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55C72AE6BFA00030ADBC /* RecipeRowBuilder.swift */; };
+		8725299B2AE902CA00E07EA4 /* RecipeDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8725299A2AE902CA00E07EA4 /* RecipeDetailVM.swift */; };
+		872529A12AE9031D00E07EA4 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872529A02AE9031D00E07EA4 /* RecipeModel.swift */; };
+		872529A32AE90E5C00E07EA4 /* RecipeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872529A22AE90E5C00E07EA4 /* RecipeRequest.swift */; };
+		872529A52AE90F2500E07EA4 /* RecipeMediaRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872529A42AE90F2500E07EA4 /* RecipeMediaRequest.swift */; };
+		872529A72AE9114800E07EA4 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872529A62AE9114800E07EA4 /* RecipeDetailView.swift */; };
 		87963EE02AC749760001BDB1 /* WoWDatabaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87963EDF2AC749760001BDB1 /* WoWDatabaseApp.swift */; };
 		87963EE42AC749790001BDB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87963EE32AC749790001BDB1 /* Assets.xcassets */; };
 		87963EE72AC749790001BDB1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87963EE62AC749790001BDB1 /* Preview Assets.xcassets */; };
@@ -117,6 +122,11 @@
 		871A55C12AE6BDC90030ADBC /* RecipesListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListVM.swift; sourceTree = "<group>"; };
 		871A55C42AE6BE4D0030ADBC /* RecipesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListView.swift; sourceTree = "<group>"; };
 		871A55C72AE6BFA00030ADBC /* RecipeRowBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRowBuilder.swift; sourceTree = "<group>"; };
+		8725299A2AE902CA00E07EA4 /* RecipeDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailVM.swift; sourceTree = "<group>"; };
+		872529A02AE9031D00E07EA4 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
+		872529A22AE90E5C00E07EA4 /* RecipeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRequest.swift; sourceTree = "<group>"; };
+		872529A42AE90F2500E07EA4 /* RecipeMediaRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeMediaRequest.swift; sourceTree = "<group>"; };
+		872529A62AE9114800E07EA4 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		87963EDF2AC749760001BDB1 /* WoWDatabaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWDatabaseApp.swift; sourceTree = "<group>"; };
 		87963EE32AC749790001BDB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87963EE62AC749790001BDB1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -212,6 +222,7 @@
 			children = (
 				871A55A82AE6A1CA0030ADBC /* ProfessionModel.swift */,
 				871A559D2AE69A260030ADBC /* ProfessionsListModel.swift */,
+				872529A02AE9031D00E07EA4 /* RecipeModel.swift */,
 				871A55B52AE6B4800030ADBC /* SkillTierModel.swift */,
 			);
 			path = Profession;
@@ -223,6 +234,8 @@
 				871A55AC2AE6A3360030ADBC /* ProfessionMediaRequest.swift */,
 				871A55AA2AE6A2BA0030ADBC /* ProfessionRequest.swift */,
 				871A55A02AE69AD40030ADBC /* ProfessionsListRequest.swift */,
+				872529A42AE90F2500E07EA4 /* RecipeMediaRequest.swift */,
+				872529A22AE90E5C00E07EA4 /* RecipeRequest.swift */,
 				871A55B72AE6B5FF0030ADBC /* SkillTierRequest.swift */,
 			);
 			path = Profession;
@@ -258,9 +271,8 @@
 		871A55C02AE6BDA40030ADBC /* Recipes */ = {
 			isa = PBXGroup;
 			children = (
-				871A55C72AE6BFA00030ADBC /* RecipeRowBuilder.swift */,
-				871A55C42AE6BE4D0030ADBC /* RecipesListView.swift */,
-				871A55C12AE6BDC90030ADBC /* RecipesListVM.swift */,
+				871A55CD2AE7E17B0030ADBC /* Detail */,
+				871A55CC2AE7E1690030ADBC /* List */,
 			);
 			path = Recipes;
 			sourceTree = "<group>";
@@ -272,6 +284,25 @@
 				871A55B92AE6B6F50030ADBC /* SkillDetailVM.swift */,
 			);
 			path = Skills;
+			sourceTree = "<group>";
+		};
+		871A55CC2AE7E1690030ADBC /* List */ = {
+			isa = PBXGroup;
+			children = (
+				871A55C72AE6BFA00030ADBC /* RecipeRowBuilder.swift */,
+				871A55C42AE6BE4D0030ADBC /* RecipesListView.swift */,
+				871A55C12AE6BDC90030ADBC /* RecipesListVM.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		871A55CD2AE7E17B0030ADBC /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				872529A62AE9114800E07EA4 /* RecipeDetailView.swift */,
+				8725299A2AE902CA00E07EA4 /* RecipeDetailVM.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		87963ED32AC749760001BDB1 = {
@@ -783,16 +814,21 @@
 				871A559E2AE69A260030ADBC /* ProfessionsListModel.swift in Sources */,
 				87A365D52AE143290041B017 /* ProfileView.swift in Sources */,
 				87963EF42AC74CEA0001BDB1 /* AchievementModel.swift in Sources */,
+				872529A12AE9031D00E07EA4 /* RecipeModel.swift in Sources */,
 				87E5205D2ACC7C9400856334 /* AchievementRequest.swift in Sources */,
 				87D4CC362AD8256B0079657E /* Strings+Generated.swift in Sources */,
 				87FCCA3A2AD53AA000CB27C4 /* Color.swift in Sources */,
 				87A365DE2AE14D050041B017 /* AuthApi.swift in Sources */,
 				87963EF02AC74BA90001BDB1 /* AchievementsListView.swift in Sources */,
+				872529A72AE9114800E07EA4 /* RecipeDetailView.swift in Sources */,
 				871A55B62AE6B4800030ADBC /* SkillTierModel.swift in Sources */,
+				8725299B2AE902CA00E07EA4 /* RecipeDetailVM.swift in Sources */,
 				87E520342ACBF1A000856334 /* AchievementsListVM.swift in Sources */,
+				872529A52AE90F2500E07EA4 /* RecipeMediaRequest.swift in Sources */,
 				871A55C52AE6BE4D0030ADBC /* RecipesListView.swift in Sources */,
 				879F3AD52AE1562D006E1C6A /* AuthService.swift in Sources */,
 				871A55A92AE6A1CA0030ADBC /* ProfessionModel.swift in Sources */,
+				872529A32AE90E5C00E07EA4 /* RecipeRequest.swift in Sources */,
 				87A365C02ADEB6140041B017 /* BaseViewModel.swift in Sources */,
 				871A55A12AE69AD40030ADBC /* ProfessionsListRequest.swift in Sources */,
 				871A55B82AE6B5FF0030ADBC /* SkillTierRequest.swift in Sources */,

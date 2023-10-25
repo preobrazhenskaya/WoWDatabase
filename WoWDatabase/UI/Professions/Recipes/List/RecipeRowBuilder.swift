@@ -11,7 +11,16 @@ struct RecipeRowBuilder: View {
 	var recipe: NameIdModel
 	
 	var body: some View {
-		NameIdRow(model: recipe, backgroundColor: .background)
+		let row = NameIdRow(model: recipe, backgroundColor: .background)
+		if let id = recipe.id {
+			NavigationLink(destination: {
+				Router.navigate(to: .recipeDetail(id: id))
+			}, label: {
+				row
+			})
+		} else {
+			row
+		}
 	}
 }
 

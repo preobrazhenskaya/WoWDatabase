@@ -10,6 +10,8 @@
 "general.no" = "Нет";
 "general.error" = "Ошибка";
 "general.ok" = "Ок";
+"general.alliance" = "Альянс";
+"general.horde" = "Орда";
 
 "tab.professions" = "Профессии";
 "tab.achievements" = "Достижения";
@@ -20,6 +22,8 @@
 "Skill.detail.minLevel" = "Минимальный уровень";
 "Skill.detail.maxLevel" = "Максимальный уровень";
 "Skill.detail.recipes" = "Рецепты";
+"Recipe.detail.rank" = "Уровень";
+"Recipe.detail.reagents" = "Ингридиенты";
 
 "achievements.detail.category" = "Категория";
 "achievements.detail.points" = "Очки";

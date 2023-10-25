@@ -24,4 +24,12 @@ struct ProfessionApi {
 	static func getSkillTier(professionId: Int, skillTierId: Int) -> AnyPublisher<SkillTierModel, AFError> {
 		Api.send(request: SkillTierRequest(professionId: professionId, skillTierId: skillTierId))
 	}
+	
+	static func getRecipe(id: Int) -> AnyPublisher<RecipeModel, AFError> {
+		Api.send(request: RecipeRequest(id: id))
+	}
+	
+	static func getRecipeMedia(id: Int) -> AnyPublisher<MediaModel, AFError> {
+		Api.send(request: RecipeMediaRequest(id: id))
+	}
 }
