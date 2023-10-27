@@ -12,21 +12,24 @@ struct AchievementsListView: View {
 	
 	var body: some View {
 		NavigationStack {
-			ScrollView {
-				LazyVStack {
-					ForEach(viewModel.achievements) { achievement in
-						AchievementRowBuilder(achievement: achievement, backgroundColor: .background)
-					}
-				}
-				.padding(.all)
-			}
-			.setNavigationBar(title: L10n.Tab.achievements, dismiss: nil, showBack: false)
-			.setViewBaseTheme()
-			.withLoader(isLoading: viewModel.isLoading)
-			.withErrorAlert(isPresented: $viewModel.showError, errorText: viewModel.errorText.value)
-			.onFirstAppear { viewModel.loadData() }
-			.refreshable { viewModel.loadData() }
+			ScrollView { mainView }
+				.setNavigationBar(title: L10n.Tab.achievements, dismiss: nil, showBack: false)
+				.setViewBaseTheme()
+				.withLoader(isLoading: viewModel.isLoading)
+				.withErrorAlert(isPresented: $viewModel.showError,
+								errorText: viewModel.errorText.value)
+				.onFirstAppear { viewModel.loadData() }
+				.refreshable { viewModel.loadData() }
 		}
+	}
+	
+	var mainView: some View {
+		LazyVStack {
+			ForEach(viewModel.achievements) { achievement in
+				AchievementRowBuilder(achievement: achievement, backgroundColor: .background)
+			}
+		}
+		.padding(.all)
 	}
 }
 

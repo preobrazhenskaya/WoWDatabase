@@ -11,24 +11,29 @@ struct RecipesListView: View {
 	@Environment(\.dismiss) private var dismiss
 	@ObservedObject var viewModel: RecipesListVM
 	
-    var body: some View {
-		ScrollView {
-			LazyVStack {
-				ForEach(viewModel.category.recipes ?? []) { recipe in
-					RecipeRowBuilder(recipe: recipe)
-				}
+	var body: some View {
+		ScrollView { mainView }
+			.setNavigationBar(title: viewModel.category.name ?? "",
+							  dismiss: dismiss,
+							  showBack: true)
+			.setViewBaseTheme()
+			.withLoader(isLoading: viewModel.isLoading)
+			.withErrorAlert(isPresented: $viewModel.showError,
+							errorText: viewModel.errorText.value)
+	}
+	
+	var mainView: some View {
+		LazyVStack {
+			ForEach(viewModel.category.recipes ?? []) { recipe in
+				RecipeRowBuilder(recipe: recipe)
 			}
-			.padding(.all)
 		}
-		.setNavigationBar(title: viewModel.category.name ?? "", dismiss: dismiss, showBack: true)
-		.setViewBaseTheme()
-		.withLoader(isLoading: viewModel.isLoading)
-		.withErrorAlert(isPresented: $viewModel.showError, errorText: viewModel.errorText.value)
-    }
+		.padding(.all)
+	}
 }
 
 struct RecipesListView_Previews: PreviewProvider {
-    static var previews: some View {
+	static var previews: some View {
 		RecipesListView(viewModel:
 				.init(category:
 						.init(name: "Оружие",

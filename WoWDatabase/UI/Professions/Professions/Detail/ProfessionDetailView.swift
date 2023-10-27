@@ -11,54 +11,37 @@ struct ProfessionDetailView: View {
 	@Environment(\.dismiss) private var dismiss
 	@ObservedObject var viewModel: ProfessionDetailVM
 	
-	var background: some View {
-		Color.background
-			.cornerRadius(6)
-			.padding(.init(top: 150, leading: 0, bottom: 0, trailing: 0))
+	var body: some View {
+		ScrollView { mainView }
+			.setNavigationBar(title: "", dismiss: dismiss, showBack: true)
+			.toolbarBackground(.hidden, for: .navigationBar)
+			.toolbar(.hidden, for: .tabBar)
+			.setViewBaseTheme()
+			.withLoader(isLoading: viewModel.isLoading)
+			.withErrorAlert(isPresented: $viewModel.showError,
+							errorText: viewModel.errorText.value)
+			.onFirstAppear { viewModel.loadData() }
+			.refreshable { viewModel.loadData() }
 	}
 	
-	var titleText: some View {
-		Text(viewModel.profession?.name ?? "")
-			.font(.customBoldLargeTitle)
-			.fixedSize(horizontal: false, vertical: true)
-			.multilineTextAlignment(.center)
-	}
-	
-	var mainImage: some View {
-		AsyncImage(url: viewModel.professionIcon) { phase in
-			let defaultImage = Image(systemSymbol: .photo)
-				.resizable()
-				.scaledToFit()
-			switch phase {
-			case .empty:
-				if !viewModel.mediaLoading.value && viewModel.professionIcon == nil {
-					defaultImage
-				} else {
-					CustomProgressView(isLoading: true)
-				}
-			case let .success(image):
-				ZStack {
-					image
-						.resizable()
-						.scaledToFill()
-						.cornerRadius(10)
-						.frame(width: 200, height: 200)
-					RoundedRectangle(cornerRadius: 10)
-						.stroke(
-							LinearGradient(
-								colors: [Color.borderStart,
-										 Color.borderEnd],
-								startPoint: .topLeading,
-								endPoint: .bottomTrailing
-							),
-							lineWidth: 5
-						)
-				}
-			default:
-				defaultImage
-			}
+	var mainView: some View {
+		ZStack {
+			CardBackgroundView()
+				.padding(.init(top: 150, leading: 0, bottom: 0, trailing: 0))
+			cardView
 		}
-		.frame(width: 205, height: 205)
+		.foregroundColor(.textMain)
+		.padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
+	}
+	
+	var cardView: some View {
+		VStack(alignment: .center) {
+			CardTitleView(title: viewModel.profession?.name)
+			CardImageView(iconUrl: viewModel.professionIcon, iconLoading: viewModel.mediaLoading.value)
+			descriptionText
+			descriptionView
+		}
+		.padding(.init(top: 6, leading: 16, bottom: 16, trailing: 16))
 	}
 	
 	var descriptionText: some View {
@@ -68,61 +51,35 @@ struct ProfessionDetailView: View {
 			.multilineTextAlignment(.center)
 	}
 	
-	var typeText: some View {
-		HStack {
-			Text("\(L10n.Professions.Detail.type):")
-				.bold()
-			Text(viewModel.profession?.type?.name ?? "")
-		}
-		.padding(.top, 4)
-	}
-	
-	var skillList: some View {
+	var descriptionView: some View {
 		VStack(alignment: .leading) {
-			Text("\(L10n.Professions.Detail.skills):")
-				.bold()
+			BoldColonRegularTextView(
+				boldText: L10n.Professions.Detail.type,
+				regularText: viewModel.profession?.type?.name
+			)
+			.padding(.top, 4)
+			skillList
 				.padding(.top, 4)
-			LazyVStack(alignment: .leading) {
-				ForEach(viewModel.profession?.skillTiers ?? []) { skill in
-					SkillRowBuilder(skill: skill, professionId: viewModel.professionId)
-				}
-			}
 		}
+		.frame(minWidth: 0,
+			   maxWidth: .infinity,
+			   minHeight: 0,
+			   maxHeight: .infinity,
+			   alignment: .topLeading)
 	}
 	
-	var body: some View {
-		ScrollView {
-			ZStack {
-				background
-				VStack(alignment: .center) {
-					titleText
-					mainImage
-					descriptionText
-					VStack(alignment: .leading) {
-						typeText
-						if !(viewModel.profession?.skillTiers?.isEmpty ?? true) {
-							skillList
-						}
+	@ViewBuilder
+	var skillList: some View {
+		if !(viewModel.profession?.skillTiers?.isEmpty ?? true) {
+			VStack(alignment: .leading) {
+				BoldColonTextView(boldText: L10n.Professions.Detail.skills)
+				LazyVStack(alignment: .leading) {
+					ForEach(viewModel.profession?.skillTiers ?? []) { skill in
+						SkillRowBuilder(skill: skill, professionId: viewModel.professionId)
 					}
-					.frame(minWidth: 0,
-						   maxWidth: .infinity,
-						   minHeight: 0,
-						   maxHeight: .infinity,
-						   alignment: .topLeading)
 				}
-				.padding(.init(top: 6, leading: 16, bottom: 16, trailing: 16))
 			}
-			.foregroundColor(.textMain)
-			.padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
 		}
-		.setNavigationBar(title: "", dismiss: dismiss, showBack: true)
-		.toolbarBackground(.hidden, for: .navigationBar)
-		.toolbar(.hidden, for: .tabBar)
-		.setViewBaseTheme()
-		.withLoader(isLoading: viewModel.isLoading)
-		.withErrorAlert(isPresented: $viewModel.showError, errorText: viewModel.errorText.value)
-		.onFirstAppear { viewModel.loadData() }
-		.refreshable { viewModel.loadData() }
 	}
 }
 

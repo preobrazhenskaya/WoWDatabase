@@ -12,180 +12,117 @@ struct AchievementDetailView: View {
 	@Environment(\.dismiss) private var dismiss
 	@ObservedObject var viewModel: AchievementDetailVM
 	
-	var background: some View {
-		Color.background
-			.cornerRadius(6)
-			.padding(.init(top: 150, leading: 0, bottom: 0, trailing: 0))
+	var body: some View {
+		ScrollView { mainView }
+			.setNavigationBar(title: "", dismiss: dismiss, showBack: true)
+			.toolbarBackground(.hidden, for: .navigationBar)
+			.toolbar(.hidden, for: .tabBar)
+			.setViewBaseTheme()
+			.withLoader(isLoading: viewModel.isLoading)
+			.withErrorAlert(isPresented: $viewModel.showError,
+							errorText: viewModel.errorText.value)
+			.onFirstAppear { viewModel.loadData() }
+			.refreshable { viewModel.loadData() }
 	}
 	
-	var titleText: some View {
-		Text(viewModel.achievement?.name ?? "")
-			.font(.customBoldLargeTitle)
-			.fixedSize(horizontal: false, vertical: true)
-			.multilineTextAlignment(.center)
-	}
-	
-	var mainImage: some View {
-		AsyncImage(url: viewModel.achievementIcon) { phase in
-			let defaultImage = Image(systemSymbol: .photo)
-				.resizable()
-				.scaledToFit()
-			switch phase {
-			case .empty:
-				if !viewModel.iconLoading.value && viewModel.achievementIcon == nil {
-					defaultImage
-				} else {
-					CustomProgressView(isLoading: true)
-				}
-			case let .success(image):
-				ZStack {
-					image
-						.resizable()
-						.scaledToFill()
-						.cornerRadius(10)
-						.frame(width: 200, height: 200)
-					RoundedRectangle(cornerRadius: 10)
-						.stroke(
-							LinearGradient(
-								colors: [Color.borderStart,
-										 Color.borderEnd],
-								startPoint: .topLeading,
-								endPoint: .bottomTrailing
-							),
-							lineWidth: 5
-						)
-				}
-			default:
-				defaultImage
-			}
+	var mainView: some View {
+		ZStack {
+			CardBackgroundView()
+				.padding(.init(top: 150, leading: 0, bottom: 0, trailing: 0))
+			cardView
 		}
-		.frame(width: 205, height: 205)
+		.foregroundColor(.textMain)
+		.padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
+	}
+	
+	var cardView: some View {
+		VStack(alignment: .center) {
+			CardTitleView(title: viewModel.achievement?.name)
+			CardImageView(iconUrl: viewModel.achievementIcon, iconLoading: viewModel.iconLoading.value)
+			descriptionText
+				.padding(.top, 6)
+			descriptionView
+		}
+		.padding(.init(top: 6, leading: 16, bottom: 16, trailing: 16))
 	}
 	
 	var descriptionText: some View {
 		Text(viewModel.achievement?.description ?? "")
-			.padding(.top, 6)
 			.fixedSize(horizontal: false, vertical: true)
 			.multilineTextAlignment(.center)
 	}
 	
-	var categoryText: some View {
-		HStack {
-			Text("\(L10n.Achievements.Detail.category):")
-				.bold()
-			Text(viewModel.achievement?.category?.name ?? "")
+	var descriptionView: some View {
+		VStack(alignment: .leading) {
+			BoldColonRegularTextView(
+				boldText: L10n.Achievements.Detail.category,
+				regularText: viewModel.achievement?.category?.name
+			)
+			BoldColonRegularTextView(
+				boldText: L10n.Achievements.Detail.faction,
+				regularText: viewModel.achievement?.requirements?.faction?.name ?? L10n.Achievements.Detail.factionBoth
+			)
+			BoldColonRegularTextView(
+				boldText: L10n.Achievements.Detail.points,
+				regularText: viewModel.achievement?.pointsString
+			)
+			BoldColonRegularTextView(
+				boldText: L10n.Achievements.Detail.isAccountWide,
+				regularText: viewModel.achievement?.isAccountWideString
+			)
+			BoldColonRegularTextView(
+				boldText: L10n.Achievements.Detail.reward,
+				regularText: viewModel.achievement?.rewardDescription
+			)
+			criteriaView
+				.padding(.top, 4)
+			prevAchievementView
+				.padding(.top, 4)
+			nextAchievementView
+				.padding(.top, 4)
 		}
 		.padding(.top, 4)
+		.frame(minWidth: 0,
+			   maxWidth: .infinity,
+			   minHeight: 0,
+			   maxHeight: .infinity,
+			   alignment: .topLeading)
 	}
 	
-	var factionText: some View {
-		HStack {
-			Text("\(L10n.Achievements.Detail.faction):")
-				.bold()
-			Text(viewModel.achievement?.requirements?.faction?.name ?? L10n.Achievements.Detail.factionBoth)
-		}
-	}
-	
-	var pointsText: some View {
-		HStack {
-			Text("\(L10n.Achievements.Detail.points):")
-				.bold()
-			Text(viewModel.achievement?.pointsString ?? "")
-		}
-	}
-	
-	var isAccountWideText: some View {
-		HStack {
-			Text("\(L10n.Achievements.Detail.isAccountWide):")
-				.bold()
-			Text(viewModel.achievement?.isAccountWideString ?? "")
-		}
-	}
-	
-	var rewardDescriptionText: some View {
-		HStack {
-			Text("\(L10n.Achievements.Detail.reward):")
-				.bold()
-			Text(viewModel.achievement?.rewardDescription ?? "-")
-		}
-	}
-	
-	func criteriaView(criteria: [AchievementChildCriteriaModel]) -> some View {
-		VStack(alignment: .leading) {
-			Text("\(L10n.Achievements.Detail.criteria):")
-				.bold()
-				.padding(.top, 4)
-			LazyVStack(alignment: .leading) {
-				ForEach(criteria) { criteria in
-					if let description = criteria.description {
-						Text("• \(description)")
+	@ViewBuilder
+	var criteriaView: some View {
+		if let criteria = viewModel.achievement?.criteria?.childCriteria {
+			VStack(alignment: .leading) {
+				BoldColonTextView(boldText: L10n.Achievements.Detail.criteria)
+				LazyVStack(alignment: .leading) {
+					ForEach(criteria) { criteria in
+						if let description = criteria.description {
+							Text("• \(description)")
+						}
 					}
 				}
 			}
 		}
 	}
 	
-	func prevAchievementView(achievement: NameIdModel) -> some View {
-		VStack(alignment: .leading) {
-			Text("\(L10n.Achievements.Detail.prevAchievement):")
-				.bold()
-				.padding(.top, 4)
-			AchievementRowBuilder(achievement: achievement, backgroundColor: .backgroundLight)
-		}
-	}
-	
-	func nextAchievementView(achievement: NameIdModel) -> some View {
-		VStack(alignment: .leading) {
-			Text("\(L10n.Achievements.Detail.nextAchievement):")
-				.bold()
-				.padding(.top, 4)
-			AchievementRowBuilder(achievement: achievement, backgroundColor: .backgroundLight)
-		}
-	}
-	
-	var body: some View {
-		ScrollView {
-			ZStack {
-				background
-				VStack(alignment: .center) {
-					titleText
-					mainImage
-					descriptionText
-					VStack(alignment: .leading) {
-						categoryText
-						factionText
-						pointsText
-						isAccountWideText
-						rewardDescriptionText
-						if let criteria = viewModel.achievement?.criteria?.childCriteria {
-							criteriaView(criteria: criteria)
-						}
-						if let prevAchievement = viewModel.achievement?.prerequisiteAchievement {
-							prevAchievementView(achievement: prevAchievement)
-						}
-						if let nextAchievement = viewModel.achievement?.nextAchievement {
-							nextAchievementView(achievement: nextAchievement)
-						}
-					}
-					.frame(minWidth: 0,
-						   maxWidth: .infinity,
-						   minHeight: 0,
-						   maxHeight: .infinity,
-						   alignment: .topLeading)
-				}
-				.padding(.init(top: 6, leading: 16, bottom: 16, trailing: 16))
+	@ViewBuilder
+	var prevAchievementView: some View {
+		if let prevAchievement = viewModel.achievement?.prerequisiteAchievement {
+			VStack(alignment: .leading) {
+				BoldColonTextView(boldText: L10n.Achievements.Detail.prevAchievement)
+				AchievementRowBuilder(achievement: prevAchievement, backgroundColor: .backgroundLight)
 			}
-			.foregroundColor(.textMain)
-			.padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
 		}
-		.setNavigationBar(title: "", dismiss: dismiss, showBack: true)
-		.toolbarBackground(.hidden, for: .navigationBar)
-		.toolbar(.hidden, for: .tabBar)
-		.setViewBaseTheme()
-		.withLoader(isLoading: viewModel.isLoading)
-		.withErrorAlert(isPresented: $viewModel.showError, errorText: viewModel.errorText.value)
-		.onFirstAppear { viewModel.loadData() }
-		.refreshable { viewModel.loadData() }
+	}
+	
+	@ViewBuilder
+	var nextAchievementView: some View {
+		if let nextAchievement = viewModel.achievement?.nextAchievement {
+			VStack(alignment: .leading) {
+				BoldColonTextView(boldText: L10n.Achievements.Detail.nextAchievement)
+				AchievementRowBuilder(achievement: nextAchievement, backgroundColor: .backgroundLight)
+			}
+		}
 	}
 }
 

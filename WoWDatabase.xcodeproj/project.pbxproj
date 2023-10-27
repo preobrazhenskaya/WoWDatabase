@@ -31,6 +31,11 @@
 		872529A32AE90E5C00E07EA4 /* RecipeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872529A22AE90E5C00E07EA4 /* RecipeRequest.swift */; };
 		872529A52AE90F2500E07EA4 /* RecipeMediaRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872529A42AE90F2500E07EA4 /* RecipeMediaRequest.swift */; };
 		872529A72AE9114800E07EA4 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872529A62AE9114800E07EA4 /* RecipeDetailView.swift */; };
+		872529C52AEBE8E400E07EA4 /* CardBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872529C42AEBE8E400E07EA4 /* CardBackgroundView.swift */; };
+		872529C72AEBE9CC00E07EA4 /* CardTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872529C62AEBE9CC00E07EA4 /* CardTitleView.swift */; };
+		872529C92AEBEA3E00E07EA4 /* CardImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872529C82AEBEA3E00E07EA4 /* CardImageView.swift */; };
+		872529CB2AEBEB9000E07EA4 /* BoldColonRegularTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872529CA2AEBEB8F00E07EA4 /* BoldColonRegularTextView.swift */; };
+		872529CD2AEBED3E00E07EA4 /* BoldColonTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872529CC2AEBED3E00E07EA4 /* BoldColonTextView.swift */; };
 		87963EE02AC749760001BDB1 /* WoWDatabaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87963EDF2AC749760001BDB1 /* WoWDatabaseApp.swift */; };
 		87963EE42AC749790001BDB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87963EE32AC749790001BDB1 /* Assets.xcassets */; };
 		87963EE72AC749790001BDB1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87963EE62AC749790001BDB1 /* Preview Assets.xcassets */; };
@@ -127,6 +132,11 @@
 		872529A22AE90E5C00E07EA4 /* RecipeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRequest.swift; sourceTree = "<group>"; };
 		872529A42AE90F2500E07EA4 /* RecipeMediaRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeMediaRequest.swift; sourceTree = "<group>"; };
 		872529A62AE9114800E07EA4 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
+		872529C42AEBE8E400E07EA4 /* CardBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBackgroundView.swift; sourceTree = "<group>"; };
+		872529C62AEBE9CC00E07EA4 /* CardTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTitleView.swift; sourceTree = "<group>"; };
+		872529C82AEBEA3E00E07EA4 /* CardImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageView.swift; sourceTree = "<group>"; };
+		872529CA2AEBEB8F00E07EA4 /* BoldColonRegularTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoldColonRegularTextView.swift; sourceTree = "<group>"; };
+		872529CC2AEBED3E00E07EA4 /* BoldColonTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoldColonTextView.swift; sourceTree = "<group>"; };
 		87963EDF2AC749760001BDB1 /* WoWDatabaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWDatabaseApp.swift; sourceTree = "<group>"; };
 		87963EE32AC749790001BDB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87963EE62AC749790001BDB1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -245,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				87963EF12AC74C0F0001BDB1 /* NameIdRow.swift */,
+				872529C32AEBE8C900E07EA4 /* DetailCard */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -312,6 +323,18 @@
 				87D4CC3C2AD848C90079657E /* NameIdModel.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		872529C32AEBE8C900E07EA4 /* DetailCard */ = {
+			isa = PBXGroup;
+			children = (
+				872529CA2AEBEB8F00E07EA4 /* BoldColonRegularTextView.swift */,
+				872529CC2AEBED3E00E07EA4 /* BoldColonTextView.swift */,
+				872529C42AEBE8E400E07EA4 /* CardBackgroundView.swift */,
+				872529C82AEBEA3E00E07EA4 /* CardImageView.swift */,
+				872529C62AEBE9CC00E07EA4 /* CardTitleView.swift */,
+			);
+			path = DetailCard;
 			sourceTree = "<group>";
 		};
 		87963ED32AC749760001BDB1 = {
@@ -475,14 +498,6 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
-		87D4CC392AD8439A0079657E /* Row */ = {
-			isa = PBXGroup;
-			children = (
-				87D4CC3A2AD843AD0079657E /* AchievementRowBuilder.swift */,
-			);
-			path = Row;
-			sourceTree = "<group>";
-		};
 		87D4CC412AD935340079657E /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
@@ -503,9 +518,9 @@
 		87E520422ACC0B1B00856334 /* Achievements */ = {
 			isa = PBXGroup;
 			children = (
+				87D4CC3A2AD843AD0079657E /* AchievementRowBuilder.swift */,
 				87E520432ACC0B3000856334 /* Detail */,
 				87E520412ACC0B0000856334 /* List */,
-				87D4CC392AD8439A0079657E /* Row */,
 			);
 			path = Achievements;
 			sourceTree = "<group>";
@@ -787,6 +802,7 @@
 				871A55992AE68D270030ADBC /* ProfessionsListVM.swift in Sources */,
 				871A55BC2AE6B80D0030ADBC /* SkillDetailView.swift in Sources */,
 				879F3AE62AE2824E006E1C6A /* Fonts+Generated.swift in Sources */,
+				872529CD2AEBED3E00E07EA4 /* BoldColonTextView.swift in Sources */,
 				87FCCA332AD52DD400CB27C4 /* TabEnum.swift in Sources */,
 				871A55A72AE69E4A0030ADBC /* ProfessionRowBuilder.swift in Sources */,
 				87E5204C2ACC497600856334 /* Router.swift in Sources */,
@@ -794,6 +810,7 @@
 				871A55BA2AE6B6F50030ADBC /* SkillDetailVM.swift in Sources */,
 				87A365BD2ADE97E10041B017 /* Publisher+Extension.swift in Sources */,
 				87E520502ACC575100856334 /* TabsView.swift in Sources */,
+				872529CB2AEBEB9000E07EA4 /* BoldColonRegularTextView.swift in Sources */,
 				87963EFA2AC755B80001BDB1 /* Api.swift in Sources */,
 				87D4CC3D2AD848CA0079657E /* NameIdModel.swift in Sources */,
 				871A55BE2AE6BB480030ADBC /* SkillRowBuilder.swift in Sources */,
@@ -802,6 +819,7 @@
 				87D4CC232AD814920079657E /* Constants.swift in Sources */,
 				87E520602ACC7D5300856334 /* AchievementMediaRequest.swift in Sources */,
 				87D4CC402AD934430079657E /* FirstAppear.swift in Sources */,
+				872529C52AEBE8E400E07EA4 /* CardBackgroundView.swift in Sources */,
 				871A55A32AE69B4E0030ADBC /* ProfessionApi.swift in Sources */,
 				87A365A72ADD4D110041B017 /* NavigationLazyView.swift in Sources */,
 				871A55C22AE6BDC90030ADBC /* RecipesListVM.swift in Sources */,
@@ -820,6 +838,7 @@
 				87FCCA3A2AD53AA000CB27C4 /* Color.swift in Sources */,
 				87A365DE2AE14D050041B017 /* AuthApi.swift in Sources */,
 				87963EF02AC74BA90001BDB1 /* AchievementsListView.swift in Sources */,
+				872529C92AEBEA3E00E07EA4 /* CardImageView.swift in Sources */,
 				872529A72AE9114800E07EA4 /* RecipeDetailView.swift in Sources */,
 				871A55B62AE6B4800030ADBC /* SkillTierModel.swift in Sources */,
 				8725299B2AE902CA00E07EA4 /* RecipeDetailVM.swift in Sources */,
@@ -837,6 +856,7 @@
 				871A55AD2AE6A3360030ADBC /* ProfessionMediaRequest.swift in Sources */,
 				871A55AB2AE6A2BA0030ADBC /* ProfessionRequest.swift in Sources */,
 				87E5203B2ACC033C00856334 /* AchievementsListModel.swift in Sources */,
+				872529C72AEBE9CC00E07EA4 /* CardTitleView.swift in Sources */,
 				87E520552ACC5FA900856334 /* MediaModel.swift in Sources */,
 				871A55B02AE6A4500030ADBC /* ProfessionDetailVM.swift in Sources */,
 				871A55B22AE6A5F10030ADBC /* ProfessionDetailView.swift in Sources */,

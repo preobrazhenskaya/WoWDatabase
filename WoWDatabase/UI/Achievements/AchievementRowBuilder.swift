@@ -26,7 +26,7 @@ struct AchievementRowBuilder: View {
 }
 
 struct AchievementRowBuilder_Previews: PreviewProvider {
-    static var previews: some View {
+	static var previews: some View {
 		AchievementRowBuilder(achievement: .init(id: 1, name: "Name"), backgroundColor: .background)
-    }
+	}
 }
