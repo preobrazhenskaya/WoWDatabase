@@ -145,6 +145,6 @@ struct RecipeDetailView: View {
 
 struct RecipeDetailView_Previews: PreviewProvider {
     static var previews: some View {
-		RecipeDetailView(viewModel: .init(id: 42347))
+		RecipeDetailView(viewModel: .init(id: 42347, professionApi: MockProfessionApi()))
     }
 }

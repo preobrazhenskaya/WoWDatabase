@@ -32,6 +32,6 @@ struct ProfessionsListView: View {
 
 struct ProfessionsListView_Previews: PreviewProvider {
     static var previews: some View {
-		ProfessionsListView(viewModel: .init())
+		ProfessionsListView(viewModel: .init(professionApi: MockProfessionApi()))
     }
 }

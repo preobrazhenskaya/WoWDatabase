@@ -12,11 +12,13 @@ final class SkillDetailVM: BaseViewModel {
 	
 	private let skillId: Int
 	private let professionId: Int
+	private let professionApi: ProfessionApiProtocol
 	private var skillLoading = CurrentValueSubject<Bool, Never>(false)
 	
-	init(skillId: Int, professionId: Int) {
+	init(skillId: Int, professionId: Int, professionApi: ProfessionApiProtocol) {
 		self.skillId = skillId
 		self.professionId = professionId
+		self.professionApi = professionApi
 		super.init()
 	}
 	
@@ -33,7 +35,7 @@ final class SkillDetailVM: BaseViewModel {
 	}
 	
 	private func getSkill() {
-		ProfessionApi.getSkillTier(professionId: professionId, skillTierId: skillId)
+		professionApi.getSkillTier(professionId: professionId, skillTierId: skillId)
 			.trackLoading(skillLoading)
 			.getError(errorText)
 			.getResult()

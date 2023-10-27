@@ -32,6 +32,6 @@ struct AchievementsListView: View {
 
 struct AchievementsListView_Previews: PreviewProvider {
 	static var previews: some View {
-		AchievementsListView(viewModel: AchievementsListVM())
+		AchievementsListView(viewModel: .init(achievementApi: MockAchievementApi()))
 	}
 }

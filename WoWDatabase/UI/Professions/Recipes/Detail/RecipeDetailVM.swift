@@ -13,11 +13,13 @@ final class RecipeDetailVM: BaseViewModel {
 	@Published var recipeIcon: URL?
 	
 	private let id: Int
+	private let professionApi: ProfessionApiProtocol
 	private var recipeLoading = CurrentValueSubject<Bool, Never>(false)
 	var mediaLoading = CurrentValueSubject<Bool, Never>(false)
 	
-	init(id: Int) {
+	init(id: Int, professionApi: ProfessionApiProtocol) {
 		self.id = id
+		self.professionApi = professionApi
 		super.init()
 	}
 	
@@ -36,7 +38,7 @@ final class RecipeDetailVM: BaseViewModel {
 	}
 	
 	private func getRecipe() {
-		ProfessionApi.getRecipe(id: id)
+		professionApi.getRecipe(id: id)
 			.trackLoading(recipeLoading)
 			.getError(errorText)
 			.getResult()
@@ -45,7 +47,7 @@ final class RecipeDetailVM: BaseViewModel {
 	}
 	
 	private func getMedia() {
-		ProfessionApi.getRecipeMedia(id: id)
+		professionApi.getRecipeMedia(id: id)
 			.trackLoading(recipeLoading)
 			.getError(errorText)
 			.getResult()

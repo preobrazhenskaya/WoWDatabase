@@ -20,15 +20,15 @@ struct Router {
 	static func navigate(to destination: Destination) -> some View {
 		switch destination {
 		case let .achievementDetail(id):
-			NavigationLazyView(AchievementDetailView(viewModel: .init(achievementId: id)))
+			NavigationLazyView(AchievementDetailView(viewModel: .init(achievementId: id, achievementApi: AchievementApi())))
 		case let .professionDetail(id):
-			NavigationLazyView(ProfessionDetailView(viewModel: .init(professionId: id)))
+			NavigationLazyView(ProfessionDetailView(viewModel: .init(professionId: id, professionApi: ProfessionApi())))
 		case let .skillDetail(skillId, professionId):
-			NavigationLazyView(SkillDetailView(viewModel: .init(skillId: skillId, professionId: professionId)))
+			NavigationLazyView(SkillDetailView(viewModel: .init(skillId: skillId, professionId: professionId, professionApi: ProfessionApi())))
 		case let .recipesList(category):
 			NavigationLazyView(RecipesListView(viewModel: .init(category: category)))
 		case let .recipeDetail(id):
-			NavigationLazyView(RecipeDetailView(viewModel: .init(id: id)))
+			NavigationLazyView(RecipeDetailView(viewModel: .init(id: id, professionApi: ProfessionApi())))
 		}
 	}
 }

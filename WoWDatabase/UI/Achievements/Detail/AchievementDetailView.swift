@@ -191,6 +191,6 @@ struct AchievementDetailView: View {
 
 struct AchievementDetailView_Previews: PreviewProvider {
 	static var previews: some View {
-		AchievementDetailView(viewModel: .init(achievementId: 6))
+		AchievementDetailView(viewModel: .init(achievementId: 608, achievementApi: MockAchievementApi()))
 	}
 }

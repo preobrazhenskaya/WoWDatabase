@@ -13,11 +13,13 @@ final class AchievementDetailVM: BaseViewModel {
 	@Published var achievementIcon: URL?
 	
 	private let achievementId: Int
+	private let achievementApi: AchievementApiProtocol
 	private var achievementLoading = CurrentValueSubject<Bool, Never>(false)
 	var iconLoading = CurrentValueSubject<Bool, Never>(false)
 	
-	init(achievementId: Int) {
+	init(achievementId: Int, achievementApi: AchievementApiProtocol) {
 		self.achievementId = achievementId
+		self.achievementApi = achievementApi
 		super.init()
 	}
 	
@@ -36,7 +38,7 @@ final class AchievementDetailVM: BaseViewModel {
 	}
 	
 	private func getAchievement() {
-		AchievementApi.getAchievement(id: achievementId)
+		achievementApi.getAchievement(id: achievementId)
 			.trackLoading(achievementLoading)
 			.getError(errorText)
 			.getResult()
@@ -45,7 +47,7 @@ final class AchievementDetailVM: BaseViewModel {
 	}
 	
 	private func getAchievementMedia() {
-		AchievementApi.getAchievementMedia(id: achievementId)
+		achievementApi.getAchievementMedia(id: achievementId)
 			.trackLoading(iconLoading)
 			.getError(errorText)
 			.getResult()

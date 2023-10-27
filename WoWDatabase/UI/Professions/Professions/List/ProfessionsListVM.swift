@@ -10,7 +10,13 @@ import Combine
 final class ProfessionsListVM: BaseViewModel {
 	@Published var professions = [NameIdModel]()
 	
+	private let professionApi: ProfessionApiProtocol
 	private var professionsLoading = CurrentValueSubject<Bool, Never>(false)
+	
+	init(professionApi: ProfessionApiProtocol) {
+		self.professionApi = professionApi
+		super.init()
+	}
 	
 	override func bind() {
 		super.bind()
@@ -25,7 +31,7 @@ final class ProfessionsListVM: BaseViewModel {
 	}
 	
 	private func getProfessions() {
-		ProfessionApi.getProfessionsList()
+		professionApi.getProfessionsList()
 			.trackLoading(professionsLoading)
 			.getError(errorText)
 			.getResult()

@@ -13,11 +13,13 @@ final class ProfessionDetailVM: BaseViewModel {
 	@Published var professionIcon: URL?
 	
 	let professionId: Int
+	private let professionApi: ProfessionApiProtocol
 	private var professionLoading = CurrentValueSubject<Bool, Never>(false)
 	var mediaLoading = CurrentValueSubject<Bool, Never>(false)
 	
-	init(professionId: Int) {
+	init(professionId: Int, professionApi: ProfessionApiProtocol) {
 		self.professionId = professionId
+		self.professionApi = professionApi
 		super.init()
 	}
 	
@@ -36,7 +38,7 @@ final class ProfessionDetailVM: BaseViewModel {
 	}
 	
 	private func getProfession() {
-		ProfessionApi.getProfession(id: professionId)
+		professionApi.getProfession(id: professionId)
 			.trackLoading(professionLoading)
 			.getError(errorText)
 			.getResult()
@@ -45,7 +47,7 @@ final class ProfessionDetailVM: BaseViewModel {
 	}
 	
 	private func getMedia() {
-		ProfessionApi.getProfessionMedia(id: professionId)
+		professionApi.getProfessionMedia(id: professionId)
 			.trackLoading(mediaLoading)
 			.getError(errorText)
 			.getResult()

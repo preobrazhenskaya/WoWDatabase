@@ -82,6 +82,6 @@ struct SkillDetailView: View {
 
 struct SkillDetailView_Previews: PreviewProvider {
     static var previews: some View {
-		SkillDetailView(viewModel: .init(skillId: 2477, professionId: 164))
+		SkillDetailView(viewModel: .init(skillId: 2477, professionId: 164, professionApi: MockProfessionApi()))
     }
 }

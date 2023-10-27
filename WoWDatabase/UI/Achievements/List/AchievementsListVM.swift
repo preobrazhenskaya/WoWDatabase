@@ -10,7 +10,13 @@ import Combine
 final class AchievementsListVM: BaseViewModel {
 	@Published var achievements = [NameIdModel]()
 	
+	private let achievementApi: AchievementApiProtocol
 	private var listLoading = CurrentValueSubject<Bool, Never>(false)
+	
+	init(achievementApi: AchievementApiProtocol) {
+		self.achievementApi = achievementApi
+		super.init()
+	}
 	
 	override func bind() {
 		super.bind()
@@ -25,11 +31,7 @@ final class AchievementsListVM: BaseViewModel {
 	}
 	
 	private func getAchievements() {
-//		achievements = [
-//			.init(id: 6, name: "10-й уровень"),
-//			.init(id: 7, name: "20-й уровень")
-//		]
-		AchievementApi.getAchievementsList()
+		achievementApi.getAchievementsList()
 			.trackLoading(listLoading)
 			.getError(errorText)
 			.getResult()

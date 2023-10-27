@@ -29,6 +29,18 @@ struct RecipesListView: View {
 
 struct RecipesListView_Previews: PreviewProvider {
     static var previews: some View {
-		RecipesListView(viewModel: .init(category: .init(name: "Name", recipes: [])))
-    }
+		RecipesListView(viewModel:
+				.init(category:
+						.init(name: "Оружие",
+							  recipes: [
+								.init(id: 38932,
+									  name: "Точно настроенный уничтожатор из штормовой стали"),
+								.init(id: 38933,
+									  name: "Точно настроенный уничтожатор из штормовой стали"),
+								.init(id: 38934,
+									  name: "Точно настроенный уничтожатор из штормовой стали")
+							  ])
+				)
+		)
+	}
 }

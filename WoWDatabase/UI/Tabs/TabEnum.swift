@@ -43,9 +43,9 @@ enum TabEnum: Int, Identifiable, CaseIterable {
 	var contentView: some View {
 		switch self {
 		case .professions:
-			ProfessionsListView(viewModel: .init())
+			ProfessionsListView(viewModel: .init(professionApi: ProfessionApi()))
 		case .achievements:
-			AchievementsListView(viewModel: .init())
+			AchievementsListView(viewModel: .init(achievementApi: AchievementApi()))
 		case .profile:
 			ProfileView(viewModel: .init())
 		}
