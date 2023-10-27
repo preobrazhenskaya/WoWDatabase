@@ -305,6 +305,15 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		872529BE2AEBE86F00E07EA4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				87E520542ACC5FA900856334 /* MediaModel.swift */,
+				87D4CC3C2AD848C90079657E /* NameIdModel.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		87963ED32AC749760001BDB1 = {
 			isa = PBXGroup;
 			children = (
@@ -388,10 +397,9 @@
 		87963F882AC75E010001BDB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				87D4CC3C2AD848C90079657E /* NameIdModel.swift */,
 				87E5205E2ACC7D2C00856334 /* Achievement */,
 				87A365DB2AE14CE50041B017 /* Auth */,
-				87A365DC2AE14CEB0041B017 /* Media */,
+				872529BE2AEBE86F00E07EA4 /* Common */,
 				871A559C2AE69A0C0030ADBC /* Profession */,
 			);
 			path = Model;
@@ -455,14 +463,6 @@
 				87963F8D2AC75E0E0001BDB1 /* TokenModel.swift */,
 			);
 			path = Auth;
-			sourceTree = "<group>";
-		};
-		87A365DC2AE14CEB0041B017 /* Media */ = {
-			isa = PBXGroup;
-			children = (
-				87E520542ACC5FA900856334 /* MediaModel.swift */,
-			);
-			path = Media;
 			sourceTree = "<group>";
 		};
 		87D4CC322AD8210F0079657E /* Generated */ = {

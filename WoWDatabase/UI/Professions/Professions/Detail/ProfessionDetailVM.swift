@@ -51,7 +51,7 @@ final class ProfessionDetailVM: BaseViewModel {
 			.trackLoading(mediaLoading)
 			.getError(errorText)
 			.getResult()
-			.map { URL(string: $0?.assets?.first?.value ?? "") }
+			.map { $0?.iconUrl }
 			.assign(to: \.professionIcon, on: self)
 			.store(in: &cancellableSet)
 	}

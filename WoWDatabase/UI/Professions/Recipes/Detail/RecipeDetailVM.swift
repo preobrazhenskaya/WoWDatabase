@@ -51,7 +51,7 @@ final class RecipeDetailVM: BaseViewModel {
 			.trackLoading(recipeLoading)
 			.getError(errorText)
 			.getResult()
-			.map { URL(string: $0?.assets?.first?.value ?? "") }
+			.map { $0?.iconUrl }
 			.assign(to: \.recipeIcon, on: self)
 			.store(in: &cancellableSet)
 	}

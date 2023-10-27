@@ -51,7 +51,7 @@ final class AchievementDetailVM: BaseViewModel {
 			.trackLoading(iconLoading)
 			.getError(errorText)
 			.getResult()
-			.map { URL(string: $0?.assets?.first?.value ?? "") }
+			.map { $0?.iconUrl }
 			.assign(to: \.achievementIcon, on: self)
 			.store(in: &cancellableSet)
 	}
