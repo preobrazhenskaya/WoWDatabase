@@ -70,10 +70,5 @@ struct AchievementChildCriteriaModel: Codable, Identifiable {
 }
 
 struct AchievementRequirementsModel: Codable {
-	let faction: AchievementRequirementsFactionModel?
-}
-
-struct AchievementRequirementsFactionModel: Codable {
-	let type: String?
-	let name: String?
+	let faction: TypeNameModel?
 }

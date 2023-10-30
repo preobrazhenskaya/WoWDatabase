@@ -24,6 +24,11 @@
 "Skill.detail.recipes" = "Рецепты";
 "Recipe.detail.rank" = "Уровень";
 "Recipe.detail.reagents" = "Ингридиенты";
+"Item.detail.quality" = "Качество";
+"Item.detail.itemLevel" = "Уровень предмета";
+"Item.detail.equipStats" = "Характеристики экипировки";
+"Item.detail.requirements" = "Требования";
+"Item.detail.sellPrice" = "Цена продажи";
 
 "achievements.detail.category" = "Категория";
 "achievements.detail.points" = "Очки";

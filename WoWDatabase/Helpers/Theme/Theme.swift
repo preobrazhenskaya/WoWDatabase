@@ -69,11 +69,9 @@ struct NavigationBarTheme: ViewModifier {
 					}
 				}
 				ToolbarItem(placement: .principal) {
-					Text(title)
+					MultilineText(text: title, alignment: .center)
 						.foregroundColor(.textMain)
 						.bold()
-						.fixedSize(horizontal: false, vertical: true)
-						.multilineTextAlignment(.center)
 				}
 			}
 			.navigationBarTitleDisplayMode(.inline)

@@ -38,17 +38,12 @@ struct ProfessionDetailView: View {
 		VStack(alignment: .center) {
 			CardTitleView(title: viewModel.profession?.name)
 			CardImageView(iconUrl: viewModel.professionIcon, iconLoading: viewModel.mediaLoading.value)
-			descriptionText
+			MultilineText(text: viewModel.profession?.description ?? "",
+						  alignment: .center)
+			.padding(.top, 6)
 			descriptionView
 		}
 		.padding(.init(top: 6, leading: 16, bottom: 16, trailing: 16))
-	}
-	
-	var descriptionText: some View {
-		Text(viewModel.profession?.description ?? "")
-			.padding(.top, 6)
-			.fixedSize(horizontal: false, vertical: true)
-			.multilineTextAlignment(.center)
 	}
 	
 	var descriptionView: some View {

@@ -39,17 +39,12 @@ struct RecipeDetailView: View {
 			CardTitleView(title: viewModel.recipe?.name)
 			CardImageView(iconUrl: viewModel.recipeIcon,
 						  iconLoading: viewModel.mediaLoading.value)
-			descriptionText
-				.padding(.top, 6)
+			MultilineText(text: viewModel.recipe?.description ?? "",
+						  alignment: .center)
+			.padding(.top, 6)
 			descriptionView
 		}
 		.padding(.init(top: 6, leading: 16, bottom: 16, trailing: 16))
-	}
-	
-	var descriptionText: some View {
-		Text(viewModel.recipe?.description ?? "")
-			.fixedSize(horizontal: false, vertical: true)
-			.multilineTextAlignment(.center)
 	}
 	
 	var descriptionView: some View {
@@ -71,13 +66,13 @@ struct RecipeDetailView: View {
 	var itemView: some View {
 		VStack(alignment: .leading) {
 			if let item = viewModel.recipe?.craftedItem {
-				NameIdRow(model: .init(id: item.id, name: "\(item.name ?? "") (\(viewModel.recipe?.craftedQuantity?.value ?? 0))"), backgroundColor: .backgroundLight)
+				ItemRowBuilder(item: .init(id: item.id, name: "\(item.name ?? "") (\(viewModel.recipe?.craftedQuantity?.value ?? 0))"))
 			}
 			if let item = viewModel.recipe?.allianceCraftedItem {
-				NameIdRow(model: .init(id: item.id, name: "\(item.name ?? "") (\(viewModel.recipe?.craftedQuantity?.value ?? 0)) (\(L10n.General.alliance))"), backgroundColor: .backgroundLight)
+				ItemRowBuilder(item: .init(id: item.id, name: "\(item.name ?? "") (\(viewModel.recipe?.craftedQuantity?.value ?? 0)) (\(L10n.General.alliance))"))
 			}
 			if let item = viewModel.recipe?.hordeCraftedItem {
-				NameIdRow(model: .init(id: item.id, name: "\(item.name ?? "") (\(viewModel.recipe?.craftedQuantity?.value ?? 0)) (\(L10n.General.horde))"), backgroundColor: .backgroundLight)
+				ItemRowBuilder(item: .init(id: item.id, name: "\(item.name ?? "") (\(viewModel.recipe?.craftedQuantity?.value ?? 0)) (\(L10n.General.horde))"))
 			}
 		}
 	}
@@ -90,7 +85,7 @@ struct RecipeDetailView: View {
 				LazyVStack(alignment: .leading) {
 					ForEach(reagents) { reagent in
 						if let reagentModel = reagent.reagent {
-							NameIdRow(model: .init(id: reagentModel.id, name: "\(reagentModel.name ?? "") (\(reagent.quantity ?? 0))"), backgroundColor: .backgroundLight)
+						ItemRowBuilder(item: .init(id: reagentModel.id, name: "\(reagentModel.name ?? "") (\(reagent.quantity ?? 0))"))
 						}
 					}
 				}

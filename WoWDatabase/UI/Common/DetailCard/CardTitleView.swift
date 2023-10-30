@@ -11,10 +11,8 @@ struct CardTitleView: View {
 	var title: String?
 	
     var body: some View {
-		Text(title ?? "")
+		MultilineText(text: title ?? "", alignment: .center)
 			.font(.customBoldLargeTitle)
-			.fixedSize(horizontal: false, vertical: true)
-			.multilineTextAlignment(.center)
     }
 }
 

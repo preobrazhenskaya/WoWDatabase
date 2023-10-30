@@ -14,6 +14,7 @@ struct Router {
 		case skillDetail(skillId: Int, professionId: Int)
 		case recipesList(category: SkillTierCategoriesModel)
 		case recipeDetail(id: Int)
+		case itemDetail(id: Int)
 	}
 	
 	@ViewBuilder
@@ -29,6 +30,8 @@ struct Router {
 			NavigationLazyView(RecipesListView(viewModel: .init(category: category)))
 		case let .recipeDetail(id):
 			NavigationLazyView(RecipeDetailView(viewModel: .init(id: id, professionApi: ProfessionApi())))
+		case let .itemDetail(id):
+			NavigationLazyView(ItemDetailView(viewModel: .init(id: id, professionApi: ProfessionApi())))
 		}
 	}
 }

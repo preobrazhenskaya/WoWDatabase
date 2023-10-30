@@ -18,6 +18,7 @@ enum Constants {
 			static let profession = "/profession"
 			static let skillTier = "/skill-tier"
 			static let recipe = "/recipe"
+			static let item = "/item"
 		}
 		
 		enum Parameters {

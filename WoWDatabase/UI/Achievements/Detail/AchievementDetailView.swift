@@ -39,17 +39,12 @@ struct AchievementDetailView: View {
 		VStack(alignment: .center) {
 			CardTitleView(title: viewModel.achievement?.name)
 			CardImageView(iconUrl: viewModel.achievementIcon, iconLoading: viewModel.iconLoading.value)
-			descriptionText
-				.padding(.top, 6)
+			MultilineText(text: viewModel.achievement?.description ?? "",
+						  alignment: .center)
+			.padding(.top, 6)
 			descriptionView
 		}
 		.padding(.init(top: 6, leading: 16, bottom: 16, trailing: 16))
-	}
-	
-	var descriptionText: some View {
-		Text(viewModel.achievement?.description ?? "")
-			.fixedSize(horizontal: false, vertical: true)
-			.multilineTextAlignment(.center)
 	}
 	
 	var descriptionView: some View {

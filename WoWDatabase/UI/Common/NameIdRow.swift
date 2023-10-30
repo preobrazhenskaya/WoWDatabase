@@ -11,39 +11,25 @@ struct NameIdRow: View {
 	var model: NameIdModel
 	var backgroundColor: Color
 	
-	var background: some View {
-		backgroundColor
-			.cornerRadius(6)
-	}
-	
-	var titleText: some View {
-		Text(model.name ?? "")
-			.fixedSize(horizontal: false, vertical: true)
-			.multilineTextAlignment(.leading)
-	}
-	
-	var navigationImage: some View {
-		Image(systemSymbol: .chevronForward)
-	}
-	
-    var body: some View {
+	var body: some View {
 		ZStack {
-			background
+			backgroundColor
+				.cornerRadius(6)
 			HStack {
-				titleText
+				MultilineText(text: model.name ?? "", alignment: .leading)
 				Spacer()
 				if model.id != nil {
-					navigationImage
+					Image(systemSymbol: .chevronForward)
 				}
 			}
 			.foregroundColor(.textMain)
 			.padding(.all)
 		}
-    }
+	}
 }
 
 struct AchievementRow_Previews: PreviewProvider {
-    static var previews: some View {
+	static var previews: some View {
 		NameIdRow(model: .init(id: 1, name: "Name"), backgroundColor: .background)
-    }
+	}
 }
