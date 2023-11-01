@@ -45,7 +45,7 @@ struct TabBarTheme: ViewModifier {
 struct TabItemTheme: ViewModifier {
 	func body(content: Content) -> some View {
 		content
-			.tint(.textMain)
+			.tint(.textLight)
 	}
 }
 
@@ -70,7 +70,7 @@ struct NavigationBarTheme: ViewModifier {
 				}
 				ToolbarItem(placement: .principal) {
 					MultilineText(text: title, alignment: .center)
-						.foregroundColor(.textMain)
+						.foregroundColor(.textLight)
 						.bold()
 				}
 			}

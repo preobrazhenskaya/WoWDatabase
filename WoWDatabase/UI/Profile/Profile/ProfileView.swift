@@ -8,29 +8,25 @@
 import SwiftUI
 
 struct ProfileView: View {
-	@ObservedObject var viewModel: ProfileViewModel
+	@ObservedObject var viewModel: ProfileVM
 	
 	var body: some View {
 		NavigationStack {
 			VStack {
-				Button(action: {
-					viewModel.updateToken()
-				}, label: {
-					ZStack {
-						Color.backgroundDark
-						Text(L10n.Profile.updateToken)
-							.foregroundColor(.white)
-					}
-				})
-				.frame(height: 52)
-				.cornerRadius(10)
+				NavigationButton(destination: .auth,
+								 label: L10n.Profile.login)
+				NavigationButton(destination: .registration,
+								 label: L10n.Profile.register)
+				ActionButton(action: { viewModel.updateToken() },
+							 label: L10n.Profile.updateToken)
 				Spacer()
 			}
 			.padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
 			.setNavigationBar(title: L10n.Tab.profile, dismiss: nil, showBack: false)
 			.setViewBaseTheme()
 			.withLoader(isLoading: viewModel.isLoading)
-			.withErrorAlert(isPresented: $viewModel.showError, errorText: viewModel.errorText.value)
+			.withErrorAlert(isPresented: $viewModel.showError,
+							errorText: viewModel.errorText.value)
 		}
 	}
 }

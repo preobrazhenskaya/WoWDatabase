@@ -19,16 +19,16 @@
 
 "professions.detail.type" = "Тип";
 "professions.detail.skills" = "Навыки";
-"Skill.detail.minLevel" = "Минимальный уровень";
-"Skill.detail.maxLevel" = "Максимальный уровень";
-"Skill.detail.recipes" = "Рецепты";
-"Recipe.detail.rank" = "Уровень";
-"Recipe.detail.reagents" = "Ингридиенты";
-"Item.detail.quality" = "Качество";
-"Item.detail.itemLevel" = "Уровень предмета";
-"Item.detail.equipStats" = "Характеристики экипировки";
-"Item.detail.requirements" = "Требования";
-"Item.detail.sellPrice" = "Цена продажи";
+"skill.detail.minLevel" = "Минимальный уровень";
+"skill.detail.maxLevel" = "Максимальный уровень";
+"skill.detail.recipes" = "Рецепты";
+"recipe.detail.rank" = "Уровень";
+"recipe.detail.reagents" = "Ингридиенты";
+"item.detail.quality" = "Качество";
+"item.detail.itemLevel" = "Уровень предмета";
+"item.detail.equipStats" = "Характеристики экипировки";
+"item.detail.requirements" = "Требования";
+"item.detail.sellPrice" = "Цена продажи";
 
 "achievements.detail.category" = "Категория";
 "achievements.detail.points" = "Очки";
@@ -41,3 +41,7 @@
 "achievements.detail.factionBoth" = "Любая";
 
 "profile.updateToken" = "Обновить токен доступа";
+"profile.registration" = "Регистрация";
+"profile.login" = "Логин";
+"profile.password" = "Пароль";
+"profile.register" = "Зарегистрироваться";

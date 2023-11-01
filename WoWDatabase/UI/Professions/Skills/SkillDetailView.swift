@@ -30,7 +30,7 @@ struct SkillDetailView: View {
 			CardBackgroundView()
 			cardView
 		}
-		.foregroundColor(.textMain)
+		.foregroundColor(.textLight)
 		.padding(.all, 16)
 	}
 	

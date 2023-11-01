@@ -1,5 +1,5 @@
 //
-//  ProfileViewModel.swift
+//  ProfileVM.swift
 //  WoWDatabase
 //
 //  Created by Яна Преображенская on 19.10.2023.
@@ -7,7 +7,7 @@
 
 import Combine
 
-final class ProfileViewModel: BaseViewModel {
+final class ProfileVM: BaseViewModel {
 	private var tokenLoading = CurrentValueSubject<Bool, Never>(false)
 	
 	override func bind() {

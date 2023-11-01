@@ -30,7 +30,7 @@ struct RecipeDetailView: View {
 				.padding(.init(top: 150, leading: 0, bottom: 0, trailing: 0))
 			cardView
 		}
-		.foregroundColor(.textMain)
+		.foregroundColor(.textLight)
 		.padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
 	}
 	

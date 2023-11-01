@@ -22,7 +22,7 @@ struct NameIdRow: View {
 					Image(systemSymbol: .chevronForward)
 				}
 			}
-			.foregroundColor(.textMain)
+			.foregroundColor(.textLight)
 			.padding(.all)
 		}
 	}
