@@ -16,6 +16,7 @@ struct Router {
 		case recipeDetail(id: Int)
 		case itemDetail(id: Int)
 		case registration
+		case auth
 	}
 	
 	@ViewBuilder
@@ -35,6 +36,8 @@ struct Router {
 			NavigationLazyView(ItemDetailView(viewModel: .init(id: id, professionApi: ProfessionApi())))
 		case .registration:
 			NavigationLazyView(RegistrationView(viewModel: .init()))
+		case .auth:
+			NavigationLazyView(AuthView(viewModel: .init()))
 		}
 	}
 }

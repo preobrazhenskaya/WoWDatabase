@@ -42,6 +42,8 @@
 
 "profile.updateToken" = "Обновить токен доступа";
 "profile.registration" = "Регистрация";
-"profile.login" = "Логин";
+"profile.userLogin" = "Логин";
 "profile.password" = "Пароль";
 "profile.register" = "Зарегистрироваться";
+"profile.auth" = "Авторизация";
+"profile.login" = "Войти";

@@ -1,17 +1,17 @@
 //
-//  RegistrationView.swift
+//  AuthView.swift
 //  WoWDatabase
 //
-//  Created by Яна Преображенская on 31.10.2023.
+//  Created by Яна Преображенская on 01.11.2023.
 //
 
 import SwiftUI
 
-struct RegistrationView: View {
+struct AuthView: View {
 	@Environment(\.dismiss) private var dismiss
-	@ObservedObject var viewModel: RegistrationVM
+	@ObservedObject var viewModel: AuthVM
 	
-    var body: some View {
+	var body: some View {
 		ScrollView {
 			VStack(alignment: .leading) {
 				Text(L10n.Profile.userLogin)
@@ -29,21 +29,21 @@ struct RegistrationView: View {
 					.cornerRadius(8)
 					.foregroundColor(.textLight)
 				ActionButton(action: {  },
-							 label: L10n.Profile.register)
+							 label: L10n.Profile.login)
 				.padding(.top, 8)
 			}
 		}
 		.padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
-		.setNavigationBar(title: L10n.Profile.registration, dismiss: dismiss, showBack: true)
+		.setNavigationBar(title: L10n.Profile.auth, dismiss: dismiss, showBack: true)
 		.setViewBaseTheme()
 		.withLoader(isLoading: viewModel.isLoading)
 		.withErrorAlert(isPresented: $viewModel.showError,
 						errorText: viewModel.errorText.value)
-    }
+	}
 }
 
-struct RegistrationView_Previews: PreviewProvider {
+struct AuthView_Previews: PreviewProvider {
     static var previews: some View {
-		RegistrationView(viewModel: .init())
+		AuthView(viewModel: .init())
     }
 }

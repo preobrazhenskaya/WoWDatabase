@@ -64,6 +64,8 @@
 		87A365D72AE143370041B017 /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A365D62AE143370041B017 /* ProfileVM.swift */; };
 		87A365DA2AE149080041B017 /* TokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A365D92AE149080041B017 /* TokenRequest.swift */; };
 		87A365DE2AE14D050041B017 /* AuthApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A365DD2AE14D050041B017 /* AuthApi.swift */; };
+		87A62D662AF28AC4009E3253 /* AuthVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A62D652AF28AC4009E3253 /* AuthVM.swift */; };
+		87A62D682AF28AE4009E3253 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A62D672AF28AE4009E3253 /* AuthView.swift */; };
 		87B39AAD2AEF93C800183594 /* DisplayStringModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B39AAC2AEF93C800183594 /* DisplayStringModel.swift */; };
 		87D4CC122AD8034C0079657E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 87D4CC142AD8034C0079657E /* Localizable.strings */; };
 		87D4CC232AD814920079657E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D4CC222AD814920079657E /* Constants.swift */; };
@@ -181,6 +183,8 @@
 		87A365D62AE143370041B017 /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
 		87A365D92AE149080041B017 /* TokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRequest.swift; sourceTree = "<group>"; };
 		87A365DD2AE14D050041B017 /* AuthApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApi.swift; sourceTree = "<group>"; };
+		87A62D652AF28AC4009E3253 /* AuthVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVM.swift; sourceTree = "<group>"; };
+		87A62D672AF28AE4009E3253 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		87B39AAC2AEF93C800183594 /* DisplayStringModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayStringModel.swift; sourceTree = "<group>"; };
 		87D4CC132AD8034C0079657E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		87D4CC222AD814920079657E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -510,6 +514,7 @@
 		87A365CF2AE1430F0041B017 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				87A62D602AF28AB2009E3253 /* Auth */,
 				87DDF8902AF12308009A643D /* Profile */,
 				87DDF8892AF122B3009A643D /* Registration */,
 			);
@@ -528,6 +533,15 @@
 			isa = PBXGroup;
 			children = (
 				87963F8D2AC75E0E0001BDB1 /* TokenModel.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		87A62D602AF28AB2009E3253 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				87A62D672AF28AE4009E3253 /* AuthView.swift */,
+				87A62D652AF28AC4009E3253 /* AuthVM.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -873,6 +887,7 @@
 				871A55C82AE6BFA00030ADBC /* RecipeRowBuilder.swift in Sources */,
 				871A55992AE68D270030ADBC /* ProfessionsListVM.swift in Sources */,
 				87DDF88F2AF12302009A643D /* RegistrationView.swift in Sources */,
+				87A62D682AF28AE4009E3253 /* AuthView.swift in Sources */,
 				871A55BC2AE6B80D0030ADBC /* SkillDetailView.swift in Sources */,
 				879F3AE62AE2824E006E1C6A /* Fonts+Generated.swift in Sources */,
 				872529CD2AEBED3E00E07EA4 /* BoldColonTextView.swift in Sources */,
@@ -887,6 +902,7 @@
 				87E520502ACC575100856334 /* TabsView.swift in Sources */,
 				872529CB2AEBEB9000E07EA4 /* BoldColonRegularTextView.swift in Sources */,
 				87963EFA2AC755B80001BDB1 /* Api.swift in Sources */,
+				87A62D662AF28AC4009E3253 /* AuthVM.swift in Sources */,
 				87D4CC3D2AD848CA0079657E /* NameIdModel.swift in Sources */,
 				871A55BE2AE6BB480030ADBC /* SkillRowBuilder.swift in Sources */,
 				87FCCA362AD5317B00CB27C4 /* Theme.swift in Sources */,
