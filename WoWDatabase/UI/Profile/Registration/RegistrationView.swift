@@ -28,7 +28,7 @@ struct RegistrationView: View {
 					.background(Color.background)
 					.cornerRadius(8)
 					.foregroundColor(.textLight)
-				ActionButton(action: {  },
+				ActionButton(action: { viewModel.save() },
 							 label: L10n.Profile.register)
 				.padding(.top, 8)
 			}
@@ -39,6 +39,17 @@ struct RegistrationView: View {
 		.withLoader(isLoading: viewModel.isLoading)
 		.withErrorAlert(isPresented: $viewModel.showError,
 						errorText: viewModel.errorText.value)
+		.alert(
+			L10n.General.ready,
+			isPresented: $viewModel.showRegMessage,
+			actions: {
+				Button(L10n.General.ok) {
+					dismiss()
+				}
+			}, message: {
+				Text(L10n.Profile.registerSuccess)
+			}
+		)
     }
 }
 

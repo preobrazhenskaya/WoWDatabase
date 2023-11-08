@@ -13,10 +13,17 @@ struct ProfileView: View {
 	var body: some View {
 		NavigationStack {
 			VStack {
-				NavigationButton(destination: .auth,
-								 label: L10n.Profile.login)
-				NavigationButton(destination: .registration,
-								 label: L10n.Profile.register)
+				if let user = viewModel.currentUser {
+					Text(user.login ?? "")
+						.font(.customBoldLargeTitle)
+					ActionButton(action: { viewModel.logout() },
+								 label: L10n.Profile.logout)
+				} else {
+					NavigationButton(destination: .auth,
+									 label: L10n.Profile.login)
+					NavigationButton(destination: .registration,
+									 label: L10n.Profile.register)
+				}
 				ActionButton(action: { viewModel.updateToken() },
 							 label: L10n.Profile.updateToken)
 				Spacer()
@@ -27,6 +34,7 @@ struct ProfileView: View {
 			.withLoader(isLoading: viewModel.isLoading)
 			.withErrorAlert(isPresented: $viewModel.showError,
 							errorText: viewModel.errorText.value)
+			.onAppear { viewModel.getActiveUser() }
 		}
 	}
 }

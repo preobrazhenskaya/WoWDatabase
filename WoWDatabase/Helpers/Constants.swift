@@ -59,4 +59,9 @@ enum Constants {
 			static let clientSecret = "WOW_API_CLIENT_SECRET"
 		}
 	}
+	
+	// swiftlint:disable:next type_name
+	enum DB {
+		static let name = "WoWDatabase"
+	}
 }

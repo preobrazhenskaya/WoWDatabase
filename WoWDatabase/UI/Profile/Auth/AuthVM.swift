@@ -10,4 +10,14 @@ import Combine
 final class AuthVM: BaseViewModel {
 	@Published var login = ""
 	@Published var password = ""
+	@Published var showAuthMessage = false
+	
+	func auth() {
+		let user = AuthService.authUser(login: login, password: password)
+		if user == nil {
+			errorText.send(L10n.Profile.authError)
+		} else {
+			showAuthMessage = true
+		}
+	}
 }

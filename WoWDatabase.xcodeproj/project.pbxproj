@@ -66,6 +66,10 @@
 		87A365DE2AE14D050041B017 /* AuthApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A365DD2AE14D050041B017 /* AuthApi.swift */; };
 		87A62D662AF28AC4009E3253 /* AuthVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A62D652AF28AC4009E3253 /* AuthVM.swift */; };
 		87A62D682AF28AE4009E3253 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A62D672AF28AE4009E3253 /* AuthView.swift */; };
+		87A62D6C2AF29037009E3253 /* WoWDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 87A62D6A2AF29037009E3253 /* WoWDatabase.xcdatamodeld */; };
+		87A62D912AF2945D009E3253 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A62D902AF2945D009E3253 /* PersistenceController.swift */; };
+		87A62D932AF29A54009E3253 /* CoreData+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A62D922AF29A54009E3253 /* CoreData+Extension.swift */; };
+		87A62D962AF50749009E3253 /* User+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A62D952AF50749009E3253 /* User+CoreData.swift */; };
 		87B39AAD2AEF93C800183594 /* DisplayStringModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B39AAC2AEF93C800183594 /* DisplayStringModel.swift */; };
 		87D4CC122AD8034C0079657E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 87D4CC142AD8034C0079657E /* Localizable.strings */; };
 		87D4CC232AD814920079657E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D4CC222AD814920079657E /* Constants.swift */; };
@@ -185,6 +189,10 @@
 		87A365DD2AE14D050041B017 /* AuthApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApi.swift; sourceTree = "<group>"; };
 		87A62D652AF28AC4009E3253 /* AuthVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVM.swift; sourceTree = "<group>"; };
 		87A62D672AF28AE4009E3253 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		87A62D6B2AF29037009E3253 /* WoWDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WoWDatabase.xcdatamodel; sourceTree = "<group>"; };
+		87A62D902AF2945D009E3253 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		87A62D922AF29A54009E3253 /* CoreData+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreData+Extension.swift"; sourceTree = "<group>"; };
+		87A62D952AF50749009E3253 /* User+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreData.swift"; sourceTree = "<group>"; };
 		87B39AAC2AEF93C800183594 /* DisplayStringModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayStringModel.swift; sourceTree = "<group>"; };
 		87D4CC132AD8034C0079657E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		87D4CC222AD814920079657E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -403,6 +411,7 @@
 				87E5204D2ACC51C700856334 /* Info.plist */,
 				87963EDF2AC749760001BDB1 /* WoWDatabaseApp.swift */,
 				87963EF82AC754BC0001BDB1 /* Api */,
+				87A62D692AF28FDA009E3253 /* DB */,
 				87FCCA282AD3DF7100CB27C4 /* Helpers */,
 				87963EE52AC749790001BDB1 /* Preview Content */,
 				87963EF72AC7505D0001BDB1 /* Resources */,
@@ -496,6 +505,7 @@
 		87A365B72ADE97CB0041B017 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				87A62D922AF29A54009E3253 /* CoreData+Extension.swift */,
 				87A365BC2ADE97E10041B017 /* Publisher+Extension.swift */,
 			);
 			path = Extensions;
@@ -544,6 +554,24 @@
 				87A62D652AF28AC4009E3253 /* AuthVM.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		87A62D692AF28FDA009E3253 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				87A62D902AF2945D009E3253 /* PersistenceController.swift */,
+				87A62D9B2AF514D1009E3253 /* Model */,
+				87A62D6A2AF29037009E3253 /* WoWDatabase.xcdatamodeld */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
+		87A62D9B2AF514D1009E3253 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87A62D952AF50749009E3253 /* User+CoreData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		87D4CC322AD8210F0079657E /* Generated */ = {
@@ -926,7 +954,10 @@
 				871A559E2AE69A260030ADBC /* ProfessionsListModel.swift in Sources */,
 				87A365D52AE143290041B017 /* ProfileView.swift in Sources */,
 				87963EF42AC74CEA0001BDB1 /* AchievementModel.swift in Sources */,
+				87A62D932AF29A54009E3253 /* CoreData+Extension.swift in Sources */,
 				872529A12AE9031D00E07EA4 /* RecipeModel.swift in Sources */,
+				87A62D962AF50749009E3253 /* User+CoreData.swift in Sources */,
+				87A62D912AF2945D009E3253 /* PersistenceController.swift in Sources */,
 				87E5205D2ACC7C9400856334 /* AchievementRequest.swift in Sources */,
 				87D4CC362AD8256B0079657E /* Strings+Generated.swift in Sources */,
 				87FCCA3A2AD53AA000CB27C4 /* Color.swift in Sources */,
@@ -937,6 +968,7 @@
 				872529A72AE9114800E07EA4 /* RecipeDetailView.swift in Sources */,
 				871A55B62AE6B4800030ADBC /* SkillTierModel.swift in Sources */,
 				8725299B2AE902CA00E07EA4 /* RecipeDetailVM.swift in Sources */,
+				87A62D6C2AF29037009E3253 /* WoWDatabase.xcdatamodeld in Sources */,
 				872529B92AE93B0100E07EA4 /* ItemDetailView.swift in Sources */,
 				87E520342ACBF1A000856334 /* AchievementsListVM.swift in Sources */,
 				87DDF88D2AF122E7009A643D /* RegistrationVM.swift in Sources */,
@@ -1181,6 +1213,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		87A62D6A2AF29037009E3253 /* WoWDatabase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				87A62D6B2AF29037009E3253 /* WoWDatabase.xcdatamodel */,
+			);
+			currentVersion = 87A62D6B2AF29037009E3253 /* WoWDatabase.xcdatamodel */;
+			path = WoWDatabase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 87963ED42AC749760001BDB1 /* Project object */;
 }

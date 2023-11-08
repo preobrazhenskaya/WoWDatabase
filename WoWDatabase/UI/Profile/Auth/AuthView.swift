@@ -28,7 +28,7 @@ struct AuthView: View {
 					.background(Color.background)
 					.cornerRadius(8)
 					.foregroundColor(.textLight)
-				ActionButton(action: {  },
+				ActionButton(action: { viewModel.auth() },
 							 label: L10n.Profile.login)
 				.padding(.top, 8)
 			}
@@ -39,6 +39,17 @@ struct AuthView: View {
 		.withLoader(isLoading: viewModel.isLoading)
 		.withErrorAlert(isPresented: $viewModel.showError,
 						errorText: viewModel.errorText.value)
+		.alert(
+			L10n.General.ready,
+			isPresented: $viewModel.showAuthMessage,
+			actions: {
+				Button(L10n.General.ok) {
+					dismiss()
+				}
+			}, message: {
+				Text(L10n.Profile.authSuccess)
+			}
+		)
 	}
 }
 

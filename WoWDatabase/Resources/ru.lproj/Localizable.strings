@@ -12,6 +12,7 @@
 "general.ok" = "Ок";
 "general.alliance" = "Альянс";
 "general.horde" = "Орда";
+"general.ready" = "Готово";
 
 "tab.professions" = "Профессии";
 "tab.achievements" = "Достижения";
@@ -47,3 +48,7 @@
 "profile.register" = "Зарегистрироваться";
 "profile.auth" = "Авторизация";
 "profile.login" = "Войти";
+"profile.logout" = "Выйти";
+"profile.registerSuccess" = "Регистрация прошла успешно!";
+"profile.authSuccess" = "Авторизация прошла успешно!";
+"profile.authError" = "Авторизация не удалась";
