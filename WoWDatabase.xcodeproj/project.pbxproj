@@ -12,6 +12,7 @@
 		8716FB042AFBCA3200BC4BE1 /* FavoritesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8716FB032AFBCA3200BC4BE1 /* FavoritesVM.swift */; };
 		8716FB072AFCFAA800BC4BE1 /* EmptySearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8716FB062AFCFAA800BC4BE1 /* EmptySearchView.swift */; };
 		8716FB092AFCFDD700BC4BE1 /* PreviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8716FB082AFCFDD700BC4BE1 /* PreviewService.swift */; };
+		8716FB0D2AFD031C00BC4BE1 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8716FB0C2AFD031C00BC4BE1 /* AuthService.swift */; };
 		871A55992AE68D270030ADBC /* ProfessionsListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55982AE68D270030ADBC /* ProfessionsListVM.swift */; };
 		871A559B2AE68D400030ADBC /* ProfessionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A559A2AE68D400030ADBC /* ProfessionsListView.swift */; };
 		871A559E2AE69A260030ADBC /* ProfessionsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A559D2AE69A260030ADBC /* ProfessionsListModel.swift */; };
@@ -56,7 +57,7 @@
 		87963EF42AC74CEA0001BDB1 /* AchievementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87963EF32AC74CEA0001BDB1 /* AchievementModel.swift */; };
 		87963EFA2AC755B80001BDB1 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87963EF92AC755B80001BDB1 /* Api.swift */; };
 		87963F8E2AC75E0E0001BDB1 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87963F8D2AC75E0E0001BDB1 /* TokenModel.swift */; };
-		879F3AD52AE1562D006E1C6A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879F3AD42AE1562D006E1C6A /* AuthService.swift */; };
+		879F3AD52AE1562D006E1C6A /* ApiAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879F3AD42AE1562D006E1C6A /* ApiAuthService.swift */; };
 		879F3AE62AE2824E006E1C6A /* Fonts+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879F3AE52AE2824E006E1C6A /* Fonts+Generated.swift */; };
 		879F3AEF2AE28F78006E1C6A /* FrizQuadrataC-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 879F3AED2AE28F77006E1C6A /* FrizQuadrataC-Bold.otf */; };
 		879F3AF02AE28F78006E1C6A /* FrizQuadrataC.otf in Resources */ = {isa = PBXBuildFile; fileRef = 879F3AEE2AE28F77006E1C6A /* FrizQuadrataC.otf */; };
@@ -137,6 +138,7 @@
 		8716FB032AFBCA3200BC4BE1 /* FavoritesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVM.swift; sourceTree = "<group>"; };
 		8716FB062AFCFAA800BC4BE1 /* EmptySearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySearchView.swift; sourceTree = "<group>"; };
 		8716FB082AFCFDD700BC4BE1 /* PreviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewService.swift; sourceTree = "<group>"; };
+		8716FB0C2AFD031C00BC4BE1 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		871A55982AE68D270030ADBC /* ProfessionsListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionsListVM.swift; sourceTree = "<group>"; };
 		871A559A2AE68D400030ADBC /* ProfessionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionsListView.swift; sourceTree = "<group>"; };
 		871A559D2AE69A260030ADBC /* ProfessionsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionsListModel.swift; sourceTree = "<group>"; };
@@ -183,7 +185,7 @@
 		87963F802AC757630001BDB1 /* WoWDatabase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WoWDatabase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87963F812AC7576B0001BDB1 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		87963F8D2AC75E0E0001BDB1 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
-		879F3AD42AE1562D006E1C6A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		879F3AD42AE1562D006E1C6A /* ApiAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAuthService.swift; sourceTree = "<group>"; };
 		879F3AD72AE16ADD006E1C6A /* WoWDatabase.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = WoWDatabase.xcconfig; sourceTree = "<group>"; };
 		879F3AE52AE2824E006E1C6A /* Fonts+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Fonts+Generated.swift"; sourceTree = "<group>"; };
 		879F3AED2AE28F77006E1C6A /* FrizQuadrataC-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FrizQuadrataC-Bold.otf"; sourceTree = "<group>"; };
@@ -508,7 +510,8 @@
 		879F3AD32AE1561E006E1C6A /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				879F3AD42AE1562D006E1C6A /* AuthService.swift */,
+				879F3AD42AE1562D006E1C6A /* ApiAuthService.swift */,
+				8716FB0C2AFD031C00BC4BE1 /* AuthService.swift */,
 				8716FB082AFCFDD700BC4BE1 /* PreviewService.swift */,
 			);
 			path = Services;
@@ -940,6 +943,7 @@
 				871A55992AE68D270030ADBC /* ProfessionsListVM.swift in Sources */,
 				87DDF88F2AF12302009A643D /* RegistrationView.swift in Sources */,
 				87A62D682AF28AE4009E3253 /* AuthView.swift in Sources */,
+				8716FB0D2AFD031C00BC4BE1 /* AuthService.swift in Sources */,
 				871A55BC2AE6B80D0030ADBC /* SkillDetailView.swift in Sources */,
 				879F3AE62AE2824E006E1C6A /* Fonts+Generated.swift in Sources */,
 				872529CD2AEBED3E00E07EA4 /* BoldColonTextView.swift in Sources */,
@@ -1000,7 +1004,7 @@
 				87DDF88D2AF122E7009A643D /* RegistrationVM.swift in Sources */,
 				872529A52AE90F2500E07EA4 /* RecipeMediaRequest.swift in Sources */,
 				871A55C52AE6BE4D0030ADBC /* RecipesListView.swift in Sources */,
-				879F3AD52AE1562D006E1C6A /* AuthService.swift in Sources */,
+				879F3AD52AE1562D006E1C6A /* ApiAuthService.swift in Sources */,
 				872529AE2AE91F5000E07EA4 /* TypeNameModel.swift in Sources */,
 				871A55A92AE6A1CA0030ADBC /* ProfessionModel.swift in Sources */,
 				872529B22AE9390600E07EA4 /* ItemMediaRequest.swift in Sources */,

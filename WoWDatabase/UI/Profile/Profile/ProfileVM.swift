@@ -10,7 +10,12 @@ import Combine
 final class ProfileVM: BaseViewModel {
 	@Published var currentUser: User?
 	
+	private let authService: AuthService
 	private var tokenLoading = CurrentValueSubject<Bool, Never>(false)
+	
+	init(db: PersistenceController) {
+		authService = AuthService(db: db)
+	}
 	
 	override func bind() {
 		super.bind()
@@ -26,17 +31,16 @@ final class ProfileVM: BaseViewModel {
 			.getError(errorText)
 			.getResult()
 			.map { $0?.accessToken }
-			.sink(receiveValue: { AuthService.saveToken($0) })
+			.sink(receiveValue: { ApiAuthService.saveToken($0) })
 			.store(in: &cancellableSet)
 	}
 	
 	func getActiveUser() {
-		AuthService.getActiveUser()
-		currentUser = AuthService.currentUser
+		currentUser = authService.getActiveUser()
 	}
 	
 	func logout() {
-		errorText.send(AuthService.logout())
+		errorText.send(authService.logout())
 		getActiveUser()
 	}
 }

@@ -33,7 +33,8 @@ extension Favorites {
 	}
 	
 	static func saveFav(achievement: AchievementModel, context: NSManagedObjectContext) -> String {
-		guard let id = achievement.id, let user = AuthService.currentUser else { return L10n.General.error }
+		let authService = AuthService(context: context)
+		guard let id = achievement.id, let user = authService.getActiveUser() else { return L10n.General.error }
 		let fav = Favorites(context: context)
 		fav.id = id
 		fav.name = achievement.name

@@ -31,7 +31,7 @@ extension RequestProtocol {
 	
 	var headers: HTTPHeaders? {
 		[
-			Constants.API.Headers.Keys.authorization: "\(Constants.API.Headers.Value.bearer) \(AuthService.getToken() ?? "")"
+			Constants.API.Headers.Keys.authorization: "\(Constants.API.Headers.Value.bearer) \(ApiAuthService.getToken() ?? "")"
 		]
 	}
 }

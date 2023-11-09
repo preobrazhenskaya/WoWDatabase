@@ -45,6 +45,8 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
 	static var previews: some View {
-		ProfileView(viewModel: .init())
+		let db = PreviewService.createDbWithUser()
+//		let db = PersistenceController(inMemory: true)
+		ProfileView(viewModel: .init(db: db))
 	}
 }

@@ -12,8 +12,14 @@ final class RegistrationVM: BaseViewModel {
 	@Published var password = ""
 	@Published var showRegMessage = false
 	
+	private let authService: AuthService
+	
+	init(db: PersistenceController) {
+		authService = AuthService(db: db)
+	}
+	
 	func save() {
-		let result = AuthService.regUser(login: login, password: password)
+		let result = authService.regUser(login: login, password: password)
 		if result.isEmpty {
 			showRegMessage = true
 		} else {

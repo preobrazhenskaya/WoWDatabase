@@ -47,7 +47,7 @@ enum TabEnum: Int, Identifiable, CaseIterable {
 		case .achievements:
 			AchievementsListView(viewModel: .init(achievementApi: AchievementApi()))
 		case .profile:
-			ProfileView(viewModel: .init())
+			ProfileView(viewModel: .init(db: PersistenceController.shared))
 		}
 	}
 }

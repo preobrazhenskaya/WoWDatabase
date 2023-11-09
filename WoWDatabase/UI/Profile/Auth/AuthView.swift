@@ -55,6 +55,6 @@ struct AuthView: View {
 
 struct AuthView_Previews: PreviewProvider {
     static var previews: some View {
-		AuthView(viewModel: .init())
+		AuthView(viewModel: .init(db: PreviewService.createDbWithUser()))
     }
 }

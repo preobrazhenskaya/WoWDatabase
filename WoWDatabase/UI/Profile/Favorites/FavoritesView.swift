@@ -40,10 +40,10 @@ struct FavoritesView: View {
 			ForEach(viewModel.favorites) { favorites in
 				NavigationLink(destination: {
 					switch favorites.type {
-						case .achievement:
-							Router.navigate(to: .achievementDetail(id: favorites.id))
-						case .none:
-							Router.navigate(to: .none)
+					case .achievement:
+						Router.navigate(to: .achievementDetail(id: favorites.id))
+					case .none:
+						Router.navigate(to: .none)
 					}
 				}, label: {
 					NameIdRow(model: .init(id: favorites.id, name: favorites.name), backgroundColor: .background)
@@ -55,6 +55,6 @@ struct FavoritesView: View {
 
 struct FavoritesView_Previews: PreviewProvider {
 	static var previews: some View {
-		FavoritesView(viewModel: .init())
+		FavoritesView(viewModel: .init(db: PreviewService.createDbWithUser()))
 	}
 }

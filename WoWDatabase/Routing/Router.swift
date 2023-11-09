@@ -46,11 +46,11 @@ struct Router {
 			NavigationLazyView(ItemDetailView(viewModel: .init(id: id,
 															   professionApi: ProfessionApi())))
 		case .registration:
-			NavigationLazyView(RegistrationView(viewModel: .init()))
+			NavigationLazyView(RegistrationView(viewModel: .init(db: PersistenceController.shared)))
 		case .auth:
-			NavigationLazyView(AuthView(viewModel: .init()))
+			NavigationLazyView(AuthView(viewModel: .init(db: PersistenceController.shared)))
 		case .favorites:
-			NavigationLazyView(FavoritesView(viewModel: .init()))
+			NavigationLazyView(FavoritesView(viewModel: .init(db: PersistenceController.shared)))
 		}
 	}
 }

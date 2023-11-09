@@ -6,7 +6,7 @@
 //
 
 struct PreviewService {
-	static func getDbWithUser() -> PersistenceController {
+	static func createDbWithUser() -> PersistenceController {
 		let db = PersistenceController(inMemory: true)
 		let viewContext = db.container.viewContext
 		
@@ -14,7 +14,7 @@ struct PreviewService {
 		user.login = "Preview"
 		user.password = "1234"
 		user.isActive = true
-		let _ = viewContext.saveContext()
+		_ = viewContext.saveContext()
 		
 		return db
 	}

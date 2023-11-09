@@ -10,7 +10,13 @@ import Combine
 final class FavoritesVM: BaseViewModel {
 	@Published var favorites = [Favorites]()
 	
+	private let authService: AuthService
+	
+	init(db: PersistenceController) {
+		authService = AuthService(db: db)
+	}
+	
 	func getFavorites() {
-		favorites = AuthService.currentUser?.favorites ?? []
+		favorites = authService.getActiveUser()?.favorites ?? []
 	}
 }

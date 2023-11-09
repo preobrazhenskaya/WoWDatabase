@@ -12,8 +12,14 @@ final class AuthVM: BaseViewModel {
 	@Published var password = ""
 	@Published var showAuthMessage = false
 	
+	private let authService: AuthService
+	
+	init(db: PersistenceController) {
+		authService = AuthService(db: db)
+	}
+	
 	func auth() {
-		let user = AuthService.authUser(login: login, password: password)
+		let user = authService.authUser(login: login, password: password)
 		if user == nil {
 			errorText.send(L10n.Auth.error)
 		} else {

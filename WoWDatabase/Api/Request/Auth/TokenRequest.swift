@@ -14,8 +14,8 @@ struct TokenRequest: RequestProtocol {
 	
 	let parameters = [
 		Constants.API.Parameters.Keys.grantType: Constants.API.Parameters.Value.grantType,
-		Constants.API.Parameters.Keys.clientId: AuthService.getClientId(),
-		Constants.API.Parameters.Keys.clientSecret: AuthService.getClientSecret()
+		Constants.API.Parameters.Keys.clientId: ApiAuthService.getClientId(),
+		Constants.API.Parameters.Keys.clientSecret: ApiAuthService.getClientSecret()
 	]
 	
 	let headers: HTTPHeaders? = [

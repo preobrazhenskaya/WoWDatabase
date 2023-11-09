@@ -2,54 +2,45 @@
 //  AuthService.swift
 //  WoWDatabase
 //
-//  Created by Яна Преображенская on 19.10.2023.
+//  Created by Яна Преображенская on 09.11.2023.
 //
 
-import Foundation
+import CoreData
 
 struct AuthService {
-	static private let viewContext = PersistenceController.shared.container.viewContext
-	static var currentUser: User?
+	private let context: NSManagedObjectContext
 	
-	static func getClientId() -> String {
-		Bundle.main.object(forInfoDictionaryKey: Constants.Services.Auth.clientId) as? String ?? ""
+	init(db: PersistenceController) {
+		context = db.container.viewContext
 	}
 	
-	static func getClientSecret() -> String {
-		Bundle.main.object(forInfoDictionaryKey: Constants.Services.Auth.clientSecret) as? String ?? ""
+	init(context: NSManagedObjectContext) {
+		self.context = context
 	}
 	
-	static func saveToken(_ token: String?) {
-		UserDefaults.standard.setValue(token, forKey: Constants.Services.Auth.token)
-	}
-	
-	static func getToken() -> String? {
-		UserDefaults.standard.string(forKey: Constants.Services.Auth.token)
-	}
-	
-	static func regUser(login: String, password: String) -> String {
-		let newUser = User(context: viewContext)
+	func regUser(login: String, password: String) -> String {
+		let newUser = User(context: context)
 		newUser.login = login
 		newUser.password = password
 		newUser.isActive = false
-		return viewContext.saveContext()
+		return context.saveContext()
 	}
 	
-	static func authUser(login: String, password: String) -> User? {
+	func authUser(login: String, password: String) -> User? {
 		let userPredicate = NSPredicate(format: "login == %@ AND password == %@", login, password)
-		let user = try? viewContext.fetch(User.findUserRequest(predicate: userPredicate)).first
+		let user = try? context.fetch(User.findUserRequest(predicate: userPredicate)).first
 		user?.isActive = true
-		let authUser = viewContext.saveContext().isEmpty ? user : nil
+		let authUser = context.saveContext().isEmpty ? user : nil
 		return authUser
 	}
 	
-	static func getActiveUser() {
+	func getActiveUser() -> User? {
 		let userPredicate = NSPredicate(format: "isActive == true")
-		currentUser = try? viewContext.fetch(User.findUserRequest(predicate: userPredicate)).first
+		return try? context.fetch(User.findUserRequest(predicate: userPredicate)).first
 	}
 	
-	static func logout() -> String {
-		currentUser?.isActive = false
-		return viewContext.saveContext()
+	func logout() -> String {
+		getActiveUser()?.isActive = false
+		return context.saveContext()
 	}
 }

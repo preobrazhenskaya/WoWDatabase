@@ -144,7 +144,7 @@ struct AchievementDetailView: View {
 
 struct AchievementDetailView_Previews: PreviewProvider {
 	static var previews: some View {
-		let db = PreviewService.getDbWithUser()
+		let db = PreviewService.createDbWithUser()
 		let vm = AchievementDetailVM(achievementId: 608,
 									 achievementApi: MockAchievementApi(),
 									 db: db)
