@@ -12,10 +12,15 @@ struct ProfileView: View {
 	
 	var body: some View {
 		NavigationStack {
-			VStack {
+			ScrollView {
 				if let user = viewModel.currentUser {
 					Text(user.login ?? "")
 						.font(.customBoldLargeTitle)
+					NavigationLink(destination: {
+						Router.navigate(to: .favorites)
+					}, label: {
+						NameIdRow(model: .init(id: 1, name: L10n.Fav.title), backgroundColor: .background)
+					})
 					ActionButton(action: { viewModel.logout() },
 								 label: L10n.Profile.logout)
 				} else {
@@ -26,7 +31,6 @@ struct ProfileView: View {
 				}
 				ActionButton(action: { viewModel.updateToken() },
 							 label: L10n.Profile.updateToken)
-				Spacer()
 			}
 			.padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
 			.setNavigationBar(title: L10n.Tab.profile, dismiss: nil, showBack: false)

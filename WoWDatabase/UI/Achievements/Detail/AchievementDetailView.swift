@@ -23,6 +23,7 @@ struct AchievementDetailView: View {
 							errorText: viewModel.errorText.value)
 			.onFirstAppear { viewModel.loadData() }
 			.refreshable { viewModel.loadData() }
+			.onAppear { viewModel.checkInFav() }
 	}
 	
 	var mainView: some View {
@@ -38,7 +39,15 @@ struct AchievementDetailView: View {
 	var cardView: some View {
 		VStack(alignment: .center) {
 			CardTitleView(title: viewModel.achievement?.name)
-			CardImageView(iconUrl: viewModel.achievementIcon, iconLoading: viewModel.iconLoading.value)
+			ZStack {
+				HStack {
+					CardImageView(iconUrl: viewModel.achievementIcon, iconLoading: viewModel.iconLoading.value)
+				}
+				HStack {
+					Spacer()
+					favImage
+				}
+			}
 			MultilineText(text: viewModel.achievement?.description ?? "",
 						  alignment: .center)
 			.padding(.top, 6)
@@ -119,10 +128,26 @@ struct AchievementDetailView: View {
 			}
 		}
 	}
+	
+	var favImage: some View {
+		Button(action: {
+			viewModel.inFav ? viewModel.removeFromFavorites() : viewModel.addInFavorites()
+		}, label: {
+			Image(systemSymbol: viewModel.inFav ? .heartFill : .heart)
+				.resizable()
+				.scaledToFill()
+				.frame(width: 32, height: 32)
+		})
+		.padding(.top, 50)
+	}
 }
 
 struct AchievementDetailView_Previews: PreviewProvider {
 	static var previews: some View {
-		AchievementDetailView(viewModel: .init(achievementId: 608, achievementApi: MockAchievementApi()))
+		let db = PreviewService.getDbWithUser()
+		let vm = AchievementDetailVM(achievementId: 608,
+									 achievementApi: MockAchievementApi(),
+									 db: db)
+		return AchievementDetailView(viewModel: vm)
 	}
 }

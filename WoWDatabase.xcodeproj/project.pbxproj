@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8716FAFB2AFBC4DE00BC4BE1 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8716FAFA2AFBC4DE00BC4BE1 /* Favorites.swift */; };
+		8716FB022AFBC8F700BC4BE1 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8716FB012AFBC8F700BC4BE1 /* FavoritesView.swift */; };
+		8716FB042AFBCA3200BC4BE1 /* FavoritesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8716FB032AFBCA3200BC4BE1 /* FavoritesVM.swift */; };
+		8716FB072AFCFAA800BC4BE1 /* EmptySearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8716FB062AFCFAA800BC4BE1 /* EmptySearchView.swift */; };
+		8716FB092AFCFDD700BC4BE1 /* PreviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8716FB082AFCFDD700BC4BE1 /* PreviewService.swift */; };
 		871A55992AE68D270030ADBC /* ProfessionsListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55982AE68D270030ADBC /* ProfessionsListVM.swift */; };
 		871A559B2AE68D400030ADBC /* ProfessionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A559A2AE68D400030ADBC /* ProfessionsListView.swift */; };
 		871A559E2AE69A260030ADBC /* ProfessionsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A559D2AE69A260030ADBC /* ProfessionsListModel.swift */; };
@@ -69,7 +74,7 @@
 		87A62D6C2AF29037009E3253 /* WoWDatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 87A62D6A2AF29037009E3253 /* WoWDatabase.xcdatamodeld */; };
 		87A62D912AF2945D009E3253 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A62D902AF2945D009E3253 /* PersistenceController.swift */; };
 		87A62D932AF29A54009E3253 /* CoreData+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A62D922AF29A54009E3253 /* CoreData+Extension.swift */; };
-		87A62D962AF50749009E3253 /* User+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A62D952AF50749009E3253 /* User+CoreData.swift */; };
+		87A62D962AF50749009E3253 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A62D952AF50749009E3253 /* User.swift */; };
 		87B39AAD2AEF93C800183594 /* DisplayStringModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B39AAC2AEF93C800183594 /* DisplayStringModel.swift */; };
 		87D4CC122AD8034C0079657E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 87D4CC142AD8034C0079657E /* Localizable.strings */; };
 		87D4CC232AD814920079657E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D4CC222AD814920079657E /* Constants.swift */; };
@@ -127,6 +132,11 @@
 /* Begin PBXFileReference section */
 		476AB0847F83DC3FA06FB767 /* Pods-WoWDatabase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WoWDatabase.debug.xcconfig"; path = "Target Support Files/Pods-WoWDatabase/Pods-WoWDatabase.debug.xcconfig"; sourceTree = "<group>"; };
 		77C7B7EF9A2CA6FE2BE49F01 /* Pods_WoWDatabase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WoWDatabase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8716FAFA2AFBC4DE00BC4BE1 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
+		8716FB012AFBC8F700BC4BE1 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		8716FB032AFBCA3200BC4BE1 /* FavoritesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVM.swift; sourceTree = "<group>"; };
+		8716FB062AFCFAA800BC4BE1 /* EmptySearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySearchView.swift; sourceTree = "<group>"; };
+		8716FB082AFCFDD700BC4BE1 /* PreviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewService.swift; sourceTree = "<group>"; };
 		871A55982AE68D270030ADBC /* ProfessionsListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionsListVM.swift; sourceTree = "<group>"; };
 		871A559A2AE68D400030ADBC /* ProfessionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionsListView.swift; sourceTree = "<group>"; };
 		871A559D2AE69A260030ADBC /* ProfessionsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionsListModel.swift; sourceTree = "<group>"; };
@@ -192,7 +202,7 @@
 		87A62D6B2AF29037009E3253 /* WoWDatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WoWDatabase.xcdatamodel; sourceTree = "<group>"; };
 		87A62D902AF2945D009E3253 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		87A62D922AF29A54009E3253 /* CoreData+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreData+Extension.swift"; sourceTree = "<group>"; };
-		87A62D952AF50749009E3253 /* User+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreData.swift"; sourceTree = "<group>"; };
+		87A62D952AF50749009E3253 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		87B39AAC2AEF93C800183594 /* DisplayStringModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayStringModel.swift; sourceTree = "<group>"; };
 		87D4CC132AD8034C0079657E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		87D4CC222AD814920079657E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -243,6 +253,15 @@
 				F74969DF43C0CB4372F72C31 /* Pods-WoWDatabase.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		8716FB002AFBC85700BC4BE1 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				8716FB012AFBC8F700BC4BE1 /* FavoritesView.swift */,
+				8716FB032AFBCA3200BC4BE1 /* FavoritesVM.swift */,
+			);
+			path = Favorites;
 			sourceTree = "<group>";
 		};
 		871A55922AE660DA0030ADBC /* Professions */ = {
@@ -296,6 +315,7 @@
 		871A55A42AE69CF20030ADBC /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8716FB062AFCFAA800BC4BE1 /* EmptySearchView.swift */,
 				87F249622AEFAE4F007FECBC /* MultilineText.swift */,
 				87963EF12AC74C0F0001BDB1 /* NameIdRow.swift */,
 				87DDF8932AF13808009A643D /* Button */,
@@ -489,6 +509,7 @@
 			isa = PBXGroup;
 			children = (
 				879F3AD42AE1562D006E1C6A /* AuthService.swift */,
+				8716FB082AFCFDD700BC4BE1 /* PreviewService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -525,6 +546,7 @@
 			isa = PBXGroup;
 			children = (
 				87A62D602AF28AB2009E3253 /* Auth */,
+				8716FB002AFBC85700BC4BE1 /* Favorites */,
 				87DDF8902AF12308009A643D /* Profile */,
 				87DDF8892AF122B3009A643D /* Registration */,
 			);
@@ -569,7 +591,8 @@
 		87A62D9B2AF514D1009E3253 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				87A62D952AF50749009E3253 /* User+CoreData.swift */,
+				8716FAFA2AFBC4DE00BC4BE1 /* Favorites.swift */,
+				87A62D952AF50749009E3253 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -913,6 +936,7 @@
 			files = (
 				872529AB2AE91D5D00E07EA4 /* ItemModel.swift in Sources */,
 				871A55C82AE6BFA00030ADBC /* RecipeRowBuilder.swift in Sources */,
+				8716FB042AFBCA3200BC4BE1 /* FavoritesVM.swift in Sources */,
 				871A55992AE68D270030ADBC /* ProfessionsListVM.swift in Sources */,
 				87DDF88F2AF12302009A643D /* RegistrationView.swift in Sources */,
 				87A62D682AF28AE4009E3253 /* AuthView.swift in Sources */,
@@ -955,12 +979,14 @@
 				87A365D52AE143290041B017 /* ProfileView.swift in Sources */,
 				87963EF42AC74CEA0001BDB1 /* AchievementModel.swift in Sources */,
 				87A62D932AF29A54009E3253 /* CoreData+Extension.swift in Sources */,
+				8716FB022AFBC8F700BC4BE1 /* FavoritesView.swift in Sources */,
 				872529A12AE9031D00E07EA4 /* RecipeModel.swift in Sources */,
-				87A62D962AF50749009E3253 /* User+CoreData.swift in Sources */,
+				87A62D962AF50749009E3253 /* User.swift in Sources */,
 				87A62D912AF2945D009E3253 /* PersistenceController.swift in Sources */,
 				87E5205D2ACC7C9400856334 /* AchievementRequest.swift in Sources */,
 				87D4CC362AD8256B0079657E /* Strings+Generated.swift in Sources */,
 				87FCCA3A2AD53AA000CB27C4 /* Color.swift in Sources */,
+				8716FB072AFCFAA800BC4BE1 /* EmptySearchView.swift in Sources */,
 				872529B02AE9388C00E07EA4 /* ItemRequest.swift in Sources */,
 				87A365DE2AE14D050041B017 /* AuthApi.swift in Sources */,
 				87963EF02AC74BA90001BDB1 /* AchievementsListView.swift in Sources */,
@@ -986,6 +1012,7 @@
 				87E5204A2ACC145A00856334 /* AchievementDetailVM.swift in Sources */,
 				871A55AD2AE6A3360030ADBC /* ProfessionMediaRequest.swift in Sources */,
 				871A55AB2AE6A2BA0030ADBC /* ProfessionRequest.swift in Sources */,
+				8716FB092AFCFDD700BC4BE1 /* PreviewService.swift in Sources */,
 				87E5203B2ACC033C00856334 /* AchievementsListModel.swift in Sources */,
 				872529C72AEBE9CC00E07EA4 /* CardTitleView.swift in Sources */,
 				87E520552ACC5FA900856334 /* MediaModel.swift in Sources */,
@@ -993,6 +1020,7 @@
 				871A55B22AE6A5F10030ADBC /* ProfessionDetailView.swift in Sources */,
 				879F3AF22AE2901F006E1C6A /* Font.swift in Sources */,
 				87E520462ACC13D900856334 /* AchievementDetailView.swift in Sources */,
+				8716FAFB2AFBC4DE00BC4BE1 /* Favorites.swift in Sources */,
 				87963EE02AC749760001BDB1 /* WoWDatabaseApp.swift in Sources */,
 				87F249632AEFAE4F007FECBC /* MultilineText.swift in Sources */,
 				871A559B2AE68D400030ADBC /* ProfessionsListView.swift in Sources */,

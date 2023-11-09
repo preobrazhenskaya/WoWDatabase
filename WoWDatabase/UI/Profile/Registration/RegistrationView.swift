@@ -34,7 +34,7 @@ struct RegistrationView: View {
 			}
 		}
 		.padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
-		.setNavigationBar(title: L10n.Profile.registration, dismiss: dismiss, showBack: true)
+		.setNavigationBar(title: L10n.Reg.title, dismiss: dismiss, showBack: true)
 		.setViewBaseTheme()
 		.withLoader(isLoading: viewModel.isLoading)
 		.withErrorAlert(isPresented: $viewModel.showError,
@@ -47,7 +47,7 @@ struct RegistrationView: View {
 					dismiss()
 				}
 			}, message: {
-				Text(L10n.Profile.registerSuccess)
+				Text(L10n.Reg.success)
 			}
 		)
     }

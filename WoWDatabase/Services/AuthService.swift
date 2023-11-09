@@ -9,6 +9,7 @@ import Foundation
 
 struct AuthService {
 	static private let viewContext = PersistenceController.shared.container.viewContext
+	static var currentUser: User?
 	
 	static func getClientId() -> String {
 		Bundle.main.object(forInfoDictionaryKey: Constants.Services.Auth.clientId) as? String ?? ""
@@ -36,19 +37,19 @@ struct AuthService {
 	
 	static func authUser(login: String, password: String) -> User? {
 		let userPredicate = NSPredicate(format: "login == %@ AND password == %@", login, password)
-		let user = viewContext.fetchContext(request: User.findUserRequest(predicate: userPredicate))
+		let user = try? viewContext.fetch(User.findUserRequest(predicate: userPredicate)).first
 		user?.isActive = true
 		let authUser = viewContext.saveContext().isEmpty ? user : nil
 		return authUser
 	}
 	
-	static func getActiveUser() -> User? {
+	static func getActiveUser() {
 		let userPredicate = NSPredicate(format: "isActive == true")
-		return viewContext.fetchContext(request: User.findUserRequest(predicate: userPredicate))
+		currentUser = try? viewContext.fetch(User.findUserRequest(predicate: userPredicate)).first
 	}
 	
-	static func logout(user: User) -> String {
-		user.isActive = false
+	static func logout() -> String {
+		currentUser?.isActive = false
 		return viewContext.saveContext()
 	}
 }

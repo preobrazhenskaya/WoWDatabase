@@ -15,7 +15,7 @@ final class AuthVM: BaseViewModel {
 	func auth() {
 		let user = AuthService.authUser(login: login, password: password)
 		if user == nil {
-			errorText.send(L10n.Profile.authError)
+			errorText.send(L10n.Auth.error)
 		} else {
 			showAuthMessage = true
 		}

@@ -34,7 +34,7 @@ struct AuthView: View {
 			}
 		}
 		.padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
-		.setNavigationBar(title: L10n.Profile.auth, dismiss: dismiss, showBack: true)
+		.setNavigationBar(title: L10n.Auth.title, dismiss: dismiss, showBack: true)
 		.setViewBaseTheme()
 		.withLoader(isLoading: viewModel.isLoading)
 		.withErrorAlert(isPresented: $viewModel.showError,
@@ -47,7 +47,7 @@ struct AuthView: View {
 					dismiss()
 				}
 			}, message: {
-				Text(L10n.Profile.authSuccess)
+				Text(L10n.Auth.success)
 			}
 		)
 	}

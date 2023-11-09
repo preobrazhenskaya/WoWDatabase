@@ -17,12 +17,4 @@ extension NSManagedObjectContext {
 			return "Unresolved error \(nsError), \(nsError.userInfo)"
 		}
 	}
-	
-	func fetchContext<T: NSManagedObject>(request: NSFetchRequest<T>) -> T? {
-		do {
-			return try self.fetch(request).first
-		} catch {
-			return nil
-		}
-	}
 }

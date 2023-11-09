@@ -8,9 +8,9 @@
 import Combine
 
 final class ProfileVM: BaseViewModel {
-	private var tokenLoading = CurrentValueSubject<Bool, Never>(false)
-	
 	@Published var currentUser: User?
+	
+	private var tokenLoading = CurrentValueSubject<Bool, Never>(false)
 	
 	override func bind() {
 		super.bind()
@@ -31,12 +31,12 @@ final class ProfileVM: BaseViewModel {
 	}
 	
 	func getActiveUser() {
-		currentUser = AuthService.getActiveUser()
+		AuthService.getActiveUser()
+		currentUser = AuthService.currentUser
 	}
 	
 	func logout() {
-		guard let user = currentUser else { return }
-		errorText.send(AuthService.logout(user: user))
+		errorText.send(AuthService.logout())
 		getActiveUser()
 	}
 }

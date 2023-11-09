@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Router {
 	enum Destination {
+		case none
 		case achievementDetail(id: Int)
 		case professionDetail(id: Int)
 		case skillDetail(skillId: Int, professionId: Int)
@@ -17,27 +18,39 @@ struct Router {
 		case itemDetail(id: Int)
 		case registration
 		case auth
+		case favorites
 	}
 	
 	@ViewBuilder
 	static func navigate(to destination: Destination) -> some View {
 		switch destination {
+		case .none:
+			EmptyView()
 		case let .achievementDetail(id):
-			NavigationLazyView(AchievementDetailView(viewModel: .init(achievementId: id, achievementApi: AchievementApi())))
+			NavigationLazyView(AchievementDetailView(viewModel: .init(achievementId: id,
+																	  achievementApi: AchievementApi(),
+																	  db: PersistenceController.shared)))
 		case let .professionDetail(id):
-			NavigationLazyView(ProfessionDetailView(viewModel: .init(professionId: id, professionApi: ProfessionApi())))
+			NavigationLazyView(ProfessionDetailView(viewModel: .init(professionId: id,
+																	 professionApi: ProfessionApi())))
 		case let .skillDetail(skillId, professionId):
-			NavigationLazyView(SkillDetailView(viewModel: .init(skillId: skillId, professionId: professionId, professionApi: ProfessionApi())))
+			NavigationLazyView(SkillDetailView(viewModel: .init(skillId: skillId,
+																professionId: professionId,
+																professionApi: ProfessionApi())))
 		case let .recipesList(category):
 			NavigationLazyView(RecipesListView(viewModel: .init(category: category)))
 		case let .recipeDetail(id):
-			NavigationLazyView(RecipeDetailView(viewModel: .init(id: id, professionApi: ProfessionApi())))
+			NavigationLazyView(RecipeDetailView(viewModel: .init(id: id,
+																 professionApi: ProfessionApi())))
 		case let .itemDetail(id):
-			NavigationLazyView(ItemDetailView(viewModel: .init(id: id, professionApi: ProfessionApi())))
+			NavigationLazyView(ItemDetailView(viewModel: .init(id: id,
+															   professionApi: ProfessionApi())))
 		case .registration:
 			NavigationLazyView(RegistrationView(viewModel: .init()))
 		case .auth:
 			NavigationLazyView(AuthView(viewModel: .init()))
+		case .favorites:
+			NavigationLazyView(FavoritesView(viewModel: .init()))
 		}
 	}
 }

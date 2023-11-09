@@ -60,7 +60,6 @@ enum Constants {
 		}
 	}
 	
-	// swiftlint:disable:next type_name
 	enum DB {
 		static let name = "WoWDatabase"
 	}

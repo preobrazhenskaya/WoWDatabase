@@ -13,6 +13,7 @@
 "general.alliance" = "Альянс";
 "general.horde" = "Орда";
 "general.ready" = "Готово";
+"general.emptySearch" = "Ничего не найдено";
 
 "tab.professions" = "Профессии";
 "tab.achievements" = "Достижения";
@@ -20,11 +21,14 @@
 
 "professions.detail.type" = "Тип";
 "professions.detail.skills" = "Навыки";
+
 "skill.detail.minLevel" = "Минимальный уровень";
 "skill.detail.maxLevel" = "Максимальный уровень";
 "skill.detail.recipes" = "Рецепты";
+
 "recipe.detail.rank" = "Уровень";
 "recipe.detail.reagents" = "Ингридиенты";
+
 "item.detail.quality" = "Качество";
 "item.detail.itemLevel" = "Уровень предмета";
 "item.detail.equipStats" = "Характеристики экипировки";
@@ -41,14 +45,18 @@
 "achievements.detail.faction" = "Фракция";
 "achievements.detail.factionBoth" = "Любая";
 
-"profile.updateToken" = "Обновить токен доступа";
-"profile.registration" = "Регистрация";
-"profile.userLogin" = "Логин";
-"profile.password" = "Пароль";
 "profile.register" = "Зарегистрироваться";
-"profile.auth" = "Авторизация";
 "profile.login" = "Войти";
 "profile.logout" = "Выйти";
-"profile.registerSuccess" = "Регистрация прошла успешно!";
-"profile.authSuccess" = "Авторизация прошла успешно!";
-"profile.authError" = "Авторизация не удалась";
+"profile.updateToken" = "Обновить токен доступа";
+"profile.userLogin" = "Логин";
+"profile.password" = "Пароль";
+
+"auth.title" = "Авторизация";
+"auth.success" = "Авторизация прошла успешно!";
+"auth.error" = "Авторизация не удалась";
+
+"reg.title" = "Регистрация";
+"reg.success" = "Регистрация прошла успешно!";
+
+"fav.title" = "Избранное";
