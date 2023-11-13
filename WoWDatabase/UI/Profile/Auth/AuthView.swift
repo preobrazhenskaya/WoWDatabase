@@ -35,6 +35,7 @@ struct AuthView: View {
 		}
 		.padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
 		.setNavigationBar(title: L10n.Auth.title, dismiss: dismiss, showBack: true)
+		.toolbar(.hidden, for: .tabBar)
 		.setViewBaseTheme()
 		.withLoader(isLoading: viewModel.isLoading)
 		.withErrorAlert(isPresented: $viewModel.showError,
