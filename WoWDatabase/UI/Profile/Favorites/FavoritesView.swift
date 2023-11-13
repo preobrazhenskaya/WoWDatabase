@@ -37,17 +37,19 @@ struct FavoritesView: View {
 	
 	var listView: some View {
 		ScrollView {
-			ForEach(viewModel.favorites) { favorites in
-				NavigationLink(destination: {
-					switch favorites.type {
-					case .achievement:
-						Router.navigate(to: .achievementDetail(id: favorites.id))
-					case .none:
-						Router.navigate(to: .none)
-					}
-				}, label: {
-					NameIdRow(model: .init(id: favorites.id, name: favorites.name), backgroundColor: .background)
-				})
+			LazyVStack {
+				ForEach(viewModel.favorites) { favorites in
+					NavigationLink(destination: {
+						switch favorites.type {
+						case .achievement:
+							Router.navigate(to: .achievementDetail(id: favorites.id))
+						case .none:
+							Router.navigate(to: .none)
+						}
+					}, label: {
+						NameIdRow(model: .init(id: favorites.id, name: favorites.name), backgroundColor: .background)
+					})
+				}
 			}
 		}
 	}

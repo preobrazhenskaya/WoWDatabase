@@ -82,9 +82,11 @@ struct ItemDetailView: View {
 			if let binding = viewModel.item?.previewItem?.binding?.name {
 				MultilineText(text: binding, alignment: .leading)
 			}
-			ForEach(viewModel.item?.previewItem?.spells ?? []) { spell in
-				if let spell = spell.description {
-					MultilineText(text: spell, alignment: .leading)
+			LazyVStack(alignment: .leading) {
+				ForEach(viewModel.item?.previewItem?.spells ?? []) { spell in
+					if let spell = spell.description {
+						MultilineText(text: spell, alignment: .leading)
+					}
 				}
 			}
 		}
@@ -122,8 +124,10 @@ struct ItemDetailView: View {
 				if let armor = viewModel.item?.previewItem?.armor {
 					Text(armor.display?.displayString ?? "")
 				}
-				ForEach(viewModel.item?.previewItem?.stats ?? []) { stat in
-					Text(stat.display?.displayString ?? "")
+				LazyVStack(alignment: .leading) {
+					ForEach(viewModel.item?.previewItem?.stats ?? []) { stat in
+						Text(stat.display?.displayString ?? "")
+					}
 				}
 				Text(durability)
 			}
