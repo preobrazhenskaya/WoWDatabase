@@ -4,12 +4,12 @@
         <attribute name="id_" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="type_" optional="YES" attributeType="String"/>
-        <relationship name="userId" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="favorites_" inverseEntity="User"/>
+        <relationship name="users_" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="favorites_" inverseEntity="User"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
         <attribute name="isActive" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="login" optional="YES" attributeType="String"/>
         <attribute name="password" optional="YES" attributeType="String"/>
-        <relationship name="favorites_" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Favorites" inverseName="userId" inverseEntity="Favorites"/>
+        <relationship name="favorites_" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Favorites" inverseName="users_" inverseEntity="Favorites"/>
     </entity>
 </model>

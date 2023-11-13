@@ -17,13 +17,17 @@ final class AchievementDetailVM: BaseViewModel {
 	private let achievementId: Int
 	private let achievementApi: AchievementApiProtocol
 	private let context: NSManagedObjectContext
+	private let authService: AuthService
+	
+	private lazy var user = authService.getActiveUser()
 	private var achievementLoading = CurrentValueSubject<Bool, Never>(false)
 	var iconLoading = CurrentValueSubject<Bool, Never>(false)
 	
 	init(achievementId: Int, achievementApi: AchievementApiProtocol, db: PersistenceController) {
 		self.achievementId = achievementId
 		self.achievementApi = achievementApi
-		self.context = db.container.viewContext
+		context = db.container.viewContext
+		authService = AuthService(db: db)
 		super.init()
 	}
 	
@@ -61,17 +65,25 @@ final class AchievementDetailVM: BaseViewModel {
 	}
 	
 	func checkInFav() {
-		inFav = Favorites.checkInFav(id: achievementId, type: .achievement, context: context)
+		guard let user = user else { return }
+		inFav = Favorites.checkInFav(id: achievementId, type: .achievement, user: user, context: context)
 	}
 	
 	func addInFavorites() {
-		guard let achievement = achievement else { return }
-		errorText.send(Favorites.saveFav(achievement: achievement, context: context))
+		guard let achievement = achievement, let user = user else {
+			errorText.send(L10n.General.error)
+			return
+		}
+		errorText.send(Favorites.saveFav(achievement: achievement, user: user, context: context))
 		checkInFav()
 	}
 	
 	func removeFromFavorites() {
-		errorText.send(Favorites.removeFav(id: achievementId, type: .achievement, context: context))
+		guard let user = user else {
+			errorText.send(L10n.General.error)
+			return
+		}
+		errorText.send(Favorites.removeFav(id: achievementId, type: .achievement, user: user, context: context))
 		checkInFav()
 	}
 }

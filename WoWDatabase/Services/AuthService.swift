@@ -14,10 +14,6 @@ struct AuthService {
 		context = db.container.viewContext
 	}
 	
-	init(context: NSManagedObjectContext) {
-		self.context = context
-	}
-	
 	func regUser(login: String, password: String) -> String {
 		let newUser = User(context: context)
 		newUser.login = login
