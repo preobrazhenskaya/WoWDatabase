@@ -61,6 +61,8 @@ struct FavoritesView: View {
 
 struct FavoritesView_Previews: PreviewProvider {
 	static var previews: some View {
-		FavoritesView(viewModel: .init(db: PreviewService.createDbWithFavorites()))
+		let db = PreviewService.createDbWithFavorites()
+		let vm = FavoritesVM(dbService: DbService(db: db))
+		return FavoritesView(viewModel: vm)
 	}
 }

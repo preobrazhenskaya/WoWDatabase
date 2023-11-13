@@ -27,32 +27,23 @@ struct Router {
 		case .none:
 			EmptyView()
 		case let .achievementDetail(id):
-			NavigationLazyView(AchievementDetailView(viewModel: .init(achievementId: id,
-																	  achievementApi: AchievementApi(),
-																	  db: PersistenceController.shared)))
+			NavigationLazyView(AchievementDetailView(viewModel: AchievementDetailVM(achievementId: id, achievementApi: AchievementApi(), dbService: DbService.shared)))
 		case let .professionDetail(id):
-			NavigationLazyView(ProfessionDetailView(viewModel: .init(professionId: id,
-																	 professionApi: ProfessionApi(),
-																	 db: PersistenceController.shared)))
+			NavigationLazyView(ProfessionDetailView(viewModel: ProfessionDetailVM(professionId: id, professionApi: ProfessionApi(), dbService: DbService.shared)))
 		case let .skillDetail(skillId, professionId):
-			NavigationLazyView(SkillDetailView(viewModel: .init(skillId: skillId,
-																professionId: professionId,
-																professionApi: ProfessionApi())))
+			NavigationLazyView(SkillDetailView(viewModel: SkillDetailVM(skillId: skillId, professionId: professionId, professionApi: ProfessionApi())))
 		case let .recipesList(category):
-			NavigationLazyView(RecipesListView(viewModel: .init(category: category)))
+			NavigationLazyView(RecipesListView(viewModel: RecipesListVM(category: category)))
 		case let .recipeDetail(id):
-			NavigationLazyView(RecipeDetailView(viewModel: .init(id: id,
-																 professionApi: ProfessionApi(),
-																 db: PersistenceController.shared)))
+			NavigationLazyView(RecipeDetailView(viewModel: RecipeDetailVM(id: id, professionApi: ProfessionApi(), dbService: DbService.shared)))
 		case let .itemDetail(id):
-			NavigationLazyView(ItemDetailView(viewModel: .init(id: id,
-															   professionApi: ProfessionApi())))
+			NavigationLazyView(ItemDetailView(viewModel: ItemDetailVM(id: id, professionApi: ProfessionApi())))
 		case .registration:
-			NavigationLazyView(RegistrationView(viewModel: .init(db: PersistenceController.shared)))
+			NavigationLazyView(RegistrationView(viewModel: RegistrationVM(dbService: DbService.shared)))
 		case .auth:
-			NavigationLazyView(AuthView(viewModel: .init(db: PersistenceController.shared)))
+			NavigationLazyView(AuthView(viewModel: AuthVM(dbService: DbService.shared)))
 		case .favorites:
-			NavigationLazyView(FavoritesView(viewModel: .init(db: PersistenceController.shared)))
+			NavigationLazyView(FavoritesView(viewModel: FavoritesVM(dbService: DbService.shared)))
 		}
 	}
 }

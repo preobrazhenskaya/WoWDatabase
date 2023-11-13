@@ -115,7 +115,7 @@ struct AchievementDetailView_Previews: PreviewProvider {
 		let db = PreviewService.createDbWithUser()
 		let vm = AchievementDetailVM(achievementId: 608,
 									 achievementApi: MockAchievementApi(),
-									 db: db)
+									 dbService: DbService(db: db))
 		return AchievementDetailView(viewModel: vm)
 	}
 }

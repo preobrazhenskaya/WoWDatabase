@@ -10,11 +10,11 @@ import Combine
 final class ProfileVM: BaseViewModel {
 	@Published var currentUser: User?
 	
-	private let authService: AuthService
+	private let dbService: DbService
 	private var tokenLoading = CurrentValueSubject<Bool, Never>(false)
 	
-	init(db: PersistenceController) {
-		authService = AuthService(db: db)
+	init(dbService: DbService) {
+		self.dbService = dbService
 	}
 	
 	override func bind() {
@@ -36,11 +36,11 @@ final class ProfileVM: BaseViewModel {
 	}
 	
 	func getActiveUser() {
-		currentUser = authService.getActiveUser()
+		currentUser = dbService.user
 	}
 	
 	func logout() {
-		errorText.send(authService.logout())
+		errorText.send(dbService.logout())
 		getActiveUser()
 	}
 }

@@ -87,7 +87,7 @@ struct RecipeDetailView_Previews: PreviewProvider {
 		let db = PreviewService.createDbWithUser()
 		let vm = RecipeDetailVM(id: 42347,
 								professionApi: MockProfessionApi(),
-								db: db)
+								dbService: DbService(db: db))
 		return RecipeDetailView(viewModel: vm)
 	}
 }

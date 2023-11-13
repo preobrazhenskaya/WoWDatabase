@@ -14,7 +14,9 @@ extension Favorites {
 		case profession
 		case recipe
 	}
-	
+}
+
+extension Favorites {
 	public var id: Int {
 		get { Int(id_) }
 		set { id_ = Int64(newValue) }
@@ -37,41 +39,5 @@ extension Favorites {
 		request.sortDescriptors = [NSSortDescriptor(key: "id_", ascending: true)]
 		request.predicate = predicate
 		return request
-	}
-	
-	static func saveFav(id: Int, name: String?, type: TypeEnum, user: User, context: NSManagedObjectContext) -> String {
-		let predicate = NSPredicate(format: "id_ == %@ AND type_ == %@", "\(id)", type.rawValue)
-		let storedFav = try? context.fetch(Favorites.getFavoritesRequest(predicate: predicate)).first
-		
-		if let storedFav = storedFav {
-			storedFav.users.append(user)
-		} else {
-			let fav = Favorites(context: context)
-			fav.id = id
-			fav.name = name
-			fav.type = type
-			fav.users = [user]
-		}
-		
-		return context.saveContext()
-	}
-	
-	static func removeFav(id: Int, type: TypeEnum, user: User, context: NSManagedObjectContext) -> String {
-		let predicate = NSPredicate(format: "id_ == %@ AND type_ == %@", "\(id)", type.rawValue)
-		let fav = try? context.fetch(Favorites.getFavoritesRequest(predicate: predicate)).first
-		guard let fav = fav else { return L10n.General.error }
-		
-		fav.users = fav.users.filter { $0 != user }
-		if fav.users.isEmpty {
-			context.delete(fav)
-		}
-		return context.saveContext()
-	}
-	
-	static func checkInFav(id: Int, type: TypeEnum, user: User, context: NSManagedObjectContext) -> Bool {
-		let predicate = NSPredicate(format: "id_ == %@ AND type_ == %@", "\(id)", type.rawValue)
-		let achievement = try? context.fetch(Favorites.getFavoritesRequest(predicate: predicate)).first
-		
-		return achievement?.users.contains { $0 == user } ?? false
 	}
 }

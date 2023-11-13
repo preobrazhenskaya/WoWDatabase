@@ -56,6 +56,8 @@ struct RegistrationView: View {
 
 struct RegistrationView_Previews: PreviewProvider {
     static var previews: some View {
-		RegistrationView(viewModel: .init(db: PreviewService.createDbWithUser()))
+		let db = PreviewService.createDbWithUser()
+		let vm = RegistrationVM(dbService: DbService(db: db))
+		return RegistrationView(viewModel: vm)
     }
 }

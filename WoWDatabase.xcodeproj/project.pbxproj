@@ -12,7 +12,6 @@
 		8716FB042AFBCA3200BC4BE1 /* FavoritesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8716FB032AFBCA3200BC4BE1 /* FavoritesVM.swift */; };
 		8716FB072AFCFAA800BC4BE1 /* EmptySearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8716FB062AFCFAA800BC4BE1 /* EmptySearchView.swift */; };
 		8716FB092AFCFDD700BC4BE1 /* PreviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8716FB082AFCFDD700BC4BE1 /* PreviewService.swift */; };
-		8716FB0D2AFD031C00BC4BE1 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8716FB0C2AFD031C00BC4BE1 /* AuthService.swift */; };
 		871A55992AE68D270030ADBC /* ProfessionsListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A55982AE68D270030ADBC /* ProfessionsListVM.swift */; };
 		871A559B2AE68D400030ADBC /* ProfessionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A559A2AE68D400030ADBC /* ProfessionsListView.swift */; };
 		871A559E2AE69A260030ADBC /* ProfessionsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A559D2AE69A260030ADBC /* ProfessionsListModel.swift */; };
@@ -74,6 +73,7 @@
 		87A62D912AF2945D009E3253 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A62D902AF2945D009E3253 /* PersistenceController.swift */; };
 		87A62D932AF29A54009E3253 /* CoreData+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A62D922AF29A54009E3253 /* CoreData+Extension.swift */; };
 		87A62D962AF50749009E3253 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A62D952AF50749009E3253 /* User.swift */; };
+		87AAB5682B025BFE0046E220 /* DbService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AAB5672B025BFE0046E220 /* DbService.swift */; };
 		87B39AAD2AEF93C800183594 /* DisplayStringModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B39AAC2AEF93C800183594 /* DisplayStringModel.swift */; };
 		87D4CC122AD8034C0079657E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 87D4CC142AD8034C0079657E /* Localizable.strings */; };
 		87D4CC232AD814920079657E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D4CC222AD814920079657E /* Constants.swift */; };
@@ -136,7 +136,6 @@
 		8716FB032AFBCA3200BC4BE1 /* FavoritesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVM.swift; sourceTree = "<group>"; };
 		8716FB062AFCFAA800BC4BE1 /* EmptySearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySearchView.swift; sourceTree = "<group>"; };
 		8716FB082AFCFDD700BC4BE1 /* PreviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewService.swift; sourceTree = "<group>"; };
-		8716FB0C2AFD031C00BC4BE1 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		871A55982AE68D270030ADBC /* ProfessionsListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionsListVM.swift; sourceTree = "<group>"; };
 		871A559A2AE68D400030ADBC /* ProfessionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionsListView.swift; sourceTree = "<group>"; };
 		871A559D2AE69A260030ADBC /* ProfessionsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessionsListModel.swift; sourceTree = "<group>"; };
@@ -201,6 +200,7 @@
 		87A62D902AF2945D009E3253 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		87A62D922AF29A54009E3253 /* CoreData+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreData+Extension.swift"; sourceTree = "<group>"; };
 		87A62D952AF50749009E3253 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		87AAB5672B025BFE0046E220 /* DbService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbService.swift; sourceTree = "<group>"; };
 		87B39AAC2AEF93C800183594 /* DisplayStringModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayStringModel.swift; sourceTree = "<group>"; };
 		87D4CC132AD8034C0079657E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		87D4CC222AD814920079657E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -493,7 +493,7 @@
 			isa = PBXGroup;
 			children = (
 				879F3AD42AE1562D006E1C6A /* ApiAuthService.swift */,
-				8716FB0C2AFD031C00BC4BE1 /* AuthService.swift */,
+				87AAB5672B025BFE0046E220 /* DbService.swift */,
 				8716FB082AFCFDD700BC4BE1 /* PreviewService.swift */,
 			);
 			path = Services;
@@ -940,12 +940,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				872529AB2AE91D5D00E07EA4 /* ItemModel.swift in Sources */,
+				87AAB5682B025BFE0046E220 /* DbService.swift in Sources */,
 				871A55C82AE6BFA00030ADBC /* RecipeRowBuilder.swift in Sources */,
 				8716FB042AFBCA3200BC4BE1 /* FavoritesVM.swift in Sources */,
 				871A55992AE68D270030ADBC /* ProfessionsListVM.swift in Sources */,
 				87DDF88F2AF12302009A643D /* RegistrationView.swift in Sources */,
 				87A62D682AF28AE4009E3253 /* AuthView.swift in Sources */,
-				8716FB0D2AFD031C00BC4BE1 /* AuthService.swift in Sources */,
 				871A55BC2AE6B80D0030ADBC /* SkillDetailView.swift in Sources */,
 				879F3AE62AE2824E006E1C6A /* Fonts+Generated.swift in Sources */,
 				872529CD2AEBED3E00E07EA4 /* BoldColonTextView.swift in Sources */,

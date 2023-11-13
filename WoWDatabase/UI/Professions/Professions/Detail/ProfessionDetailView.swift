@@ -72,7 +72,7 @@ struct ProfessionDetailView_Previews: PreviewProvider {
 		let db = PreviewService.createDbWithUser()
 		let vm = ProfessionDetailVM(professionId: 202,
 									professionApi: MockProfessionApi(),
-									db: db)
+									dbService: DbService(db: db))
 		return ProfessionDetailView(viewModel: vm)
 	}
 }

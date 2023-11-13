@@ -16,18 +16,15 @@ final class ProfessionDetailVM: BaseViewModel {
 	
 	let professionId: Int
 	private let professionApi: ProfessionApiProtocol
-	private let context: NSManagedObjectContext
-	private let authService: AuthService
+	private let dbService: DbService
 	
-	private lazy var user = authService.getActiveUser()
 	private var professionLoading = CurrentValueSubject<Bool, Never>(false)
 	var mediaLoading = CurrentValueSubject<Bool, Never>(false)
 	
-	init(professionId: Int, professionApi: ProfessionApiProtocol, db: PersistenceController) {
+	init(professionId: Int, professionApi: ProfessionApiProtocol, dbService: DbService) {
 		self.professionId = professionId
 		self.professionApi = professionApi
-		context = db.container.viewContext
-		authService = AuthService(db: db)
+		self.dbService = dbService
 		super.init()
 	}
 	
@@ -65,25 +62,20 @@ final class ProfessionDetailVM: BaseViewModel {
 	}
 	
 	func checkInFav() {
-		guard let user = user else { return }
-		inFav = Favorites.checkInFav(id: professionId, type: .profession, user: user, context: context)
+		inFav = dbService.checkItemInFav(id: professionId, type: .profession)
 	}
 	
 	func addInFavorites() {
-		guard let profession = profession, let user = user else {
+		guard let profession = profession else {
 			errorText.send(L10n.General.error)
 			return
 		}
-		errorText.send(Favorites.saveFav(id: professionId, name: profession.name, type: .profession, user: user, context: context))
+		errorText.send(dbService.addInFavorites(id: professionId, name: profession.name, type: .profession))
 		checkInFav()
 	}
 	
 	func removeFromFavorites() {
-		guard let user = user else {
-			errorText.send(L10n.General.error)
-			return
-		}
-		errorText.send(Favorites.removeFav(id: professionId, type: .profession, user: user, context: context))
+		errorText.send(dbService.removeFromFavorites(id: professionId, type: .profession))
 		checkInFav()
 	}
 }
