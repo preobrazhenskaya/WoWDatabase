@@ -420,7 +420,6 @@
 				87963EE52AC749790001BDB1 /* Preview Content */,
 				87963EF72AC7505D0001BDB1 /* Resources */,
 				87E520532ACC5DA600856334 /* Routing */,
-				879F3AD32AE1561E006E1C6A /* Services */,
 				87963EF52AC74F840001BDB1 /* UI */,
 			);
 			path = WoWDatabase;
@@ -730,6 +729,7 @@
 				87D4CC222AD814920079657E /* Constants.swift */,
 				87A365B72ADE97CB0041B017 /* Extensions */,
 				87D4CC412AD935340079657E /* Modifiers */,
+				879F3AD32AE1561E006E1C6A /* Services */,
 				87FCCA372AD53A8B00CB27C4 /* Theme */,
 			);
 			path = Helpers;
