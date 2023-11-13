@@ -313,7 +313,6 @@
 		871A55A42AE69CF20030ADBC /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				87963EF12AC74C0F0001BDB1 /* NameIdRow.swift */,
 				87DDF8932AF13808009A643D /* Button */,
 				879FFEC32B022F00005E9C1E /* Text */,
 				879FFEC82B022F13005E9C1E /* View */,
@@ -524,6 +523,7 @@
 			children = (
 				879FFEC92B022F4E005E9C1E /* DetailCardMainView.swift */,
 				8716FB062AFCFAA800BC4BE1 /* EmptySearchView.swift */,
+				87963EF12AC74C0F0001BDB1 /* NameIdRow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

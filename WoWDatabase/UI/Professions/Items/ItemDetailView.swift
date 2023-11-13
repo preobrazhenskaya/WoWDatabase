@@ -14,14 +14,14 @@ struct ItemDetailView: View {
 	var body: some View {		
 		ScrollView {
 			DetailCardMainView(title: viewModel.item?.name,
-						   icon: viewModel.itemIcon,
-						   iconLoading: viewModel.mediaLoading.value,
-						   description: viewModel.item?.description,
-						   descriptionView: descriptionView,
-						   withFav: false,
-						   inFav: false,
-						   removeFromFavorites: {},
-						   addInFavorites: {})
+							   icon: viewModel.itemIcon,
+							   iconLoading: viewModel.mediaLoading.value,
+							   description: viewModel.item?.description,
+							   descriptionView: descriptionView,
+							   withFav: false,
+							   inFav: false,
+							   removeFromFavorites: {},
+							   addInFavorites: {})
 		}
 		.setNavigationBar(title: "", dismiss: dismiss, showBack: true)
 		.toolbarBackground(.hidden, for: .navigationBar)

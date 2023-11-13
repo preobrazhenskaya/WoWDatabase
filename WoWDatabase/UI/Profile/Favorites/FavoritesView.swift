@@ -43,6 +43,10 @@ struct FavoritesView: View {
 						switch favorites.type {
 						case .achievement:
 							Router.navigate(to: .achievementDetail(id: favorites.id))
+						case .profession:
+							Router.navigate(to: .professionDetail(id: favorites.id))
+						case .recipe:
+							Router.navigate(to: .recipeDetail(id: favorites.id))
 						case .none:
 							Router.navigate(to: .none)
 						}

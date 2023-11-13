@@ -74,7 +74,7 @@ final class AchievementDetailVM: BaseViewModel {
 			errorText.send(L10n.General.error)
 			return
 		}
-		errorText.send(Favorites.saveFav(achievement: achievement, user: user, context: context))
+		errorText.send(Favorites.saveFav(id: achievementId, name: achievement.name, type: .achievement, user: user, context: context))
 		checkInFav()
 	}
 	

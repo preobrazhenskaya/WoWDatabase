@@ -7,19 +7,27 @@
 
 import Combine
 import Foundation
+import CoreData
 
 final class ProfessionDetailVM: BaseViewModel {
 	@Published var profession: ProfessionModel?
 	@Published var professionIcon: URL?
+	@Published var inFav = false
 	
 	let professionId: Int
 	private let professionApi: ProfessionApiProtocol
+	private let context: NSManagedObjectContext
+	private let authService: AuthService
+	
+	private lazy var user = authService.getActiveUser()
 	private var professionLoading = CurrentValueSubject<Bool, Never>(false)
 	var mediaLoading = CurrentValueSubject<Bool, Never>(false)
 	
-	init(professionId: Int, professionApi: ProfessionApiProtocol) {
+	init(professionId: Int, professionApi: ProfessionApiProtocol, db: PersistenceController) {
 		self.professionId = professionId
 		self.professionApi = professionApi
+		context = db.container.viewContext
+		authService = AuthService(db: db)
 		super.init()
 	}
 	
@@ -54,5 +62,28 @@ final class ProfessionDetailVM: BaseViewModel {
 			.map { $0?.iconUrl }
 			.assign(to: \.professionIcon, on: self)
 			.store(in: &cancellableSet)
+	}
+	
+	func checkInFav() {
+		guard let user = user else { return }
+		inFav = Favorites.checkInFav(id: professionId, type: .profession, user: user, context: context)
+	}
+	
+	func addInFavorites() {
+		guard let profession = profession, let user = user else {
+			errorText.send(L10n.General.error)
+			return
+		}
+		errorText.send(Favorites.saveFav(id: professionId, name: profession.name, type: .profession, user: user, context: context))
+		checkInFav()
+	}
+	
+	func removeFromFavorites() {
+		guard let user = user else {
+			errorText.send(L10n.General.error)
+			return
+		}
+		errorText.send(Favorites.removeFav(id: professionId, type: .profession, user: user, context: context))
+		checkInFav()
 	}
 }

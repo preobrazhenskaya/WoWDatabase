@@ -32,7 +32,8 @@ struct Router {
 																	  db: PersistenceController.shared)))
 		case let .professionDetail(id):
 			NavigationLazyView(ProfessionDetailView(viewModel: .init(professionId: id,
-																	 professionApi: ProfessionApi())))
+																	 professionApi: ProfessionApi(),
+																	 db: PersistenceController.shared)))
 		case let .skillDetail(skillId, professionId):
 			NavigationLazyView(SkillDetailView(viewModel: .init(skillId: skillId,
 																professionId: professionId,
@@ -41,7 +42,8 @@ struct Router {
 			NavigationLazyView(RecipesListView(viewModel: .init(category: category)))
 		case let .recipeDetail(id):
 			NavigationLazyView(RecipeDetailView(viewModel: .init(id: id,
-																 professionApi: ProfessionApi())))
+																 professionApi: ProfessionApi(),
+																 db: PersistenceController.shared)))
 		case let .itemDetail(id):
 			NavigationLazyView(ItemDetailView(viewModel: .init(id: id,
 															   professionApi: ProfessionApi())))

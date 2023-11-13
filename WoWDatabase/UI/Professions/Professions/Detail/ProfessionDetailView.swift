@@ -14,14 +14,14 @@ struct ProfessionDetailView: View {
 	var body: some View {
 		ScrollView {
 			DetailCardMainView(title: viewModel.profession?.name,
-						   icon: viewModel.professionIcon,
-						   iconLoading: viewModel.mediaLoading.value,
-						   description: viewModel.profession?.description,
-						   descriptionView: descriptionView,
-						   withFav: false,
-						   inFav: false,
-						   removeFromFavorites: {},
-						   addInFavorites: {})
+							   icon: viewModel.professionIcon,
+							   iconLoading: viewModel.mediaLoading.value,
+							   description: viewModel.profession?.description,
+							   descriptionView: descriptionView,
+							   withFav: true,
+							   inFav: viewModel.inFav,
+							   removeFromFavorites: { viewModel.removeFromFavorites() },
+							   addInFavorites: { viewModel.addInFavorites() })
 		}
 		.setNavigationBar(title: "", dismiss: dismiss, showBack: true)
 		.toolbarBackground(.hidden, for: .navigationBar)
@@ -32,6 +32,7 @@ struct ProfessionDetailView: View {
 						errorText: viewModel.errorText.value)
 		.onFirstAppear { viewModel.loadData() }
 		.refreshable { viewModel.loadData() }
+		.onAppear { viewModel.checkInFav() }
 	}
 	
 	var descriptionView: some View {
@@ -68,6 +69,10 @@ struct ProfessionDetailView: View {
 
 struct ProfessionDetailView_Previews: PreviewProvider {
 	static var previews: some View {
-		ProfessionDetailView(viewModel: .init(professionId: 202, professionApi: MockProfessionApi()))
+		let db = PreviewService.createDbWithUser()
+		let vm = ProfessionDetailVM(professionId: 202,
+									professionApi: MockProfessionApi(),
+									db: db)
+		return ProfessionDetailView(viewModel: vm)
 	}
 }

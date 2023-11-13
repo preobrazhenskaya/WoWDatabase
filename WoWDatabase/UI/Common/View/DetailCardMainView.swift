@@ -59,32 +59,32 @@ struct DetailCardMainView<Content: View>: View {
 				.resizable()
 				.scaledToFit()
 			switch phase {
-				case .empty:
-					if !iconLoading && icon == nil {
-						defaultImage
-					} else {
-						CustomProgressView(isLoading: true)
-					}
-				case let .success(image):
-					ZStack {
-						image
-							.resizable()
-							.scaledToFill()
-							.cornerRadius(10)
-							.frame(width: 200, height: 200)
-						RoundedRectangle(cornerRadius: 10)
-							.stroke(
-								LinearGradient(
-									colors: [Color.borderStart,
-											 Color.borderEnd],
-									startPoint: .topLeading,
-									endPoint: .bottomTrailing
-								),
-								lineWidth: 5
-							)
-					}
-				default:
+			case .empty:
+				if !iconLoading && icon == nil {
 					defaultImage
+				} else {
+					CustomProgressView(isLoading: true)
+				}
+			case let .success(image):
+				ZStack {
+					image
+						.resizable()
+						.scaledToFill()
+						.cornerRadius(10)
+						.frame(width: 200, height: 200)
+					RoundedRectangle(cornerRadius: 10)
+						.stroke(
+							LinearGradient(
+								colors: [Color.borderStart,
+										 Color.borderEnd],
+								startPoint: .topLeading,
+								endPoint: .bottomTrailing
+							),
+							lineWidth: 5
+						)
+				}
+			default:
+				defaultImage
 			}
 		}
 		.frame(width: 205, height: 205)

@@ -18,10 +18,10 @@ struct RecipeDetailView: View {
 							   iconLoading: viewModel.mediaLoading.value,
 							   description: viewModel.recipe?.description,
 							   descriptionView: descriptionView,
-							   withFav: false,
-							   inFav: false,
-							   removeFromFavorites: {},
-							   addInFavorites: {})
+							   withFav: true,
+							   inFav: viewModel.inFav,
+							   removeFromFavorites: { viewModel.removeFromFavorites() },
+							   addInFavorites: { viewModel.addInFavorites() })
 		}
 		.setNavigationBar(title: "", dismiss: dismiss, showBack: true)
 		.toolbarBackground(.hidden, for: .navigationBar)
@@ -32,6 +32,7 @@ struct RecipeDetailView: View {
 						errorText: viewModel.errorText.value)
 		.onFirstAppear { viewModel.loadData() }
 		.refreshable { viewModel.loadData() }
+		.onAppear { viewModel.checkInFav() }
 	}
 	
 	var descriptionView: some View {
@@ -83,6 +84,10 @@ struct RecipeDetailView: View {
 
 struct RecipeDetailView_Previews: PreviewProvider {
 	static var previews: some View {
-		RecipeDetailView(viewModel: .init(id: 42347, professionApi: MockProfessionApi()))
+		let db = PreviewService.createDbWithUser()
+		let vm = RecipeDetailVM(id: 42347,
+								professionApi: MockProfessionApi(),
+								db: db)
+		return RecipeDetailView(viewModel: vm)
 	}
 }

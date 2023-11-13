@@ -15,14 +15,14 @@ struct AchievementDetailView: View {
 	var body: some View {
 		ScrollView {
 			DetailCardMainView(title: viewModel.achievement?.name,
-						   icon: viewModel.achievementIcon,
-						   iconLoading: viewModel.iconLoading.value,
-						   description: viewModel.achievement?.description,
-						   descriptionView: descriptionView,
-						   withFav: true,
-						   inFav: viewModel.inFav,
-						   removeFromFavorites: { viewModel.removeFromFavorites() },
-						   addInFavorites: { viewModel.addInFavorites() })
+							   icon: viewModel.achievementIcon,
+							   iconLoading: viewModel.iconLoading.value,
+							   description: viewModel.achievement?.description,
+							   descriptionView: descriptionView,
+							   withFav: true,
+							   inFav: viewModel.inFav,
+							   removeFromFavorites: { viewModel.removeFromFavorites() },
+							   addInFavorites: { viewModel.addInFavorites() })
 		}
 		.setNavigationBar(title: "", dismiss: dismiss, showBack: true)
 		.toolbarBackground(.hidden, for: .navigationBar)

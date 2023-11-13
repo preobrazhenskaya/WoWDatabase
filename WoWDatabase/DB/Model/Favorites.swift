@@ -11,6 +11,8 @@ extension Favorites {
 	enum TypeEnum: String {
 		case none
 		case achievement
+		case profession
+		case recipe
 	}
 	
 	public var id: Int {
@@ -37,10 +39,8 @@ extension Favorites {
 		return request
 	}
 	
-	static func saveFav(achievement: AchievementModel, user: User, context: NSManagedObjectContext) -> String {
-		guard let id = achievement.id else { return L10n.General.error }
-		
-		let predicate = NSPredicate(format: "id_ == %@ AND type_ == %@", "\(id)", TypeEnum.achievement.rawValue)
+	static func saveFav(id: Int, name: String?, type: TypeEnum, user: User, context: NSManagedObjectContext) -> String {
+		let predicate = NSPredicate(format: "id_ == %@ AND type_ == %@", "\(id)", type.rawValue)
 		let storedFav = try? context.fetch(Favorites.getFavoritesRequest(predicate: predicate)).first
 		
 		if let storedFav = storedFav {
@@ -48,8 +48,8 @@ extension Favorites {
 		} else {
 			let fav = Favorites(context: context)
 			fav.id = id
-			fav.name = achievement.name
-			fav.type = .achievement
+			fav.name = name
+			fav.type = type
 			fav.users = [user]
 		}
 		

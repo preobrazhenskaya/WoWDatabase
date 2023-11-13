@@ -17,6 +17,6 @@ final class FavoritesVM: BaseViewModel {
 	}
 	
 	func getFavorites() {
-		favorites = authService.getActiveUser()?.favorites ?? []
+		favorites = authService.getActiveUser()?.favorites.sorted { ($0.name ?? "") < ($1.name ?? "") } ?? []
 	}
 }
