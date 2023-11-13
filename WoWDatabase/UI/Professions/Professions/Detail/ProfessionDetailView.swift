@@ -12,38 +12,26 @@ struct ProfessionDetailView: View {
 	@ObservedObject var viewModel: ProfessionDetailVM
 	
 	var body: some View {
-		ScrollView { mainView }
-			.setNavigationBar(title: "", dismiss: dismiss, showBack: true)
-			.toolbarBackground(.hidden, for: .navigationBar)
-			.toolbar(.hidden, for: .tabBar)
-			.setViewBaseTheme()
-			.withLoader(isLoading: viewModel.isLoading)
-			.withErrorAlert(isPresented: $viewModel.showError,
-							errorText: viewModel.errorText.value)
-			.onFirstAppear { viewModel.loadData() }
-			.refreshable { viewModel.loadData() }
-	}
-	
-	var mainView: some View {
-		ZStack {
-			CardBackgroundView()
-				.padding(.init(top: 150, leading: 0, bottom: 0, trailing: 0))
-			cardView
+		ScrollView {
+			DetailCardMainView(title: viewModel.profession?.name,
+						   icon: viewModel.professionIcon,
+						   iconLoading: viewModel.mediaLoading.value,
+						   description: viewModel.profession?.description,
+						   descriptionView: descriptionView,
+						   withFav: false,
+						   inFav: false,
+						   removeFromFavorites: {},
+						   addInFavorites: {})
 		}
-		.foregroundColor(.textLight)
-		.padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
-	}
-	
-	var cardView: some View {
-		VStack(alignment: .center) {
-			CardTitleView(title: viewModel.profession?.name)
-			CardImageView(iconUrl: viewModel.professionIcon, iconLoading: viewModel.mediaLoading.value)
-			MultilineText(text: viewModel.profession?.description ?? "",
-						  alignment: .center)
-			.padding(.top, 6)
-			descriptionView
-		}
-		.padding(.init(top: 6, leading: 16, bottom: 16, trailing: 16))
+		.setNavigationBar(title: "", dismiss: dismiss, showBack: true)
+		.toolbarBackground(.hidden, for: .navigationBar)
+		.toolbar(.hidden, for: .tabBar)
+		.setViewBaseTheme()
+		.withLoader(isLoading: viewModel.isLoading)
+		.withErrorAlert(isPresented: $viewModel.showError,
+						errorText: viewModel.errorText.value)
+		.onFirstAppear { viewModel.loadData() }
+		.refreshable { viewModel.loadData() }
 	}
 	
 	var descriptionView: some View {

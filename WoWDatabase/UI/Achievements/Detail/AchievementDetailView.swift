@@ -13,47 +13,27 @@ struct AchievementDetailView: View {
 	@ObservedObject var viewModel: AchievementDetailVM
 	
 	var body: some View {
-		ScrollView { mainView }
-			.setNavigationBar(title: "", dismiss: dismiss, showBack: true)
-			.toolbarBackground(.hidden, for: .navigationBar)
-			.toolbar(.hidden, for: .tabBar)
-			.setViewBaseTheme()
-			.withLoader(isLoading: viewModel.isLoading)
-			.withErrorAlert(isPresented: $viewModel.showError,
-							errorText: viewModel.errorText.value)
-			.onFirstAppear { viewModel.loadData() }
-			.refreshable { viewModel.loadData() }
-			.onAppear { viewModel.checkInFav() }
-	}
-	
-	var mainView: some View {
-		ZStack {
-			CardBackgroundView()
-				.padding(.init(top: 150, leading: 0, bottom: 0, trailing: 0))
-			cardView
+		ScrollView {
+			DetailCardMainView(title: viewModel.achievement?.name,
+						   icon: viewModel.achievementIcon,
+						   iconLoading: viewModel.iconLoading.value,
+						   description: viewModel.achievement?.description,
+						   descriptionView: descriptionView,
+						   withFav: true,
+						   inFav: viewModel.inFav,
+						   removeFromFavorites: { viewModel.removeFromFavorites() },
+						   addInFavorites: { viewModel.addInFavorites() })
 		}
-		.foregroundColor(.textLight)
-		.padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
-	}
-	
-	var cardView: some View {
-		VStack(alignment: .center) {
-			CardTitleView(title: viewModel.achievement?.name)
-			ZStack {
-				HStack {
-					CardImageView(iconUrl: viewModel.achievementIcon, iconLoading: viewModel.iconLoading.value)
-				}
-				HStack {
-					Spacer()
-					favImage
-				}
-			}
-			MultilineText(text: viewModel.achievement?.description ?? "",
-						  alignment: .center)
-			.padding(.top, 6)
-			descriptionView
-		}
-		.padding(.init(top: 6, leading: 16, bottom: 16, trailing: 16))
+		.setNavigationBar(title: "", dismiss: dismiss, showBack: true)
+		.toolbarBackground(.hidden, for: .navigationBar)
+		.toolbar(.hidden, for: .tabBar)
+		.setViewBaseTheme()
+		.withLoader(isLoading: viewModel.isLoading)
+		.withErrorAlert(isPresented: $viewModel.showError,
+						errorText: viewModel.errorText.value)
+		.onFirstAppear { viewModel.loadData() }
+		.refreshable { viewModel.loadData() }
+		.onAppear { viewModel.checkInFav() }
 	}
 	
 	var descriptionView: some View {
@@ -127,18 +107,6 @@ struct AchievementDetailView: View {
 				AchievementRowBuilder(achievement: nextAchievement, backgroundColor: .backgroundLight)
 			}
 		}
-	}
-	
-	var favImage: some View {
-		Button(action: {
-			viewModel.inFav ? viewModel.removeFromFavorites() : viewModel.addInFavorites()
-		}, label: {
-			Image(systemSymbol: viewModel.inFav ? .heartFill : .heart)
-				.resizable()
-				.scaledToFill()
-				.frame(width: 32, height: 32)
-		})
-		.padding(.top, 50)
 	}
 }
 

@@ -27,7 +27,8 @@ struct SkillDetailView: View {
 	
 	var mainView: some View {
 		ZStack {
-			CardBackgroundView()
+			Color.background
+				.cornerRadius(6)
 			cardView
 		}
 		.foregroundColor(.textLight)

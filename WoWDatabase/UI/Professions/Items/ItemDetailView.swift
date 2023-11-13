@@ -11,40 +11,27 @@ struct ItemDetailView: View {
 	@Environment(\.dismiss) private var dismiss
 	@ObservedObject var viewModel: ItemDetailVM
 	
-	var body: some View {
-		ScrollView { mainView }
-			.setNavigationBar(title: "", dismiss: dismiss, showBack: true)
-			.toolbarBackground(.hidden, for: .navigationBar)
-			.toolbar(.hidden, for: .tabBar)
-			.setViewBaseTheme()
-			.withLoader(isLoading: viewModel.isLoading)
-			.withErrorAlert(isPresented: $viewModel.showError,
-							errorText: viewModel.errorText.value)
-			.onFirstAppear { viewModel.loadData() }
-			.refreshable { viewModel.loadData() }
-	}
-	
-	var mainView: some View {
-		ZStack {
-			CardBackgroundView()
-				.padding(.init(top: 150, leading: 0, bottom: 0, trailing: 0))
-			cardView
+	var body: some View {		
+		ScrollView {
+			DetailCardMainView(title: viewModel.item?.name,
+						   icon: viewModel.itemIcon,
+						   iconLoading: viewModel.mediaLoading.value,
+						   description: viewModel.item?.description,
+						   descriptionView: descriptionView,
+						   withFav: false,
+						   inFav: false,
+						   removeFromFavorites: {},
+						   addInFavorites: {})
 		}
-		.foregroundColor(.textLight)
-		.padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
-	}
-	
-	var cardView: some View {
-		VStack(alignment: .center) {
-			CardTitleView(title: viewModel.item?.name)
-			CardImageView(iconUrl: viewModel.itemIcon,
-						  iconLoading: viewModel.mediaLoading.value)
-			if let description = viewModel.item?.description {
-				MultilineText(text: description, alignment: .center)
-			}
-			descriptionView
-		}
-		.padding(.init(top: 6, leading: 16, bottom: 16, trailing: 16))
+		.setNavigationBar(title: "", dismiss: dismiss, showBack: true)
+		.toolbarBackground(.hidden, for: .navigationBar)
+		.toolbar(.hidden, for: .tabBar)
+		.setViewBaseTheme()
+		.withLoader(isLoading: viewModel.isLoading)
+		.withErrorAlert(isPresented: $viewModel.showError,
+						errorText: viewModel.errorText.value)
+		.onFirstAppear { viewModel.loadData() }
+		.refreshable { viewModel.loadData() }
 	}
 	
 	var descriptionView: some View {
