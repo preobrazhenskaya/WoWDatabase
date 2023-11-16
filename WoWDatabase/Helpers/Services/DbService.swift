@@ -11,11 +11,9 @@ struct DbService {
 	static let shared = DbService(db: PersistenceController.shared)
 	
 	private let context: NSManagedObjectContext
-	let user: User?
 	
 	init(db: PersistenceController) {
 		context = db.container.viewContext
-		user = try? context.fetch(User.getUsersRequest(predicate: NSPredicate(format: "isActive == true"))).first
 	}
 }
 
@@ -36,8 +34,12 @@ extension DbService {
 		return authUser
 	}
 	
+	func activeUser() -> User? {
+		try? context.fetch(User.getUsersRequest(predicate: NSPredicate(format: "isActive == true"))).first
+	}
+	
 	func logout() -> String {
-		guard let user = user else { return L10n.General.error }
+		guard let user = activeUser() else { return L10n.General.error }
 		user.isActive = false
 		return context.saveContext()
 	}
@@ -45,7 +47,7 @@ extension DbService {
 
 extension DbService {
 	func checkItemInFav(id: Int, type: Favorites.TypeEnum) -> Bool {
-		guard let user = user else { return false }
+		guard let user = activeUser() else { return false }
 		
 		let predicate = NSPredicate(format: "id_ == %@ AND type_ == %@", "\(id)", type.rawValue)
 		let achievement = try? context.fetch(Favorites.getFavoritesRequest(predicate: predicate)).first
@@ -54,7 +56,7 @@ extension DbService {
 	}
 	
 	func addInFavorites(id: Int, name: String?, type: Favorites.TypeEnum) -> String {
-		guard let user = user else { return L10n.General.error }
+		guard let user = activeUser() else { return L10n.General.error }
 		
 		let predicate = NSPredicate(format: "id_ == %@ AND type_ == %@", "\(id)", type.rawValue)
 		let storedFav = try? context.fetch(Favorites.getFavoritesRequest(predicate: predicate)).first
@@ -72,7 +74,7 @@ extension DbService {
 	}
 	
 	func removeFromFavorites(id: Int, type: Favorites.TypeEnum) -> String {
-		guard let user = user else { return L10n.General.error }
+		guard let user = activeUser() else { return L10n.General.error }
 		
 		let predicate = NSPredicate(format: "id_ == %@ AND type_ == %@", "\(id)", type.rawValue)
 		let fav = try? context.fetch(Favorites.getFavoritesRequest(predicate: predicate)).first

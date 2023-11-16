@@ -36,7 +36,7 @@ final class ProfileVM: BaseViewModel {
 	}
 	
 	func getActiveUser() {
-		currentUser = dbService.user
+		currentUser = dbService.activeUser()
 	}
 	
 	func logout() {
