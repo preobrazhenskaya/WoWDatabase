@@ -18,7 +18,7 @@ struct NavigationButton: View {
 			},
 			label: {
 				ZStack {
-					Color.backgroundDark
+					Color.accentColor
 					Text(label)
 						.foregroundColor(.white)
 				}

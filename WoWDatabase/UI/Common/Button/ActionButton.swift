@@ -16,7 +16,7 @@ struct ActionButton: View {
 			action: action,
 			label: {
 				ZStack {
-					Color.backgroundDark
+					Color.accentColor
 					Text(label)
 						.foregroundColor(.white)
 				}
