@@ -11,7 +11,7 @@ struct BoldColonTextView: View {
 	var boldText: String
 	
     var body: some View {
-		Text("\(boldText):")
+		MultilineText(text: "\(boldText):", alignment: .leading)
 			.bold()
     }
 }

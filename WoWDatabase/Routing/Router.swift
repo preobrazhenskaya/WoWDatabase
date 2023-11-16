@@ -10,13 +10,15 @@ import SwiftUI
 struct Router {
 	enum Destination {
 		case none
-		case achievementsList
-		case achievementDetail(id: Int)
 		case professionDetail(id: Int)
 		case skillDetail(skillId: Int, professionId: Int)
 		case recipesList(category: SkillTierCategoriesModel)
 		case recipeDetail(id: Int)
 		case itemDetail(id: Int)
+		case achievementsList
+		case achievementDetail(id: Int)
+		case titleList
+		case titleDetail(id: Int)
 		case registration
 		case auth
 		case favorites
@@ -27,10 +29,6 @@ struct Router {
 		switch destination {
 		case .none:
 			EmptyView()
-		case .achievementsList:
-			NavigationLazyView(AchievementsListView(viewModel: AchievementsListVM(achievementApi: AchievementApi())))
-		case let .achievementDetail(id):
-			NavigationLazyView(AchievementDetailView(viewModel: AchievementDetailVM(achievementId: id, achievementApi: AchievementApi(), dbService: DbService.shared)))
 		case let .professionDetail(id):
 			NavigationLazyView(ProfessionDetailView(viewModel: ProfessionDetailVM(professionId: id, professionApi: ProfessionApi(), dbService: DbService.shared)))
 		case let .skillDetail(skillId, professionId):
@@ -41,6 +39,14 @@ struct Router {
 			NavigationLazyView(RecipeDetailView(viewModel: RecipeDetailVM(id: id, professionApi: ProfessionApi(), dbService: DbService.shared)))
 		case let .itemDetail(id):
 			NavigationLazyView(ItemDetailView(viewModel: ItemDetailVM(id: id, professionApi: ProfessionApi())))
+		case .achievementsList:
+			NavigationLazyView(AchievementsListView(viewModel: AchievementsListVM(achievementApi: AchievementApi())))
+		case let .achievementDetail(id):
+			NavigationLazyView(AchievementDetailView(viewModel: AchievementDetailVM(achievementId: id, achievementApi: AchievementApi(), dbService: DbService.shared)))
+		case .titleList:
+			NavigationLazyView(TitleListView(viewModel: TitleListVM(titleApi: TitleApi())))
+		case let .titleDetail(id):
+			NavigationLazyView(TitleDetailView(viewModel: TitleDetailVM(titleId: id, titleApi: TitleApi(), dbService: DbService.shared)))
 		case .registration:
 			NavigationLazyView(RegistrationView(viewModel: RegistrationVM(dbService: DbService.shared)))
 		case .auth:

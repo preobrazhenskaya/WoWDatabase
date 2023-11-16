@@ -10,6 +10,7 @@ import SwiftUI
 
 final class CollectionVM: BaseViewModel {
 	let rows: [(String, Image, Router.Destination)] = [
-		(L10n.Achievements.title, Image(systemSymbol: .trophyFill), .achievementsList)
+		(L10n.Achievements.title, Image(systemSymbol: .trophyFill), .achievementsList),
+		(L10n.Title.title, Image(systemSymbol: .medalFill), .titleList)
 	]
 }

@@ -12,17 +12,15 @@ struct AchievementsListView: View {
 	@ObservedObject var viewModel: AchievementsListVM
 	
 	var body: some View {
-		NavigationStack {
-			ScrollView { mainView }
-				.setNavigationBar(title: L10n.Achievements.title, dismiss: dismiss, showBack: true)
-				.toolbar(.hidden, for: .tabBar)
-				.setViewBaseTheme()
-				.withLoader(isLoading: viewModel.isLoading)
-				.withErrorAlert(isPresented: $viewModel.showError,
-								errorText: viewModel.errorText.value)
-				.onFirstAppear { viewModel.loadData() }
-				.refreshable { viewModel.loadData() }
-		}
+		ScrollView { mainView }
+			.setNavigationBar(title: L10n.Achievements.title, dismiss: dismiss, showBack: true)
+			.toolbar(.hidden, for: .tabBar)
+			.setViewBaseTheme()
+			.withLoader(isLoading: viewModel.isLoading)
+			.withErrorAlert(isPresented: $viewModel.showError,
+							errorText: viewModel.errorText.value)
+			.onFirstAppear { viewModel.loadData() }
+			.refreshable { viewModel.loadData() }
 	}
 	
 	var mainView: some View {

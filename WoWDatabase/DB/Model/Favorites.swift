@@ -13,6 +13,7 @@ extension Favorites {
 		case achievement
 		case profession
 		case recipe
+		case title
 	}
 }
 

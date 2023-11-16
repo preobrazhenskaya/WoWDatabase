@@ -14,11 +14,12 @@ enum Constants {
 			static let media = "/media"
 			static let list = "/index"
 			
-			static let achievement = "/achievement"
 			static let profession = "/profession"
 			static let skillTier = "/skill-tier"
 			static let recipe = "/recipe"
 			static let item = "/item"
+			static let achievement = "/achievement"
+			static let title = "/title"
 		}
 		
 		enum Parameters {

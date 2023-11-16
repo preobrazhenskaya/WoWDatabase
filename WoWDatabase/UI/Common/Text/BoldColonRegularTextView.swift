@@ -12,9 +12,9 @@ struct BoldColonRegularTextView: View {
 	let regularText: String?
 	
     var body: some View {
-		HStack {
+		HStack(alignment: .top) {
 			BoldColonTextView(boldText: boldText)
-			Text(regularText ?? "-")
+			MultilineText(text: regularText ?? "-", alignment: .leading)
 		}
     }
 }

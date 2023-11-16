@@ -45,6 +45,11 @@
 "achievements.detail.faction" = "Фракция";
 "achievements.detail.factionBoth" = "Любая";
 
+"title.title" = "Титулы";
+"title.detail.male" = "Мужчина";
+"title.detail.female" = "Женщина";
+"title.detail.source" = "Получение";
+
 "profile.title" = "Профиль";
 "profile.register" = "Зарегистрироваться";
 "profile.login" = "Войти";
