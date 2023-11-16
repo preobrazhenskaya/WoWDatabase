@@ -10,7 +10,7 @@ import SFSafeSymbols
 
 enum TabEnum: Int, Identifiable, CaseIterable {
 	case professions
-	case achievements
+	case collection
 	case profile
 	
 	var id: Int {
@@ -20,11 +20,11 @@ enum TabEnum: Int, Identifiable, CaseIterable {
 	var title: String {
 		switch self {
 		case .professions:
-			return L10n.Tab.professions
-		case .achievements:
-			return L10n.Tab.achievements
+			return L10n.Professions.title
+		case .collection:
+			return L10n.Collection.title
 		case .profile:
-			return L10n.Tab.profile
+			return L10n.Profile.title
 		}
 	}
 	
@@ -32,8 +32,8 @@ enum TabEnum: Int, Identifiable, CaseIterable {
 		switch self {
 		case .professions:
 			return SFSymbol.hammerFill
-		case .achievements:
-			return SFSymbol.starFill
+		case .collection:
+			return SFSymbol.booksVerticalFill
 		case .profile:
 			return SFSymbol.personFill
 		}
@@ -43,11 +43,11 @@ enum TabEnum: Int, Identifiable, CaseIterable {
 	var contentView: some View {
 		switch self {
 		case .professions:
-			ProfessionsListView(viewModel: .init(professionApi: ProfessionApi()))
-		case .achievements:
-			AchievementsListView(viewModel: .init(achievementApi: AchievementApi()))
+			ProfessionsListView(viewModel: ProfessionsListVM(professionApi: ProfessionApi()))
+		case .collection:
+			CollectionView(viewModel: CollectionVM())
 		case .profile:
-			ProfileView(viewModel: .init(dbService: DbService.shared))
+			ProfileView(viewModel: ProfileVM(dbService: DbService.shared))
 		}
 	}
 }

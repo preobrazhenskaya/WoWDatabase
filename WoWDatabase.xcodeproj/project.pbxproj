@@ -45,6 +45,8 @@
 		872529BB2AE93BE200E07EA4 /* ItemRowBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872529BA2AE93BE200E07EA4 /* ItemRowBuilder.swift */; };
 		872529CB2AEBEB9000E07EA4 /* BoldColonRegularTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872529CA2AEBEB8F00E07EA4 /* BoldColonRegularTextView.swift */; };
 		872529CD2AEBED3E00E07EA4 /* BoldColonTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872529CC2AEBED3E00E07EA4 /* BoldColonTextView.swift */; };
+		878CD67B2B04C9F200DF8E98 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CD67A2B04C9F200DF8E98 /* CollectionView.swift */; };
+		878CD67D2B04D0D700DF8E98 /* CollectionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CD67C2B04D0D700DF8E98 /* CollectionVM.swift */; };
 		87963EE02AC749760001BDB1 /* WoWDatabaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87963EDF2AC749760001BDB1 /* WoWDatabaseApp.swift */; };
 		87963EE42AC749790001BDB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87963EE32AC749790001BDB1 /* Assets.xcassets */; };
 		87963EE72AC749790001BDB1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87963EE62AC749790001BDB1 /* Preview Assets.xcassets */; };
@@ -169,6 +171,8 @@
 		872529BA2AE93BE200E07EA4 /* ItemRowBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowBuilder.swift; sourceTree = "<group>"; };
 		872529CA2AEBEB8F00E07EA4 /* BoldColonRegularTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoldColonRegularTextView.swift; sourceTree = "<group>"; };
 		872529CC2AEBED3E00E07EA4 /* BoldColonTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoldColonTextView.swift; sourceTree = "<group>"; };
+		878CD67A2B04C9F200DF8E98 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		878CD67C2B04D0D700DF8E98 /* CollectionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVM.swift; sourceTree = "<group>"; };
 		87963EDF2AC749760001BDB1 /* WoWDatabaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWDatabaseApp.swift; sourceTree = "<group>"; };
 		87963EE32AC749790001BDB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87963EE62AC749790001BDB1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -397,6 +401,15 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		878CD6752B04C9D300DF8E98 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				878CD67A2B04C9F200DF8E98 /* CollectionView.swift */,
+				878CD67C2B04D0D700DF8E98 /* CollectionVM.swift */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
 		87963ED32AC749760001BDB1 = {
 			isa = PBXGroup;
 			children = (
@@ -436,6 +449,7 @@
 		87963EF52AC74F840001BDB1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				878CD6752B04C9D300DF8E98 /* Collection */,
 				87E520422ACC0B1B00856334 /* Achievements */,
 				871A55A42AE69CF20030ADBC /* Common */,
 				871A55922AE660DA0030ADBC /* Professions */,
@@ -983,6 +997,7 @@
 				87D4CC342AD822820079657E /* XCAssets+Generated.swift in Sources */,
 				871A559E2AE69A260030ADBC /* ProfessionsListModel.swift in Sources */,
 				87A365D52AE143290041B017 /* ProfileView.swift in Sources */,
+				878CD67B2B04C9F200DF8E98 /* CollectionView.swift in Sources */,
 				87963EF42AC74CEA0001BDB1 /* AchievementModel.swift in Sources */,
 				87A62D932AF29A54009E3253 /* CoreData+Extension.swift in Sources */,
 				8716FB022AFBC8F700BC4BE1 /* FavoritesView.swift in Sources */,
@@ -1017,6 +1032,7 @@
 				87E5204A2ACC145A00856334 /* AchievementDetailVM.swift in Sources */,
 				871A55AD2AE6A3360030ADBC /* ProfessionMediaRequest.swift in Sources */,
 				871A55AB2AE6A2BA0030ADBC /* ProfessionRequest.swift in Sources */,
+				878CD67D2B04D0D700DF8E98 /* CollectionVM.swift in Sources */,
 				8716FB092AFCFDD700BC4BE1 /* PreviewService.swift in Sources */,
 				87E5203B2ACC033C00856334 /* AchievementsListModel.swift in Sources */,
 				87E520552ACC5FA900856334 /* MediaModel.swift in Sources */,

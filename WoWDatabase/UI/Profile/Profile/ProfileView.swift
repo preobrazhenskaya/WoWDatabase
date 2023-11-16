@@ -33,7 +33,7 @@ struct ProfileView: View {
 							 label: L10n.Profile.updateToken)
 			}
 			.padding(.init(top: 0, leading: 16, bottom: 0, trailing: 16))
-			.setNavigationBar(title: L10n.Tab.profile, dismiss: nil, showBack: false)
+			.setNavigationBar(title: L10n.Profile.title, dismiss: nil, showBack: false)
 			.setViewBaseTheme()
 			.withLoader(isLoading: viewModel.isLoading)
 			.withErrorAlert(isPresented: $viewModel.showError,

@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct AchievementsListView: View {
+	@Environment(\.dismiss) private var dismiss
 	@ObservedObject var viewModel: AchievementsListVM
 	
 	var body: some View {
 		NavigationStack {
 			ScrollView { mainView }
-				.setNavigationBar(title: L10n.Tab.achievements, dismiss: nil, showBack: false)
+				.setNavigationBar(title: L10n.Achievements.title, dismiss: dismiss, showBack: true)
+				.toolbar(.hidden, for: .tabBar)
 				.setViewBaseTheme()
 				.withLoader(isLoading: viewModel.isLoading)
 				.withErrorAlert(isPresented: $viewModel.showError,

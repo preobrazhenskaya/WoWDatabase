@@ -10,6 +10,7 @@ import SwiftUI
 struct Router {
 	enum Destination {
 		case none
+		case achievementsList
 		case achievementDetail(id: Int)
 		case professionDetail(id: Int)
 		case skillDetail(skillId: Int, professionId: Int)
@@ -26,6 +27,8 @@ struct Router {
 		switch destination {
 		case .none:
 			EmptyView()
+		case .achievementsList:
+			NavigationLazyView(AchievementsListView(viewModel: AchievementsListVM(achievementApi: AchievementApi())))
 		case let .achievementDetail(id):
 			NavigationLazyView(AchievementDetailView(viewModel: AchievementDetailVM(achievementId: id, achievementApi: AchievementApi(), dbService: DbService.shared)))
 		case let .professionDetail(id):

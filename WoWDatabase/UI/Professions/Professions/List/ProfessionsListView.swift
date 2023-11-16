@@ -13,7 +13,7 @@ struct ProfessionsListView: View {
 	var body: some View {
 		NavigationStack {
 			ScrollView { mainView }
-				.setNavigationBar(title: L10n.Tab.professions, dismiss: nil, showBack: false)
+				.setNavigationBar(title: L10n.Professions.title, dismiss: nil, showBack: false)
 				.setViewBaseTheme()
 				.withLoader(isLoading: viewModel.isLoading)
 				.withErrorAlert(isPresented: $viewModel.showError,

@@ -15,10 +15,7 @@
 "general.ready" = "Готово";
 "general.emptySearch" = "Ничего не найдено";
 
-"tab.professions" = "Профессии";
-"tab.achievements" = "Достижения";
-"tab.profile" = "Профиль";
-
+"professions.title" = "Профессии";
 "professions.detail.type" = "Тип";
 "professions.detail.skills" = "Навыки";
 
@@ -35,6 +32,9 @@
 "item.detail.requirements" = "Требования";
 "item.detail.sellPrice" = "Цена продажи";
 
+"collection.title" = "Коллекция";
+
+"achievements.title" = "Достижения";
 "achievements.detail.category" = "Категория";
 "achievements.detail.points" = "Очки";
 "achievements.detail.isAccountWide" = "Распространяется на весь аккаунт";
@@ -45,6 +45,7 @@
 "achievements.detail.faction" = "Фракция";
 "achievements.detail.factionBoth" = "Любая";
 
+"profile.title" = "Профиль";
 "profile.register" = "Зарегистрироваться";
 "profile.login" = "Войти";
 "profile.logout" = "Выйти";
