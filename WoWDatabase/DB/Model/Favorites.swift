@@ -14,6 +14,7 @@ extension Favorites {
 		case profession
 		case recipe
 		case title
+		case mount
 	}
 }
 

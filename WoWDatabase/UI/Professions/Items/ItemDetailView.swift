@@ -56,12 +56,6 @@ struct ItemDetailView: View {
 				.padding(.top, 4)
 			
 		}
-		.padding(.top, 4)
-		.frame(minWidth: 0,
-			   maxWidth: .infinity,
-			   minHeight: 0,
-			   maxHeight: .infinity,
-			   alignment: .topLeading)
 	}
 	
 	var descriptionText: some View {

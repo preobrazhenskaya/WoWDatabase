@@ -52,6 +52,12 @@ struct DetailCardMainView<Content: View>: View {
 					.padding(.top, 6)
 			}
 			descriptionView
+				.padding(.top, 4)
+				.frame(minWidth: 0,
+					   maxWidth: .infinity,
+					   minHeight: 0,
+					   maxHeight: .infinity,
+					   alignment: .topLeading)
 		}
 		.padding(.init(top: 6, leading: 16, bottom: 16, trailing: 16))
 	}

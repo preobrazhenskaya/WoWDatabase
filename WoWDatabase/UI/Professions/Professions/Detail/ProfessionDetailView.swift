@@ -41,15 +41,9 @@ struct ProfessionDetailView: View {
 				boldText: L10n.Professions.Detail.type,
 				regularText: viewModel.profession?.type?.name
 			)
-			.padding(.top, 4)
 			skillList
 				.padding(.top, 4)
 		}
-		.frame(minWidth: 0,
-			   maxWidth: .infinity,
-			   minHeight: 0,
-			   maxHeight: .infinity,
-			   alignment: .topLeading)
 	}
 	
 	@ViewBuilder

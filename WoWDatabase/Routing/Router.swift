@@ -19,6 +19,8 @@ struct Router {
 		case achievementDetail(id: Int)
 		case titleList
 		case titleDetail(id: Int)
+		case mountList
+		case mountDetail(id: Int)
 		case registration
 		case auth
 		case favorites
@@ -47,6 +49,10 @@ struct Router {
 			NavigationLazyView(TitleListView(viewModel: TitleListVM(titleApi: TitleApi())))
 		case let .titleDetail(id):
 			NavigationLazyView(TitleDetailView(viewModel: TitleDetailVM(titleId: id, titleApi: TitleApi(), dbService: DbService.shared)))
+		case .mountList:
+			NavigationLazyView(MountListView(viewModel: MountListVM(mountApi: MountApi())))
+		case let .mountDetail(id):
+			NavigationLazyView(MountDetailView(viewModel: MountDetailVM(mountId: id, mountApi: MountApi(), dbService: DbService.shared)))
 		case .registration:
 			NavigationLazyView(RegistrationView(viewModel: RegistrationVM(dbService: DbService.shared)))
 		case .auth:

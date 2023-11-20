@@ -39,16 +39,10 @@ struct RecipeDetailView: View {
 		VStack(alignment: .leading) {
 			BoldColonRegularTextView(boldText: L10n.Recipe.Detail.rank,
 									 regularText: viewModel.recipe?.rankString)
-			.padding(.top, 4)
 			itemView
 			reagentsView
 				.padding(.top, 4)
 		}
-		.frame(minWidth: 0,
-			   maxWidth: .infinity,
-			   minHeight: 0,
-			   maxHeight: .infinity,
-			   alignment: .topLeading)
 	}
 	
 	var itemView: some View {

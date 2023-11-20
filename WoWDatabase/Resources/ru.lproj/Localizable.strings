@@ -50,6 +50,8 @@
 "title.detail.female" = "Женщина";
 "title.detail.source" = "Получение";
 
+"mount.title" = "Средства передвижения";
+
 "profile.title" = "Профиль";
 "profile.register" = "Зарегистрироваться";
 "profile.login" = "Войти";

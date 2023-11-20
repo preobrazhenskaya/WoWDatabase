@@ -49,6 +49,8 @@ struct FavoritesView: View {
 							Router.navigate(to: .recipeDetail(id: favorites.id))
 						case .title:
 							Router.navigate(to: .titleDetail(id: favorites.id))
+						case .mount:
+							Router.navigate(to: .mountDetail(id: favorites.id))
 						case .none:
 							Router.navigate(to: .none)
 						}
