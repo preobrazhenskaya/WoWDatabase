@@ -64,7 +64,7 @@
 		878CC6522B07C44B006D2D1A /* MountListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC6512B07C44B006D2D1A /* MountListVM.swift */; };
 		878CC6552B07C631006D2D1A /* MountDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC6542B07C631006D2D1A /* MountDetailView.swift */; };
 		878CC6572B07C641006D2D1A /* MountDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC6562B07C641006D2D1A /* MountDetailVM.swift */; };
-		878CC6592B0B597F006D2D1A /* MountImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC6582B0B597F006D2D1A /* MountImageRequest.swift */; };
+		878CC6592B0B597F006D2D1A /* MediaByUrlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC6582B0B597F006D2D1A /* MediaByUrlRequest.swift */; };
 		878CC65B2B0B6225006D2D1A /* PetApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC65A2B0B6225006D2D1A /* PetApi.swift */; };
 		878CC65E2B0B6265006D2D1A /* PetListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC65D2B0B6265006D2D1A /* PetListModel.swift */; };
 		878CC6612B0B62A7006D2D1A /* PetListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC6602B0B62A7006D2D1A /* PetListRequest.swift */; };
@@ -81,6 +81,16 @@
 		878CC67C2B0B8318006D2D1A /* AbilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC67B2B0B8318006D2D1A /* AbilityView.swift */; };
 		878CC67E2B0B8324006D2D1A /* AbilityVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC67D2B0B8324006D2D1A /* AbilityVM.swift */; };
 		878CC6812B0B8894006D2D1A /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 878CC6832B0B8894006D2D1A /* Localizable.stringsdict */; };
+		878CC6862B0B8E7D006D2D1A /* ToyApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC6852B0B8E7D006D2D1A /* ToyApi.swift */; };
+		878CC6892B0B8EC5006D2D1A /* ToyListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC6882B0B8EC5006D2D1A /* ToyListModel.swift */; };
+		878CC68C2B0B8EFC006D2D1A /* ToyListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC68B2B0B8EFC006D2D1A /* ToyListRequest.swift */; };
+		878CC68F2B0B8F41006D2D1A /* ToyListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC68E2B0B8F41006D2D1A /* ToyListVM.swift */; };
+		878CC6912B0B8F48006D2D1A /* ToyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC6902B0B8F48006D2D1A /* ToyListView.swift */; };
+		878CC6932B0B90D9006D2D1A /* ToyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC6922B0B90D9006D2D1A /* ToyModel.swift */; };
+		878CC6952B0B9236006D2D1A /* ToyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC6942B0B9236006D2D1A /* ToyRequest.swift */; };
+		878CC6972B0B92B3006D2D1A /* MediaByUrlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC6962B0B92B3006D2D1A /* MediaByUrlModel.swift */; };
+		878CC69B2B0B950D006D2D1A /* ToyDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC69A2B0B950D006D2D1A /* ToyDetailVM.swift */; };
+		878CC69D2B0B9515006D2D1A /* ToyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC69C2B0B9515006D2D1A /* ToyDetailView.swift */; };
 		878CD67B2B04C9F200DF8E98 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CD67A2B04C9F200DF8E98 /* CollectionView.swift */; };
 		878CD67D2B04D0D700DF8E98 /* CollectionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CD67C2B04D0D700DF8E98 /* CollectionVM.swift */; };
 		87963EE02AC749760001BDB1 /* WoWDatabaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87963EDF2AC749760001BDB1 /* WoWDatabaseApp.swift */; };
@@ -226,7 +236,7 @@
 		878CC6512B07C44B006D2D1A /* MountListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountListVM.swift; sourceTree = "<group>"; };
 		878CC6542B07C631006D2D1A /* MountDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountDetailView.swift; sourceTree = "<group>"; };
 		878CC6562B07C641006D2D1A /* MountDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountDetailVM.swift; sourceTree = "<group>"; };
-		878CC6582B0B597F006D2D1A /* MountImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountImageRequest.swift; sourceTree = "<group>"; };
+		878CC6582B0B597F006D2D1A /* MediaByUrlRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaByUrlRequest.swift; sourceTree = "<group>"; };
 		878CC65A2B0B6225006D2D1A /* PetApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetApi.swift; sourceTree = "<group>"; };
 		878CC65D2B0B6265006D2D1A /* PetListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListModel.swift; sourceTree = "<group>"; };
 		878CC6602B0B62A7006D2D1A /* PetListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListRequest.swift; sourceTree = "<group>"; };
@@ -243,6 +253,16 @@
 		878CC67B2B0B8318006D2D1A /* AbilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityView.swift; sourceTree = "<group>"; };
 		878CC67D2B0B8324006D2D1A /* AbilityVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityVM.swift; sourceTree = "<group>"; };
 		878CC6822B0B8894006D2D1A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		878CC6852B0B8E7D006D2D1A /* ToyApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToyApi.swift; sourceTree = "<group>"; };
+		878CC6882B0B8EC5006D2D1A /* ToyListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToyListModel.swift; sourceTree = "<group>"; };
+		878CC68B2B0B8EFC006D2D1A /* ToyListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToyListRequest.swift; sourceTree = "<group>"; };
+		878CC68E2B0B8F41006D2D1A /* ToyListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToyListVM.swift; sourceTree = "<group>"; };
+		878CC6902B0B8F48006D2D1A /* ToyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToyListView.swift; sourceTree = "<group>"; };
+		878CC6922B0B90D9006D2D1A /* ToyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToyModel.swift; sourceTree = "<group>"; };
+		878CC6942B0B9236006D2D1A /* ToyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToyRequest.swift; sourceTree = "<group>"; };
+		878CC6962B0B92B3006D2D1A /* MediaByUrlModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaByUrlModel.swift; sourceTree = "<group>"; };
+		878CC69A2B0B950D006D2D1A /* ToyDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToyDetailVM.swift; sourceTree = "<group>"; };
+		878CC69C2B0B9515006D2D1A /* ToyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToyDetailView.swift; sourceTree = "<group>"; };
 		878CD67A2B04C9F200DF8E98 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		878CD67C2B04D0D700DF8E98 /* CollectionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVM.swift; sourceTree = "<group>"; };
 		87963EDF2AC749760001BDB1 /* WoWDatabaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWDatabaseApp.swift; sourceTree = "<group>"; };
@@ -467,6 +487,7 @@
 			isa = PBXGroup;
 			children = (
 				87B39AAC2AEF93C800183594 /* DisplayStringModel.swift */,
+				878CC6962B0B92B3006D2D1A /* MediaByUrlModel.swift */,
 				87E520542ACC5FA900856334 /* MediaModel.swift */,
 				87D4CC3C2AD848C90079657E /* NameIdModel.swift */,
 				872529AD2AE91F5000E07EA4 /* TypeNameModel.swift */,
@@ -539,7 +560,6 @@
 		878CC6432B07BF3C006D2D1A /* Mount */ = {
 			isa = PBXGroup;
 			children = (
-				878CC6582B0B597F006D2D1A /* MountImageRequest.swift */,
 				878CC6442B07BF7F006D2D1A /* MountListRequest.swift */,
 				878CC64B2B07C29C006D2D1A /* MountRequest.swift */,
 			);
@@ -649,6 +669,59 @@
 			path = Ability;
 			sourceTree = "<group>";
 		};
+		878CC6842B0B8E5F006D2D1A /* Toy */ = {
+			isa = PBXGroup;
+			children = (
+				878CC6992B0B94FA006D2D1A /* Detail */,
+				878CC68D2B0B8F32006D2D1A /* List */,
+			);
+			path = Toy;
+			sourceTree = "<group>";
+		};
+		878CC6872B0B8EB0006D2D1A /* Toy */ = {
+			isa = PBXGroup;
+			children = (
+				878CC6882B0B8EC5006D2D1A /* ToyListModel.swift */,
+				878CC6922B0B90D9006D2D1A /* ToyModel.swift */,
+			);
+			path = Toy;
+			sourceTree = "<group>";
+		};
+		878CC68A2B0B8EED006D2D1A /* Toy */ = {
+			isa = PBXGroup;
+			children = (
+				878CC68B2B0B8EFC006D2D1A /* ToyListRequest.swift */,
+				878CC6942B0B9236006D2D1A /* ToyRequest.swift */,
+			);
+			path = Toy;
+			sourceTree = "<group>";
+		};
+		878CC68D2B0B8F32006D2D1A /* List */ = {
+			isa = PBXGroup;
+			children = (
+				878CC6902B0B8F48006D2D1A /* ToyListView.swift */,
+				878CC68E2B0B8F41006D2D1A /* ToyListVM.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		878CC6982B0B92F6006D2D1A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				878CC6582B0B597F006D2D1A /* MediaByUrlRequest.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		878CC6992B0B94FA006D2D1A /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				878CC69C2B0B9515006D2D1A /* ToyDetailView.swift */,
+				878CC69A2B0B950D006D2D1A /* ToyDetailVM.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		878CD6752B04C9D300DF8E98 /* Collection */ = {
 			isa = PBXGroup;
 			children = (
@@ -657,6 +730,7 @@
 				878CC64D2B07C428006D2D1A /* Mount */,
 				878CC6622B0B6388006D2D1A /* Pet */,
 				878CC62F2B064350006D2D1A /* Title */,
+				878CC6842B0B8E5F006D2D1A /* Toy */,
 			);
 			path = Collection;
 			sourceTree = "<group>";
@@ -752,6 +826,7 @@
 				878CC65C2B0B624F006D2D1A /* Pet */,
 				871A559C2AE69A0C0030ADBC /* Profession */,
 				878CC62B2B06425F006D2D1A /* Title */,
+				878CC6872B0B8EB0006D2D1A /* Toy */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -813,6 +888,7 @@
 				878CC65A2B0B6225006D2D1A /* PetApi.swift */,
 				871A55A22AE69B4E0030ADBC /* ProfessionApi.swift */,
 				878CC6222B064131006D2D1A /* TitleApi.swift */,
+				878CC6852B0B8E7D006D2D1A /* ToyApi.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -969,10 +1045,12 @@
 				87E520562ACC68C600856334 /* RequestProtocol.swift */,
 				87E520592ACC72CD00856334 /* Achievement */,
 				87A365D82AE148D30041B017 /* Auth */,
+				878CC6982B0B92F6006D2D1A /* Common */,
 				878CC6432B07BF3C006D2D1A /* Mount */,
 				878CC65F2B0B6298006D2D1A /* Pet */,
 				871A559F2AE69ABD0030ADBC /* Profession */,
 				878CC6282B06418C006D2D1A /* Title */,
+				878CC68A2B0B8EED006D2D1A /* Toy */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -1217,8 +1295,10 @@
 				872529AB2AE91D5D00E07EA4 /* ItemModel.swift in Sources */,
 				878CC6502B07C440006D2D1A /* MountListView.swift in Sources */,
 				87AAB5682B025BFE0046E220 /* DbService.swift in Sources */,
+				878CC6972B0B92B3006D2D1A /* MediaByUrlModel.swift in Sources */,
 				871A55C82AE6BFA00030ADBC /* RecipeRowBuilder.swift in Sources */,
 				8716FB042AFBCA3200BC4BE1 /* FavoritesVM.swift in Sources */,
+				878CC68F2B0B8F41006D2D1A /* ToyListVM.swift in Sources */,
 				878CC6652B0B639F006D2D1A /* PetListView.swift in Sources */,
 				871A55992AE68D270030ADBC /* ProfessionsListVM.swift in Sources */,
 				87DDF88F2AF12302009A643D /* RegistrationView.swift in Sources */,
@@ -1243,6 +1323,7 @@
 				878CC6572B07C641006D2D1A /* MountDetailVM.swift in Sources */,
 				872529CB2AEBEB9000E07EA4 /* BoldColonRegularTextView.swift in Sources */,
 				87963EFA2AC755B80001BDB1 /* Api.swift in Sources */,
+				878CC6932B0B90D9006D2D1A /* ToyModel.swift in Sources */,
 				87A62D662AF28AC4009E3253 /* AuthVM.swift in Sources */,
 				87D4CC3D2AD848CA0079657E /* NameIdModel.swift in Sources */,
 				871A55BE2AE6BB480030ADBC /* SkillRowBuilder.swift in Sources */,
@@ -1266,8 +1347,10 @@
 				872529BB2AE93BE200E07EA4 /* ItemRowBuilder.swift in Sources */,
 				87A365D72AE143370041B017 /* ProfileVM.swift in Sources */,
 				87963F8E2AC75E0E0001BDB1 /* TokenModel.swift in Sources */,
+				878CC6912B0B8F48006D2D1A /* ToyListView.swift in Sources */,
 				878CC62D2B064274006D2D1A /* TitleListModel.swift in Sources */,
 				87E5205B2ACC72F800856334 /* AchievementListRequest.swift in Sources */,
+				878CC6892B0B8EC5006D2D1A /* ToyListModel.swift in Sources */,
 				87E520572ACC68C600856334 /* RequestProtocol.swift in Sources */,
 				87D4CC342AD822820079657E /* XCAssets+Generated.swift in Sources */,
 				871A559E2AE69A260030ADBC /* ProfessionsListModel.swift in Sources */,
@@ -1284,16 +1367,20 @@
 				87D4CC362AD8256B0079657E /* Strings+Generated.swift in Sources */,
 				878CC6392B064E07006D2D1A /* TitleDetailVM.swift in Sources */,
 				87FCCA3A2AD53AA000CB27C4 /* Color.swift in Sources */,
+				878CC6952B0B9236006D2D1A /* ToyRequest.swift in Sources */,
 				8716FB072AFCFAA800BC4BE1 /* EmptySearchView.swift in Sources */,
+				878CC6862B0B8E7D006D2D1A /* ToyApi.swift in Sources */,
+				878CC69D2B0B9515006D2D1A /* ToyDetailView.swift in Sources */,
 				878CC6762B0B81BB006D2D1A /* PetAbilityRequest.swift in Sources */,
 				872529B02AE9388C00E07EA4 /* ItemRequest.swift in Sources */,
 				878CC6482B07BFA8006D2D1A /* MountListModel.swift in Sources */,
 				87A365DE2AE14D050041B017 /* AuthApi.swift in Sources */,
 				878CC62A2B0641A8006D2D1A /* TitleListRequest.swift in Sources */,
-				878CC6592B0B597F006D2D1A /* MountImageRequest.swift in Sources */,
+				878CC6592B0B597F006D2D1A /* MediaByUrlRequest.swift in Sources */,
 				87963EF02AC74BA90001BDB1 /* AchievementsListView.swift in Sources */,
 				878CC65E2B0B6265006D2D1A /* PetListModel.swift in Sources */,
 				872529A72AE9114800E07EA4 /* RecipeDetailView.swift in Sources */,
+				878CC69B2B0B950D006D2D1A /* ToyDetailVM.swift in Sources */,
 				878CC6422B07BF00006D2D1A /* MountApi.swift in Sources */,
 				878CC6372B064DFD006D2D1A /* TitleDetailView.swift in Sources */,
 				871A55B62AE6B4800030ADBC /* SkillTierModel.swift in Sources */,
@@ -1303,6 +1390,7 @@
 				872529B92AE93B0100E07EA4 /* ItemDetailView.swift in Sources */,
 				87E520342ACBF1A000856334 /* AchievementsListVM.swift in Sources */,
 				87DDF88D2AF122E7009A643D /* RegistrationVM.swift in Sources */,
+				878CC68C2B0B8EFC006D2D1A /* ToyListRequest.swift in Sources */,
 				872529A52AE90F2500E07EA4 /* RecipeMediaRequest.swift in Sources */,
 				871A55C52AE6BE4D0030ADBC /* RecipesListView.swift in Sources */,
 				879F3AD52AE1562D006E1C6A /* ApiAuthService.swift in Sources */,

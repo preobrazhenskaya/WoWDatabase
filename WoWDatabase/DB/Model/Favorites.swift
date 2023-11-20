@@ -16,6 +16,7 @@ extension Favorites {
 		case title
 		case mount
 		case pet
+		case toy
 	}
 }
 

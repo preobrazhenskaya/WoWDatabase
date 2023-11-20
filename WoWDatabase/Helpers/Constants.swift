@@ -23,6 +23,7 @@ enum Constants {
 			static let mount = "/mount"
 			static let pet = "/pet"
 			static let petAbility = "/pet-ability"
+			static let toy = "/toy"
 		}
 		
 		enum Parameters {

@@ -159,7 +159,8 @@ struct MockProfessionApi: ProfessionApiProtocol {
 																				 silver: "48",
 																				 copper: "58")),
 										  requirements: .init(level: .init(displayString: "Требуется 50-й уровень"),
-															  skill: .init(displayString: "Требуется: Кул-тирасское инженерное дело (1)")),
+															  skill: .init(displayString: "Требуется: Кул-тирасское инженерное дело (1)"),
+															  reputation: .init(displayString: "Требуется: Уважение со стороны батальона Адского Крика")),
 										  durability: .init(displayString: "Прочность: 100 / 100"))))
 		.setFailureType(to: AFError.self)
 		.eraseToAnyPublisher()

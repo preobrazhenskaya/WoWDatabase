@@ -12,7 +12,7 @@ struct MountModel: Codable {
 	let source: TypeNameModel?
 	let faction: TypeNameModel?
 	let requirements: MountRequirementsModel?
-	let creatureDisplays: [MountImageModel]?
+	let creatureDisplays: [MediaByUrlModel]?
 	
 	private enum CodingKeys: String, CodingKey {
 		case id
@@ -27,12 +27,4 @@ struct MountModel: Codable {
 
 struct MountRequirementsModel: Codable {
 	let faction: TypeNameModel?
-}
-
-struct MountImageModel: Codable {
-	let key: MountImageKeyModel?
-}
-
-struct MountImageKeyModel: Codable {
-	let href: String?
 }

@@ -24,6 +24,8 @@ struct Router {
 		case petList
 		case petDetail(id: Int)
 		case abilityDetail(id: Int)
+		case toyList
+		case toyDetail(id: Int)
 		case registration
 		case auth
 		case favorites
@@ -62,6 +64,10 @@ struct Router {
 			NavigationLazyView(PetDetailView(viewModel: PetDetailVM(petId: id, petApi: PetApi(), dbService: DbService.shared)))
 		case let .abilityDetail(id):
 			NavigationLazyView(AbilityView(viewModel: AbilityVM(abilityId: id, petApi: PetApi())))
+		case .toyList:
+			NavigationLazyView(ToyListView(viewModel: ToyListVM(toyApi: ToyApi())))
+		case let .toyDetail(id):
+			NavigationLazyView(ToyDetailView(viewModel: ToyDetailVM(toyId: id, toyApi: ToyApi(), dbService: DbService.shared)))
 		case .registration:
 			NavigationLazyView(RegistrationView(viewModel: RegistrationVM(dbService: DbService.shared)))
 		case .auth:

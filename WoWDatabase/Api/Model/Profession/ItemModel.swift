@@ -94,4 +94,5 @@ struct ItemPreviewPriceStringsModel: Codable {
 struct ItemPreviewRequirementsModel: Codable {
 	let level: DisplayStringModel?
 	let skill: DisplayStringModel?
+	let reputation: DisplayStringModel?
 }

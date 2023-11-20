@@ -120,9 +120,15 @@ struct ItemDetailView: View {
 		if let requirements = viewModel.item?.previewItem?.requirements {
 			VStack(alignment: .leading) {
 				BoldColonTextView(boldText: L10n.Item.Detail.requirements)
-				Text(requirements.level?.displayString ?? "")
-				MultilineText(text: requirements.skill?.displayString ?? "",
-							  alignment: .leading)
+				if let level = requirements.level?.displayString {
+					Text(level)
+				}
+				if let skill = requirements.skill?.displayString {
+					MultilineText(text: skill, alignment: .leading)
+				}
+				if let reputation = requirements.reputation?.displayString {
+					MultilineText(text: reputation, alignment: .leading)
+				}
 			}
 		}
 	}

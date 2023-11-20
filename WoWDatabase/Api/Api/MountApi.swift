@@ -24,7 +24,7 @@ struct MountApi: MountApiProtocol {
 	}
 	
 	func getMountImage(url: String) -> AnyPublisher<MediaModel, AFError> {
-		Api.send(request: MountImageRequest(imageUrl: url))
+		Api.send(request: MediaByUrlRequest(imageUrl: url))
 	}
 }
 

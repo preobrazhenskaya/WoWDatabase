@@ -66,6 +66,9 @@
 "ability.detail.cooldown" = "Восстановление";
 "ability.detail.rounds" = "Длительность";
 
+"toy.title" = "Игрушки";
+"toy.detail.item" = "Предмет";
+
 "profile.title" = "Профиль";
 "profile.register" = "Зарегистрироваться";
 "profile.login" = "Войти";
