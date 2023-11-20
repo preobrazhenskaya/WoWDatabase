@@ -15,6 +15,7 @@ extension Favorites {
 		case recipe
 		case title
 		case mount
+		case pet
 	}
 }
 

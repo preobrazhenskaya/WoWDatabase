@@ -21,6 +21,9 @@ struct Router {
 		case titleDetail(id: Int)
 		case mountList
 		case mountDetail(id: Int)
+		case petList
+		case petDetail(id: Int)
+		case abilityDetail(id: Int)
 		case registration
 		case auth
 		case favorites
@@ -53,6 +56,12 @@ struct Router {
 			NavigationLazyView(MountListView(viewModel: MountListVM(mountApi: MountApi())))
 		case let .mountDetail(id):
 			NavigationLazyView(MountDetailView(viewModel: MountDetailVM(mountId: id, mountApi: MountApi(), dbService: DbService.shared)))
+		case .petList:
+			NavigationLazyView(PetListView(viewModel: PetListVM(petApi: PetApi())))
+		case let .petDetail(id):
+			NavigationLazyView(PetDetailView(viewModel: PetDetailVM(petId: id, petApi: PetApi(), dbService: DbService.shared)))
+		case let .abilityDetail(id):
+			NavigationLazyView(AbilityView(viewModel: AbilityVM(abilityId: id, petApi: PetApi())))
 		case .registration:
 			NavigationLazyView(RegistrationView(viewModel: RegistrationVM(dbService: DbService.shared)))
 		case .auth:

@@ -12,6 +12,7 @@ final class CollectionVM: BaseViewModel {
 	let rows: [(String, Image, Router.Destination)] = [
 		(L10n.Achievements.title, Image(systemSymbol: .trophyFill), .achievementsList),
 		(L10n.Title.title, Image(systemSymbol: .medalFill), .titleList),
-		(L10n.Mount.title, Image(systemSymbol: .pawprintFill), .mountList)
+		(L10n.Mount.title, Image(systemSymbol: .hareFill), .mountList),
+		(L10n.Pet.title, Image(systemSymbol: .pawprintFill), .petList)
 	]
 }

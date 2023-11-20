@@ -7,7 +7,6 @@
 
 import Combine
 import Foundation
-import CoreData
 
 final class ProfessionDetailVM: BaseViewModel {
 	@Published var profession: ProfessionModel?

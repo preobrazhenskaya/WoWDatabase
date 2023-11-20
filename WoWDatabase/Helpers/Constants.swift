@@ -21,6 +21,8 @@ enum Constants {
 			static let achievement = "/achievement"
 			static let title = "/title"
 			static let mount = "/mount"
+			static let pet = "/pet"
+			static let petAbility = "/pet-ability"
 		}
 		
 		enum Parameters {

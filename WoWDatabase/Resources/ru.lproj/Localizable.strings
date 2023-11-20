@@ -14,6 +14,8 @@
 "general.horde" = "Орда";
 "general.ready" = "Готово";
 "general.emptySearch" = "Ничего не найдено";
+"general.unknown" = "Неизвестно";
+"general.only" = "Только";
 
 "professions.title" = "Профессии";
 "professions.detail.type" = "Тип";
@@ -51,6 +53,18 @@
 "title.detail.source" = "Получение";
 
 "mount.title" = "Средства передвижения";
+
+"pet.title" = "Питомцы";
+"pet.detail.isCapturable" = "Можно посадить в клетку";
+"pet.detail.isTradable" = "Можно продать";
+"pet.detail.isBattlepet" = "Боевой питомец";
+"pet.detail.restrictions" = "Ограничения";
+"pet.detail.abilities" = "Способности";
+"pet.detail.slot" = "Слот";
+"pet.detail.lvl" = "Ур.";
+
+"ability.detail.cooldown" = "Восстановление";
+"ability.detail.rounds" = "Длительность";
 
 "profile.title" = "Профиль";
 "profile.register" = "Зарегистрироваться";

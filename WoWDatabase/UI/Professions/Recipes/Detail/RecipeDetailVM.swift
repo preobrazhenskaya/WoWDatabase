@@ -7,7 +7,6 @@
 
 import Combine
 import Foundation
-import CoreData
 
 final class RecipeDetailVM: BaseViewModel {
 	@Published var recipe: RecipeModel?

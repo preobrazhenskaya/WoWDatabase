@@ -65,6 +65,22 @@
 		878CC6552B07C631006D2D1A /* MountDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC6542B07C631006D2D1A /* MountDetailView.swift */; };
 		878CC6572B07C641006D2D1A /* MountDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC6562B07C641006D2D1A /* MountDetailVM.swift */; };
 		878CC6592B0B597F006D2D1A /* MountImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC6582B0B597F006D2D1A /* MountImageRequest.swift */; };
+		878CC65B2B0B6225006D2D1A /* PetApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC65A2B0B6225006D2D1A /* PetApi.swift */; };
+		878CC65E2B0B6265006D2D1A /* PetListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC65D2B0B6265006D2D1A /* PetListModel.swift */; };
+		878CC6612B0B62A7006D2D1A /* PetListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC6602B0B62A7006D2D1A /* PetListRequest.swift */; };
+		878CC6652B0B639F006D2D1A /* PetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC6642B0B639F006D2D1A /* PetListView.swift */; };
+		878CC6672B0B63A9006D2D1A /* PetListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC6662B0B63A9006D2D1A /* PetListVM.swift */; };
+		878CC6692B0B64AA006D2D1A /* PetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC6682B0B64AA006D2D1A /* PetModel.swift */; };
+		878CC66B2B0B66A8006D2D1A /* PetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC66A2B0B66A8006D2D1A /* PetRequest.swift */; };
+		878CC66D2B0B66CC006D2D1A /* PetMediaRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC66C2B0B66CC006D2D1A /* PetMediaRequest.swift */; };
+		878CC6702B0B67F0006D2D1A /* PetDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC66F2B0B67F0006D2D1A /* PetDetailView.swift */; };
+		878CC6722B0B67FC006D2D1A /* PetDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC6712B0B67FC006D2D1A /* PetDetailVM.swift */; };
+		878CC6742B0B8113006D2D1A /* AbilityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC6732B0B8113006D2D1A /* AbilityModel.swift */; };
+		878CC6762B0B81BB006D2D1A /* PetAbilityRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC6752B0B81BB006D2D1A /* PetAbilityRequest.swift */; };
+		878CC6782B0B81FC006D2D1A /* PetAbilityMediaRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC6772B0B81FC006D2D1A /* PetAbilityMediaRequest.swift */; };
+		878CC67C2B0B8318006D2D1A /* AbilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC67B2B0B8318006D2D1A /* AbilityView.swift */; };
+		878CC67E2B0B8324006D2D1A /* AbilityVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CC67D2B0B8324006D2D1A /* AbilityVM.swift */; };
+		878CC6812B0B8894006D2D1A /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 878CC6832B0B8894006D2D1A /* Localizable.stringsdict */; };
 		878CD67B2B04C9F200DF8E98 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CD67A2B04C9F200DF8E98 /* CollectionView.swift */; };
 		878CD67D2B04D0D700DF8E98 /* CollectionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878CD67C2B04D0D700DF8E98 /* CollectionVM.swift */; };
 		87963EE02AC749760001BDB1 /* WoWDatabaseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87963EDF2AC749760001BDB1 /* WoWDatabaseApp.swift */; };
@@ -211,6 +227,22 @@
 		878CC6542B07C631006D2D1A /* MountDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountDetailView.swift; sourceTree = "<group>"; };
 		878CC6562B07C641006D2D1A /* MountDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountDetailVM.swift; sourceTree = "<group>"; };
 		878CC6582B0B597F006D2D1A /* MountImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountImageRequest.swift; sourceTree = "<group>"; };
+		878CC65A2B0B6225006D2D1A /* PetApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetApi.swift; sourceTree = "<group>"; };
+		878CC65D2B0B6265006D2D1A /* PetListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListModel.swift; sourceTree = "<group>"; };
+		878CC6602B0B62A7006D2D1A /* PetListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListRequest.swift; sourceTree = "<group>"; };
+		878CC6642B0B639F006D2D1A /* PetListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListView.swift; sourceTree = "<group>"; };
+		878CC6662B0B63A9006D2D1A /* PetListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListVM.swift; sourceTree = "<group>"; };
+		878CC6682B0B64AA006D2D1A /* PetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetModel.swift; sourceTree = "<group>"; };
+		878CC66A2B0B66A8006D2D1A /* PetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRequest.swift; sourceTree = "<group>"; };
+		878CC66C2B0B66CC006D2D1A /* PetMediaRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetMediaRequest.swift; sourceTree = "<group>"; };
+		878CC66F2B0B67F0006D2D1A /* PetDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailView.swift; sourceTree = "<group>"; };
+		878CC6712B0B67FC006D2D1A /* PetDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailVM.swift; sourceTree = "<group>"; };
+		878CC6732B0B8113006D2D1A /* AbilityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityModel.swift; sourceTree = "<group>"; };
+		878CC6752B0B81BB006D2D1A /* PetAbilityRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetAbilityRequest.swift; sourceTree = "<group>"; };
+		878CC6772B0B81FC006D2D1A /* PetAbilityMediaRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetAbilityMediaRequest.swift; sourceTree = "<group>"; };
+		878CC67B2B0B8318006D2D1A /* AbilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityView.swift; sourceTree = "<group>"; };
+		878CC67D2B0B8324006D2D1A /* AbilityVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityVM.swift; sourceTree = "<group>"; };
+		878CC6822B0B8894006D2D1A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		878CD67A2B04C9F200DF8E98 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		878CD67C2B04D0D700DF8E98 /* CollectionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVM.swift; sourceTree = "<group>"; };
 		87963EDF2AC749760001BDB1 /* WoWDatabaseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WoWDatabaseApp.swift; sourceTree = "<group>"; };
@@ -550,12 +582,80 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		878CC65C2B0B624F006D2D1A /* Pet */ = {
+			isa = PBXGroup;
+			children = (
+				878CC6732B0B8113006D2D1A /* AbilityModel.swift */,
+				878CC65D2B0B6265006D2D1A /* PetListModel.swift */,
+				878CC6682B0B64AA006D2D1A /* PetModel.swift */,
+			);
+			path = Pet;
+			sourceTree = "<group>";
+		};
+		878CC65F2B0B6298006D2D1A /* Pet */ = {
+			isa = PBXGroup;
+			children = (
+				878CC6772B0B81FC006D2D1A /* PetAbilityMediaRequest.swift */,
+				878CC6752B0B81BB006D2D1A /* PetAbilityRequest.swift */,
+				878CC6602B0B62A7006D2D1A /* PetListRequest.swift */,
+				878CC66C2B0B66CC006D2D1A /* PetMediaRequest.swift */,
+				878CC66A2B0B66A8006D2D1A /* PetRequest.swift */,
+			);
+			path = Pet;
+			sourceTree = "<group>";
+		};
+		878CC6622B0B6388006D2D1A /* Pet */ = {
+			isa = PBXGroup;
+			children = (
+				878CC67A2B0B82FE006D2D1A /* Ability */,
+				878CC6792B0B82F4006D2D1A /* Pet */,
+			);
+			path = Pet;
+			sourceTree = "<group>";
+		};
+		878CC6632B0B638F006D2D1A /* List */ = {
+			isa = PBXGroup;
+			children = (
+				878CC6642B0B639F006D2D1A /* PetListView.swift */,
+				878CC6662B0B63A9006D2D1A /* PetListVM.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		878CC66E2B0B67E0006D2D1A /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				878CC66F2B0B67F0006D2D1A /* PetDetailView.swift */,
+				878CC6712B0B67FC006D2D1A /* PetDetailVM.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		878CC6792B0B82F4006D2D1A /* Pet */ = {
+			isa = PBXGroup;
+			children = (
+				878CC66E2B0B67E0006D2D1A /* Detail */,
+				878CC6632B0B638F006D2D1A /* List */,
+			);
+			path = Pet;
+			sourceTree = "<group>";
+		};
+		878CC67A2B0B82FE006D2D1A /* Ability */ = {
+			isa = PBXGroup;
+			children = (
+				878CC67B2B0B8318006D2D1A /* AbilityView.swift */,
+				878CC67D2B0B8324006D2D1A /* AbilityVM.swift */,
+			);
+			path = Ability;
+			sourceTree = "<group>";
+		};
 		878CD6752B04C9D300DF8E98 /* Collection */ = {
 			isa = PBXGroup;
 			children = (
 				87E520422ACC0B1B00856334 /* Achievements */,
 				878CC62E2B064339006D2D1A /* Main */,
 				878CC64D2B07C428006D2D1A /* Mount */,
+				878CC6622B0B6388006D2D1A /* Pet */,
 				878CC62F2B064350006D2D1A /* Title */,
 			);
 			path = Collection;
@@ -612,10 +712,11 @@
 		87963EF72AC7505D0001BDB1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				879F3ADE2AE27FDA006E1C6A /* Font */,
 				87963EE32AC749790001BDB1 /* Assets.xcassets */,
+				879F3ADE2AE27FDA006E1C6A /* Font */,
 				87D4CC322AD8210F0079657E /* Generated */,
 				87D4CC142AD8034C0079657E /* Localizable.strings */,
+				878CC6832B0B8894006D2D1A /* Localizable.stringsdict */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -648,6 +749,7 @@
 				87A365DB2AE14CE50041B017 /* Auth */,
 				872529BE2AEBE86F00E07EA4 /* Common */,
 				878CC6462B07BF96006D2D1A /* Mount */,
+				878CC65C2B0B624F006D2D1A /* Pet */,
 				871A559C2AE69A0C0030ADBC /* Profession */,
 				878CC62B2B06425F006D2D1A /* Title */,
 			);
@@ -708,6 +810,7 @@
 				87A365C42AE0061D0041B017 /* AchievementApi.swift */,
 				87A365DD2AE14D050041B017 /* AuthApi.swift */,
 				878CC6412B07BF00006D2D1A /* MountApi.swift */,
+				878CC65A2B0B6225006D2D1A /* PetApi.swift */,
 				871A55A22AE69B4E0030ADBC /* ProfessionApi.swift */,
 				878CC6222B064131006D2D1A /* TitleApi.swift */,
 			);
@@ -867,6 +970,7 @@
 				87E520592ACC72CD00856334 /* Achievement */,
 				87A365D82AE148D30041B017 /* Auth */,
 				878CC6432B07BF3C006D2D1A /* Mount */,
+				878CC65F2B0B6298006D2D1A /* Pet */,
 				871A559F2AE69ABD0030ADBC /* Profession */,
 				878CC6282B06418C006D2D1A /* Title */,
 			);
@@ -1019,6 +1123,7 @@
 				87D4CC122AD8034C0079657E /* Localizable.strings in Resources */,
 				87963EE42AC749790001BDB1 /* Assets.xcassets in Resources */,
 				879F3AF02AE28F78006E1C6A /* FrizQuadrataC.otf in Resources */,
+				878CC6812B0B8894006D2D1A /* Localizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1114,6 +1219,7 @@
 				87AAB5682B025BFE0046E220 /* DbService.swift in Sources */,
 				871A55C82AE6BFA00030ADBC /* RecipeRowBuilder.swift in Sources */,
 				8716FB042AFBCA3200BC4BE1 /* FavoritesVM.swift in Sources */,
+				878CC6652B0B639F006D2D1A /* PetListView.swift in Sources */,
 				871A55992AE68D270030ADBC /* ProfessionsListVM.swift in Sources */,
 				87DDF88F2AF12302009A643D /* RegistrationView.swift in Sources */,
 				87A62D682AF28AE4009E3253 /* AuthView.swift in Sources */,
@@ -1129,8 +1235,10 @@
 				871A55BA2AE6B6F50030ADBC /* SkillDetailVM.swift in Sources */,
 				87DDF8952AF13838009A643D /* NavigationButton.swift in Sources */,
 				878CC6452B07BF7F006D2D1A /* MountListRequest.swift in Sources */,
+				878CC6702B0B67F0006D2D1A /* PetDetailView.swift in Sources */,
 				878CC6232B064131006D2D1A /* TitleApi.swift in Sources */,
 				87A365BD2ADE97E10041B017 /* Publisher+Extension.swift in Sources */,
+				878CC6692B0B64AA006D2D1A /* PetModel.swift in Sources */,
 				87E520502ACC575100856334 /* TabsView.swift in Sources */,
 				878CC6572B07C641006D2D1A /* MountDetailVM.swift in Sources */,
 				872529CB2AEBEB9000E07EA4 /* BoldColonRegularTextView.swift in Sources */,
@@ -1145,10 +1253,13 @@
 				87E520602ACC7D5300856334 /* AchievementMediaRequest.swift in Sources */,
 				87D4CC402AD934430079657E /* FirstAppear.swift in Sources */,
 				871A55A32AE69B4E0030ADBC /* ProfessionApi.swift in Sources */,
+				878CC6782B0B81FC006D2D1A /* PetAbilityMediaRequest.swift in Sources */,
 				878CC63D2B0650DF006D2D1A /* TitleRequest.swift in Sources */,
 				87A365A72ADD4D110041B017 /* NavigationLazyView.swift in Sources */,
 				871A55C22AE6BDC90030ADBC /* RecipesListVM.swift in Sources */,
+				878CC6612B0B62A7006D2D1A /* PetListRequest.swift in Sources */,
 				87DDF8922AF1313E009A643D /* ActionButton.swift in Sources */,
+				878CC67C2B0B8318006D2D1A /* AbilityView.swift in Sources */,
 				87D4CC3B2AD843AD0079657E /* AchievementRowBuilder.swift in Sources */,
 				879FFECA2B022F4E005E9C1E /* DetailCardMainView.swift in Sources */,
 				872529B52AE939B700E07EA4 /* ItemDetailVM.swift in Sources */,
@@ -1165,6 +1276,7 @@
 				87963EF42AC74CEA0001BDB1 /* AchievementModel.swift in Sources */,
 				87A62D932AF29A54009E3253 /* CoreData+Extension.swift in Sources */,
 				8716FB022AFBC8F700BC4BE1 /* FavoritesView.swift in Sources */,
+				878CC66D2B0B66CC006D2D1A /* PetMediaRequest.swift in Sources */,
 				872529A12AE9031D00E07EA4 /* RecipeModel.swift in Sources */,
 				87A62D962AF50749009E3253 /* User.swift in Sources */,
 				87A62D912AF2945D009E3253 /* PersistenceController.swift in Sources */,
@@ -1173,16 +1285,19 @@
 				878CC6392B064E07006D2D1A /* TitleDetailVM.swift in Sources */,
 				87FCCA3A2AD53AA000CB27C4 /* Color.swift in Sources */,
 				8716FB072AFCFAA800BC4BE1 /* EmptySearchView.swift in Sources */,
+				878CC6762B0B81BB006D2D1A /* PetAbilityRequest.swift in Sources */,
 				872529B02AE9388C00E07EA4 /* ItemRequest.swift in Sources */,
 				878CC6482B07BFA8006D2D1A /* MountListModel.swift in Sources */,
 				87A365DE2AE14D050041B017 /* AuthApi.swift in Sources */,
 				878CC62A2B0641A8006D2D1A /* TitleListRequest.swift in Sources */,
 				878CC6592B0B597F006D2D1A /* MountImageRequest.swift in Sources */,
 				87963EF02AC74BA90001BDB1 /* AchievementsListView.swift in Sources */,
+				878CC65E2B0B6265006D2D1A /* PetListModel.swift in Sources */,
 				872529A72AE9114800E07EA4 /* RecipeDetailView.swift in Sources */,
 				878CC6422B07BF00006D2D1A /* MountApi.swift in Sources */,
 				878CC6372B064DFD006D2D1A /* TitleDetailView.swift in Sources */,
 				871A55B62AE6B4800030ADBC /* SkillTierModel.swift in Sources */,
+				878CC65B2B0B6225006D2D1A /* PetApi.swift in Sources */,
 				8725299B2AE902CA00E07EA4 /* RecipeDetailVM.swift in Sources */,
 				87A62D6C2AF29037009E3253 /* WoWDatabase.xcdatamodeld in Sources */,
 				872529B92AE93B0100E07EA4 /* ItemDetailView.swift in Sources */,
@@ -1191,14 +1306,17 @@
 				872529A52AE90F2500E07EA4 /* RecipeMediaRequest.swift in Sources */,
 				871A55C52AE6BE4D0030ADBC /* RecipesListView.swift in Sources */,
 				879F3AD52AE1562D006E1C6A /* ApiAuthService.swift in Sources */,
+				878CC66B2B0B66A8006D2D1A /* PetRequest.swift in Sources */,
 				872529AE2AE91F5000E07EA4 /* TypeNameModel.swift in Sources */,
 				871A55A92AE6A1CA0030ADBC /* ProfessionModel.swift in Sources */,
 				872529B22AE9390600E07EA4 /* ItemMediaRequest.swift in Sources */,
 				872529A32AE90E5C00E07EA4 /* RecipeRequest.swift in Sources */,
 				87A365C02ADEB6140041B017 /* BaseViewModel.swift in Sources */,
 				871A55A12AE69AD40030ADBC /* ProfessionsListRequest.swift in Sources */,
+				878CC6742B0B8113006D2D1A /* AbilityModel.swift in Sources */,
 				871A55B82AE6B5FF0030ADBC /* SkillTierRequest.swift in Sources */,
 				87A365DA2AE149080041B017 /* TokenRequest.swift in Sources */,
+				878CC6672B0B63A9006D2D1A /* PetListVM.swift in Sources */,
 				87E5204A2ACC145A00856334 /* AchievementDetailVM.swift in Sources */,
 				871A55AD2AE6A3360030ADBC /* ProfessionMediaRequest.swift in Sources */,
 				871A55AB2AE6A2BA0030ADBC /* ProfessionRequest.swift in Sources */,
@@ -1206,10 +1324,12 @@
 				8716FB092AFCFDD700BC4BE1 /* PreviewService.swift in Sources */,
 				878CC64A2B07C0B9006D2D1A /* MountModel.swift in Sources */,
 				87E5203B2ACC033C00856334 /* AchievementsListModel.swift in Sources */,
+				878CC6722B0B67FC006D2D1A /* PetDetailVM.swift in Sources */,
 				87E520552ACC5FA900856334 /* MediaModel.swift in Sources */,
 				871A55B02AE6A4500030ADBC /* ProfessionDetailVM.swift in Sources */,
 				871A55B22AE6A5F10030ADBC /* ProfessionDetailView.swift in Sources */,
 				878CC64C2B07C29C006D2D1A /* MountRequest.swift in Sources */,
+				878CC67E2B0B8324006D2D1A /* AbilityVM.swift in Sources */,
 				879F3AF22AE2901F006E1C6A /* Font.swift in Sources */,
 				87E520462ACC13D900856334 /* AchievementDetailView.swift in Sources */,
 				878CC6312B064373006D2D1A /* TitleListView.swift in Sources */,
@@ -1226,6 +1346,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		878CC6832B0B8894006D2D1A /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				878CC6822B0B8894006D2D1A /* ru */,
+			);
+			name = Localizable.stringsdict;
+			sourceTree = "<group>";
+		};
 		87D4CC142AD8034C0079657E /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

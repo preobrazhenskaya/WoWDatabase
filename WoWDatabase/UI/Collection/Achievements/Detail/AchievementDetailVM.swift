@@ -7,7 +7,6 @@
 
 import Combine
 import Foundation
-import CoreData
 
 final class AchievementDetailVM: BaseViewModel {
 	@Published var achievement: AchievementModel?
